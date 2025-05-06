@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าหลัก</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    }
+
+    header {
+      background-color: #00579a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header img {
+      height: 80px;
+      margin-right: 20px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .header-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .header-text h1 {
+      margin: 5px;
+      font-size: 24px;
+    }
+    .header-text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #ffff33;
+      font-size: 20px;
+    }
+
+    nav.main-nav {
+      background-color: #2677A3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown {
+      position: relative;
+      z-index: 10; 
+    }
+    .dropbtn {
+      background-color: transparent;
+      color: white;
+      padding: 6px 16px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropbtn::after {
+      content: "\25BC";
+      margin-left: 8px;
+      font-size: 10px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      z-index: 20;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .banner-dsi {
+      background-color: #ffffffd0;
+      padding: 15px 0;
+      font-size: 24px;
+      color: #07589C;
+      font-weight: bold;
+      box-shadow: 0 4px 4px rgba(0,0,0,0.1);
+    }
+
+    .main-section {
+      display: flex;
+      flex-grow: 1;
+      background: linear-gradient(to right, #C2E5FB 50%, #E6F6FF 50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+    }
+    .main-section::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 50%;
+      height: 100%;
+      background: url('offcie1.png') no-repeat center left;
+      background-size: cover;
+      z-index: 0;
+    }
+    .left-content, .button-container {
+      position: relative;
+      z-index: 1;
+    }
+    .left-content {
+      width: 50%;
+      padding: 30px 30px 30px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      padding: 10px 0;
+    }
+    .logo-text {
+      font-size: 72px;
+      font-weight: bold;
+      color: #004b94;
+      margin-right: 20px;
+    }
+    .description {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    .description .thai {
+      font-size: 28px;
+      font-weight: bold;
+      color: #007bdb;
+    }
+    .description .eng {
+      font-size: 22px;
+      font-weight: bold;
+      color: #004b94;
+    }
+    .welcome-box {
+      background-color: rgba(255, 255, 255, 0.75);
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      font-size: 18px;
+      line-height: 1.6;
+      color: #003366;
+      max-width: 90%;
+    }
+    .welcome-box h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #004b94;
+    }
+    .section-block1, .section-block2 {
+      /* background-color: #e2e3e5; */
+      font-size: 14px;
+      color: #333;
+      width: fit-content;
+      margin: 5px 0;
+
+    }
+    .section-block1 span {
+      background-color: #DBC697;
+      display: inline-block;
+      border-radius: 15px;
+      padding: 8px 12px;
+      /* margin: 5px 0; */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      text-shadow: -1px -1px 0 white;
+      border: 2px solid #af9356; 
+
+
+    }
+    .section-block2 span {
+      background-color: #C2E0FF;
+      display: inline-block;
+      border-radius: 15px;
+      padding: 8px 12px;
+      /* margin: 5px 0; */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      text-shadow: -1px -1px 0 white;
+      border: 2px solid #5286ba; 
+
+    }
+
+    .button-container {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 30px 60px 30px 30px;
+    }
+
+    .btn {
+      width: 400px;
+      padding: 15px 20px;
+      margin: 10px 0;
+      font-size: 18px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .btn-yellow { background-color: #EAE427; color: #000; border-right: 12px solid #626010; text-shadow: -1px -1px 0 white; }
+    .btn-orange { background-color: #FFC131; color: #000; border-right: 12px solid #735718; text-shadow: -1px -1px 0 white;}
+    .btn-green  { background-color: #7FD8A1; color: #000; border-right: 12px solid #3A6F4E; text-shadow: -1px -1px 0 white;}
+    .btn-blue1  { background-color: #8CD2FE; color: #000; border-right: 12px solid #2D4F64; text-shadow: -1px -1px 0 white;}
+    .btn-blue2  { background-color: #679EFA; color: #000; border-right: 12px solid #0E264F; text-shadow: -1px -1px 0 white;}
+
+    footer {
+      background-color: #444;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Logo.png" alt="DSI Logo">
+    <div class="header-text">
+      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2>Department of Special Investigation</h2>
+    </div>
+    <div class="lang-switch">
+      <button onclick="changeLanguage('th')">TH</button> |
+      <button onclick="changeLanguage('en')">EN</button> |
+      <button onclick="changeLanguage('ms')">MS</button>
+    </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="dropdown">
+      <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
+      <div class="dropdown-content">
+        <a href="user-name.html" target="_blank">แจ้งเบาะแส</a>
+        <a href="#" target="_blank">ฟอร์มคำร้อง</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+      <div class="dropdown-content">
+        <a href="dsi-news.html">ประชาสัมพันธ์</a>
+        <a href="dsi-announcement.html">รายละเอียดกิจกรรม</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">เกี่ยวกับ DSI</button>
+      <div class="dropdown-content">
+        <a href="dsi-about.html">เกี่ยวกับ DSI</a>
+        <a href="dsi-laws.html">กฎหมาย DSI</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">โครงสร้างการบริหารงาน</button>
+      <div class="dropdown-content">
+        <a href="dsi-structure.html">แผนผังองค์กร</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">ช่องทางการติดต่อ</button>
+      <div class="dropdown-content">
+        <a href="dsi-contact.html">ช่องทางการติดต่อ</a>
+        <a href="dsi-contact.html">ที่ตั้งสำนักงาน</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">เว็บไซต์อื่นๆ</button>
+      <div class="dropdown-content">
+        <a href="dsi-websites.html" target="_blank">เว็บไซต์หลัก DSI</a>
+        <a href="dsi-guide.html">คู่มือการใช้งาน</a>
+      </div>
+    </div>
+  </nav>
+  <div class="main-section">
+    <div class="left-content">
+      <div class="logo-container">
+        <div class="logo-text">DSI</div>
+        <div class="description">
+          <div class="thai">กรมสอบสวนคดีพิเศษ</div>
+          <div class="eng">Department of Special Investigation</div>
+        </div>
+      </div>
+      <div class="section-block1">
+        <span>สำหรับประชาชน</span>
+      </div>
+      <div class="section-block2">
+        <span>สำหรับเจ้าหน้าที่</span>
+      </div>
+
+      <div class="welcome-box">
+        <h2>ยินดีต้อนรับสู่เว็บไซต์ DSI</h2>
+        ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ในการดำเนินการและจัดการคดีพิเศษ เพื่อให้เกิดความยุติธรรมและคุ้มครองสิทธิของประชาชน
+      </div>
+
+    </div>
+
+    <div class="button-container">
+      <a href="user-name.html" class="btn btn-yellow">ร้องเรียน/ร้องทุกข์</a>
+      <a href="dsi-news.html" class="btn btn-orange">ข่าวประชาสัมพันธ์/กิจกรรม</a>
+      <a href="dsi-about.html" class="btn btn-green">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" class="btn btn-blue1">กฎหมายที่เกี่ยวข้อง</a>
+      <a href="dsi-contact.html" class="btn btn-blue2">ช่องทางติดต่อ</a>
+    </div>
+  </div>
+
+  <footer>
+    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+  </footer>
+</body>
+</html>

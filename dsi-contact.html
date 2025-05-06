@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ช่องทางการติดต่อ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    }
+
+    header {
+      background-color: #00579a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header img {
+      height: 80px;
+      margin-right: 20px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .header-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .header-text h1 {
+      margin: 5px;
+      font-size: 24px;
+    }
+    .header-text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #ffff33;
+      font-size: 20px;
+    }
+
+    /* ส่วน Nav เมนู */
+    nav.main-nav {
+      background-color: #2677A3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background-color: transparent;
+      color: white;
+      padding: 6px 16px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropbtn::after {
+      content: "\25BC";
+      margin-left: 8px;
+      font-size: 10px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* ส่วน Breadcrumb */
+    .breadcrumb-bar {
+      background-color: #f1f1f1;
+      padding: 12px 40px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: inset 0 -1px 0 #ccc;
+    }
+    .breadcrumb-bar nav {
+      display: flex;
+      align-items: center;
+    }
+    .breadcrumb-bar ol {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+    .breadcrumb-bar li {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+    .breadcrumb-bar a {
+      text-decoration: none;
+      color: #00579a;
+      transition: color 0.3s;
+    }
+    .breadcrumb-bar a:hover {
+      color: #003366;
+    }
+    .breadcrumb-bar .current {
+      color: #666;
+    }
+
+    .main-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px 20px;
+    }
+
+    .section-box {
+      background-color: white;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      margin-bottom: 50px;
+      max-width: 900px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .section-box h3 {
+      color: #3b4cca;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .section-box p {
+      color: #444;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .qr-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .qr-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 130px;
+    }
+
+    .qr-item img {
+      width: 110px;
+      height: 110px;
+      border: 4px solid #7c4dff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+    }
+
+    .qr-item img:hover {
+      transform: scale(1.05);
+    }
+
+    .qr-caption {
+      margin-top: 10px;
+      font-size: 15px;
+      color: #333;
+    }
+
+    iframe {
+      border: 4px solid #7c4dff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      height: 420px;
+      margin-top: 20px;
+    }
+
+    footer {
+      background-color: #444;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Logo.png" alt="DSI Logo">
+    <div class="header-text">
+      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2>Department of Special Investigation</h2>
+    </div>
+  </div>
+  <div class="lang-switch">
+    <button onclick="changeLanguage('th')">TH</button> |
+    <button onclick="changeLanguage('en')">EN</button> |
+    <button onclick="changeLanguage('ms')">MS</button>
+  </div>
+  </header>
+
+  <nav class="main-nav">
+    <div class="dropdown">
+      <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
+      <div class="dropdown-content">
+        <a href="user-name.html" target="_blank">แจ้งเบาะแส</a>
+        <a href="#" target="_blank">ฟอร์มคำร้อง</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+      <div class="dropdown-content">
+        <a href="dsi-news.html">ประชาสัมพันธ์</a>
+        <a href="dsi-announcement.html">รายละเอียดกิจกรรม</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">เกี่ยวกับ DSI</button>
+      <div class="dropdown-content">
+        <a href="dsi-about.html">เกี่ยวกับ DSI</a>
+        <a href="dsi-laws.html">กฎหมาย DSI</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">โครงสร้างการบริหารงาน</button>
+      <div class="dropdown-content">
+        <a href="dsi-structure.html">แผนผังองค์กร</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">ช่องทางการติดต่อ</button>
+      <div class="dropdown-content">
+        <a href="dsi-contact.html">ช่องทางการติดต่อ</a>
+        <a href="dsi-contact.html">ที่ตั้งสำนักงาน</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">เว็บไซต์อื่นๆ</button>
+      <div class="dropdown-content">
+        <a href="dsi-websites.html" target="_blank">เว็บไซต์หลัก DSI</a>
+        <a href="dsi-guide.html">คู่มือการใช้งาน</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb-bar" id="breadcrumb">
+    <nav aria-label="breadcrumb">
+      <ol>
+        <li><a href="dsi-home.html">หน้าหลัก</a></li>
+        <li>&nbsp;/&nbsp;</li>
+        <li><span class="current">ช่องทางการติดต่อ / ที่ตั้งสำนักงาน</span></li>
+      </ol>
+    </nav>
+  </div>
+
+  <div class="main-container">
+    <div class="section-box">
+      <h3>ช่องทางการติดต่อเรา</h3>
+      <p>
+        ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)<br>
+        เลขที่ 18 ซอย 5 บ้านลุ่ม ตำบลบุดี อำเภอเมือง จังหวัดยะลา 94000<br>
+        โทร. 02-8319888 ต่อ 61002
+      </p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3914.3827405105314!2d101.279112!3d6.543263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b33dfc4c914b2d%3A0x9c9de1e9c53ae99d!2z4LmA4LiU4LiZ4LmA4Lil4Lix4LiH4Lia4LmA4Lil4LmJ4Lit4LiZ4LiB4Liy4LiV4LmM4LiZ4LiE4Lij4Li44LiB4LmA4LiX4LiZ4LmM!5e0!3m2!1sth!2sth!4v1714043628414!5m2!1sth!2sth" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+    <div class="section-box">
+      <h3>ช่องทางการติดตามเรา</h3>
+      <div class="qr-grid">
+        <div class="qr-item">
+          <img src="img/dsi_qr.png" alt="เว็บไซต์ DSI">
+          <div class="qr-caption">เว็บไซต์ DSI</div>
+        </div>
+        <div class="qr-item">
+          <img src="img/facebook_qr.png" alt="Facebook">
+          <div class="qr-caption">Facebook</div>
+        </div>
+        <div class="qr-item">
+          <img src="img/ig_qr.png" alt="Instagram">
+          <div class="qr-caption">Instagram</div>
+        </div>
+        <div class="qr-item">
+          <img src="img/tiktok_qr.png" alt="TikTok">
+          <div class="qr-caption">TikTok</div>
+        </div>
+        <div class="qr-item">
+          <img src="img/youtube_qr.png" alt="YouTube">
+          <div class="qr-caption">YouTube</div>
+        </div>
+        <div class="qr-item">
+          <img src="img/x_qr.png" alt="Twitter">
+          <div class="qr-caption">Twitter</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+  </footer></body>
+</html>
