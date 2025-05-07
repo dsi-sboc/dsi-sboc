@@ -24,8 +24,6 @@
       display: flex;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      position: relative;
-      flex-wrap: wrap;
     }
     header img {
       height: 80px;
@@ -35,13 +33,12 @@
       position: absolute;
       top: 20px;
       right: 20px;
+      margin-left: auto;
       font-size: 14px;
     }
     .header-text {
       text-align: center;
       flex-grow: 1;
-      order: 1;
-      width: 100%;
     }
     .header-text h1 {
       margin: 5px;
@@ -52,9 +49,7 @@
       font-weight: normal;
       color: #ffff33;
       font-size: 20px;
-    }
-
-    .menu-toggle {
+    }    .menu-toggle {
       display: none;
       background: none;
       border: none;
@@ -65,7 +60,6 @@
       top: 110px;
       z-index: 100;
     }
-
     nav.main-nav {
       background-color: #2677A3;
       display: flex;
