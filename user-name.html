@@ -197,14 +197,41 @@
   <footer>
     © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
   </footer>
+<script>
+  function goBack() {
+    window.location.href = "dsi-home.html";
+  }
 
-  <script>
-    function goBack() {
-      window.location.href = "dsi-home.html";
+  async function goToNextPage() {
+    const form = document.getElementById("complaintForm");
+    const formData = new FormData(form);
+
+    const data = {};
+    for (const [key, value] of formData.entries()) {
+      data[key] = value;
     }
-    function goToNextPage() {
-      window.location.href = "user-contact.html"; 
+
+    try {
+      const response = await fetch("https://script.google.com/macros/s/AKfycbw3NbZzyY7xJ_q2BFK2gTeL6E1KSSMvB6DuqkNr2gWNUWO6HuLo6-P_UtU3TGD6qBnZ-g/exec", {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+      const result = await response.json();
+      console.log("ส่งข้อมูลสำเร็จ:", result);
+
+      // เมื่อส่งสำเร็จไปหน้าถัดไป
+      window.location.href = "user-contact.html";
+
+    } catch (error) {
+      console.error("เกิดข้อผิดพลาด:", error);
+      alert("ไม่สามารถส่งข้อมูลได้ กรุณาลองใหม่");
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
