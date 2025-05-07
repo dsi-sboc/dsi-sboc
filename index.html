@@ -24,6 +24,7 @@
       display: flex;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
     header img {
       height: 80px;
@@ -33,7 +34,6 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      margin-left: auto;
       font-size: 14px;
     }
     .header-text {
@@ -49,6 +49,18 @@
       font-weight: normal;
       color: #ffff33;
       font-size: 20px;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: white;
+      position: absolute;
+      right: 20px;
+      top: 70px;
+      z-index: 100;
     }
 
     nav.main-nav {
@@ -90,7 +102,8 @@
       text-decoration: none;
       display: block;
     }
-    .dropdown:hover .dropdown-content {
+    .dropdown:hover .dropdown-content,
+    .dropdown.active .dropdown-content {
       display: block;
     }
 
@@ -175,29 +188,27 @@
       margin-bottom: 10px;
       color: #004b94;
     }
+
     .section-block1, .section-block2 {
       font-size: 14px;
       color: #333;
       width: fit-content;
       margin: 5px 0;
     }
-    .section-block1 span {
-      background-color: #DBC697;
+    .section-block1 span, .section-block2 span {
       display: inline-block;
       border-radius: 15px;
       padding: 8px 12px;
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
       text-shadow: -1px -1px 0 white;
-      border: 2px solid #af9356; 
+    }
+    .section-block1 span {
+      background-color: #DBC697;
+      border: 2px solid #af9356;
     }
     .section-block2 span {
       background-color: #C2E0FF;
-      display: inline-block;
-      border-radius: 15px;
-      padding: 8px 12px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-      text-shadow: -1px -1px 0 white;
-      border: 2px solid #5286ba; 
+      border: 2px solid #5286ba;
     }
 
     .button-container {
@@ -235,52 +246,20 @@
       font-size: 13px;
     }
 
-    /* Responsive Design for Mobile */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
         text-align: center;
       }
-      header img {
-        height: 60px;
-        margin: 0 auto 10px;
-      }
-      .lang-switch {
-        position: static;
-        margin-top: 10px;
+      .menu-toggle {
+        display: block;
       }
       nav.main-nav {
         flex-direction: column;
-        align-items: center;
-      }
-      .main-section {
-        flex-direction: column;
-        background: none;
-      }
-      .main-section::before {
         display: none;
       }
-      .left-content, .button-container {
-        width: 100%;
-        padding: 20px;
-        align-items: center;
-        text-align: center;
-      }
-      .logo-text {
-        font-size: 48px;
-        margin: 0 0 10px 0;
-      }
-      .description .thai, .description .eng {
-        text-align: center;
-      }
-      .welcome-box {
-        font-size: 16px;
-        max-width: 100%;
-      }
-      .btn {
-        width: 100%;
-        font-size: 16px;
-        margin: 8px 0;
+      nav.main-nav.active {
+        display: flex;
       }
       .dropdown-content {
         position: static;
@@ -289,15 +268,21 @@
       .dropdown:hover .dropdown-content {
         display: none;
       }
-      .dropdown .dropbtn {
-        display: block;
-        width: 100%;
-      }
-      .dropdown .dropbtn::after {
-        display: none;
-      }
     }
   </style>
+  <script>
+    function toggleMenu() {
+      document.querySelector('nav.main-nav').classList.toggle('active');
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const dropdowns = document.querySelectorAll('.dropdown');
+      dropdowns.forEach(drop => {
+        drop.addEventListener('click', () => {
+          drop.classList.toggle('active');
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
@@ -311,6 +296,7 @@
       <button onclick="changeLanguage('en')">EN</button> |
       <button onclick="changeLanguage('ms')">MS</button>
     </div>
+    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
   </header>
 
   <nav class="main-nav">
@@ -393,3 +379,5 @@
   </footer>
 </body>
 </html>
+
+
