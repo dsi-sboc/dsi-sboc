@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>ส่งข้อมูลคำขอร้อง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    }
+
+    header {
+      background-color: #00579a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header img {
+      height: 80px;
+      margin-right: 20px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .header-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .header-text h1 {
+      margin: 5px;
+      font-size: 24px;
+    }
+    .header-text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #ffff33;
+      font-size: 20px;
+    }
+
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .lang-switch button {
+      padding: 2px 6px;
+      margin: 0 1px;
+      font-size: 14px;
+      border-radius: 0;       /* ขอบมุมคม */
+      cursor: pointer;
+      outline: none;
+      box-shadow: none;
+      border: 1px solid #ccc;
+    }
+    
+    .main-container {
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .content-box {
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 40px 20px;
+      width: 100%;
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .content-box h2 {
+      color: #0056aa;
+      margin-bottom: 20px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .note i {
+      color: #555;
+      margin-right: 5px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .cancel-btn {
+      background-color: #aaa;
+      color: white;
+    }
+    .next-btn {
+      background-color: #5cd88e;
+      color: white;
+    }
+
+    footer {
+      background-color: #444;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+    .wrapper {
+  min-height: 33.5vh;
+  display: flex;
+  flex-direction: column;
+}
+
+</style>
+</head>
+<body>
+  <header>
+    <img src="Logo.png" alt="DSI Logo">
+    <div class="header-text">
+      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2>Department of Special Investigation</h2>
+    </div>
+    <div class="lang-switch">
+      <button onclick="changeLanguage('th')">TH</button> |
+      <button onclick="changeLanguage('en')">EN</button> |
+      <button onclick="changeLanguage('ms')">MS</button>
+    </div>
+  
+  </header>
+
+  <div class="main-container">
+    <div class="content-box">
+      <h2>ส่งข้อมูลคำขอร้อง</h2>
+      <p class="note">
+         ⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน <span style="color: red">*</span>
+      </p>
+      <div class="buttons">
+        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()">ย้อนกลับ</button>
+        <button type="button" class="next-btn" onclick="goToNextPage()">ส่งข้อมูลคำขอร้อง</button>
+      </div>
+      <script>
+          function goBack() {
+        window.location.href = "user-terms.html";
+        }
+        function goToNextPage() {
+          window.location.href = "#"; 
+        }
+      </script>    
+     </div>
+  </div>
+    <div class="wrapper"></div>
+    <footer>
+      © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+    </footer>
+</body>
+</html>
