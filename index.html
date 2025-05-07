@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>หน้าหลัก</title>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
     body {
       font-family: 'Kanit', sans-serif;
@@ -25,6 +25,7 @@
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       position: relative;
+      flex-wrap: wrap;
     }
     header img {
       height: 80px;
@@ -39,6 +40,8 @@
     .header-text {
       text-align: center;
       flex-grow: 1;
+      order: 1;
+      width: 100%;
     }
     .header-text h1 {
       margin: 5px;
@@ -59,7 +62,7 @@
       color: white;
       position: absolute;
       right: 20px;
-      top: 70px;
+      top: 110px;
       z-index: 100;
     }
 
@@ -73,7 +76,7 @@
     }
     .dropdown {
       position: relative;
-      z-index: 10; 
+      z-index: 10;
     }
     .dropbtn {
       background-color: transparent;
@@ -135,10 +138,12 @@
       background-size: cover;
       z-index: 0;
     }
+
     .left-content, .button-container {
       position: relative;
       z-index: 1;
     }
+
     .left-content {
       width: 50%;
       padding: 30px 30px 30px 60px;
@@ -146,6 +151,7 @@
       flex-direction: column;
       justify-content: flex-start;
     }
+
     .logo-container {
       display: flex;
       align-items: center;
@@ -253,10 +259,13 @@
       }
       .menu-toggle {
         display: block;
+        top: 160px;
       }
       nav.main-nav {
         flex-direction: column;
         display: none;
+        gap: 8px;
+        padding: 12px;
       }
       nav.main-nav.active {
         display: flex;
@@ -264,9 +273,69 @@
       .dropdown-content {
         position: static;
         box-shadow: none;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        margin-top: 4px;
       }
       .dropdown:hover .dropdown-content {
         display: none;
+      }
+      .dropbtn {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .dropdown-content a {
+        font-size: 14px;
+        padding: 10px;
+      }
+      .main-section {
+        flex-direction: column;
+        background: none;
+      }
+      .main-section::before {
+        display: none;
+      }
+      .left-content,
+      .button-container {
+        width: 100%;
+        padding: 20px;
+        align-items: center;
+      }
+      .logo-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo-text {
+        font-size: 48px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .description {
+        align-items: center;
+        text-align: center;
+      }
+      .welcome-box {
+        font-size: 16px;
+        padding: 15px;
+        margin: 15px 0;
+      }
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        font-size: 16px;
+      }
+      header img {
+        height: 60px;
+      }
+      .lang-switch {
+        position: static;
+        margin-top: 10px;
+      }
+      .header-text h1 {
+        font-size: 20px;
+      }
+      .header-text h2 {
+        font-size: 16px;
       }
     }
   </style>
@@ -379,5 +448,3 @@
   </footer>
 </body>
 </html>
-
-
