@@ -250,7 +250,6 @@
     © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
   </footer>
 
-<!-- ลบ src="lang.js" ออก -->
 <script>
   const translations = {
     th: {
@@ -319,9 +318,41 @@
       }
     });
 
-    // เปลี่ยน title ด้วย
-    document.title = translations[lang].page_title;
-  }
+
+    function copyPermanentAddress() {
+      if (document.getElementById("same_address").checked) {
+        const address = localStorage.getItem("address") || "";
+        const district = localStorage.getItem("district") || "";
+        const amphoe = localStorage.getItem("amphoe") || "";
+        const province = localStorage.getItem("province") || "";
+        const zipcode = localStorage.getItem("zipcode") || "";
+        document.getElementById("address").value = address;
+        document.getElementById("district").value = district;
+        document.getElementById("amphoe").value = amphoe;
+        document.getElementById("province").value = province;
+        document.getElementById("zipcode").value = zipcode;
+      }
+    }
+
+    function goBack() {
+      window.location.href = "user-name.html";
+    }
+
+    function goToNextPage() {
+      const addressData = {
+        address: document.getElementById("address").value,
+        district: document.getElementById("district").value,
+        amphoe: document.getElementById("amphoe").value,
+        province: document.getElementById("province").value,
+        zipcode: document.getElementById("zipcode").value,
+        tel: document.getElementById("tel").value,
+        email: document.getElementById("email").value
+      };
+      for (const [key, value] of Object.entries(addressData)) {
+        localStorage.setItem(key, value);
+      }
+      window.location.href = "user-complaint.html";
+    }
 
   document.addEventListener("DOMContentLoaded", () => {
     const lang = localStorage.getItem("lang") || "th";
