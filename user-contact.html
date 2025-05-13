@@ -30,20 +30,16 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      margin-left: auto;
       font-size: 14px;
     }
     .lang-switch button {
       padding: 2px 6px;
       margin: 0 1px;
       font-size: 14px;
-      border-radius: 0;       /* ขอบมุมคม */
       cursor: pointer;
-      outline: none;
-      box-shadow: none;
       border: 1px solid #ccc;
     }
-    
+
     .header-text {
       text-align: center;
       flex-grow: 1;
@@ -58,6 +54,7 @@
       color: #ffff33;
       font-size: 20px;
     }
+
     .container {
       width: 80%;
       margin: 20px auto;
@@ -66,6 +63,7 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       padding: 20px;
     }
+
     .section-title {
       font-weight: bold;
       font-size: 18px;
@@ -73,6 +71,7 @@
       padding: 10px;
       border-radius: 10px 10px 0 0;
     }
+
     form {
       display: flex;
       flex-direction: column;
@@ -126,6 +125,7 @@
       background-color: #00579a;
       color: white;
     }
+
     footer {
       background-color: #444;
       color: white;
@@ -133,12 +133,12 @@
       padding: 15px;
       font-size: 14px;
     }
-    .wrapper {
-  min-height: 18vh;
-  display: flex;
-  flex-direction: column;
-}
 
+    .wrapper {
+      min-height: 18vh;
+      display: flex;
+      flex-direction: column;
+    }
   </style>
 </head>
 <body>
@@ -153,105 +153,130 @@
       <button onclick="changeLanguage('en')">EN</button> |
       <button onclick="changeLanguage('ms')">MS</button>
     </div>
-  
   </header>
+
   <div class="container">
-    <div class="section-title">
+    <div class="section-title" data-i18n="section_title">
       📍 ส่วนที่ 2 : กรอกข้อมูลที่อยู่/ช่องทางการติดต่อ
     </div>
 
     <form id="contactForm">
-      <h4 style="color: #019EFF;">ที่อยู่ตามภูมิลำเนา  <span class="required">*</span></h4>
+      <h4 style="color: #019EFF;" data-i18n="perm_address">ที่อยู่ตามภูมิลำเนา <span class="required">*</span></h4>
       <div class="form-row">
         <div class="form-group">
-          <label>บ้านเลขที่ <span class="required">*</span></label>
+          <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
           <input type="text" name="permHouseNumber" required>
         </div>
         <div class="form-group">
-          <label>หมู่ที่ <span class="required">*</span></label>
+          <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
           <input type="text" name="permVillage" required>
         </div>
         <div class="form-group">
-          <label>ถนน <span class="required">*</span></label>
+          <label data-i18n="street">ถนน <span class="required">*</span></label>
           <input type="text" name="permStreet" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>ตำบล/แขวง <span class="required">*</span></label>
+          <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
           <input type="text" name="permSubdistrict" required>
         </div>
         <div class="form-group">
-          <label>อำเภอ/เขต <span class="required">*</span></label>
+          <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
           <input type="text" name="permDistrict" required>
         </div>
         <div class="form-group">
-          <label>จังหวัด <span class="required">*</span></label>
+          <label data-i18n="province">จังหวัด <span class="required">*</span></label>
           <input type="text" name="permProvince" required>
         </div>
       </div>
 
-      <h4 style="color: #019EFF;">ที่อยู่ปัจจุบัน  <span class="required">*</span></h4>
+      <h4 style="color: #019EFF;" data-i18n="current_address">ที่อยู่ปัจจุบัน <span class="required">*</span></h4>
       <label class="checkbox-label">
         <input type="checkbox" id="sameAddress" onchange="copyPermanentAddress()">
-        <span>ใช้ที่อยู่ตามภูมิลำเนา</span>
+        <span data-i18n="same_as_perm">ใช้ที่อยู่ตามภูมิลำเนา</span>
       </label>
       <div class="form-row">
         <div class="form-group">
-          <label>บ้านเลขที่ <span class="required">*</span></label>
+          <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
           <input type="text" name="houseNumber" required>
         </div>
         <div class="form-group">
-          <label>หมู่ที่ <span class="required">*</span></label>
+          <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
           <input type="text" name="village" required>
         </div>
         <div class="form-group">
-          <label>ถนน <span class="required">*</span></label>
+          <label data-i18n="street">ถนน <span class="required">*</span></label>
           <input type="text" name="street" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label>ตำบล/แขวง <span class="required">*</span></label>
+          <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
           <input type="text" name="subdistrict" required>
         </div>
         <div class="form-group">
-          <label>อำเภอ/เขต <span class="required">*</span></label>
+          <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
           <input type="text" name="district" required>
         </div>
         <div class="form-group">
-          <label>จังหวัด <span class="required">*</span></label>
+          <label data-i18n="province">จังหวัด <span class="required">*</span></label>
           <input type="text" name="province" required>
         </div>
       </div>
 
-      <h4 style="color: #019EFF;">ช่องทางการติดต่อ  <span class="required">*</span></h4>
+      <h4 style="color: #019EFF;" data-i18n="contact_info">ช่องทางการติดต่อ <span class="required">*</span></h4>
       <div class="form-row">
         <div class="form-group">
-          <label>อีเมล <span class="required">*</span></label>
+          <label data-i18n="email">อีเมล <span class="required">*</span></label>
           <input type="email" name="email" required>
         </div>
         <div class="form-group">
-          <label>เบอร์โทรศัพท์ <span class="required">*</span></label>
+          <label data-i18n="phone">เบอร์โทรศัพท์ <span class="required">*</span></label>
           <input type="tel" name="phone" required>
         </div>
       </div>
     </form>
+
     <div class="buttons">
-      <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()">ย้อนกลับ</button>
-      <button type="button" class="next-btn" onclick="goToNextPage()">ถัดไป</button>
+      <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="cancel">ย้อนกลับ</button>
+      <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next">ถัดไป</button>
     </div>
-    <script>
-        function goBack() {
-      window.location.href = "user-name.html";
-      }
-      function goToNextPage() {
-        window.location.href = "user-complaint.html"; 
-      }
-    </script>    
   </div>
+
   <div class="wrapper"></div>
+
   <footer>
     © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
   </footer>
+
+  <!-- Scripts -->
+  <script src="lang.js"></script>
+  <script>
+    function goBack() {
+      window.location.href = "user-name.html";
+    }
+
+    function goToNextPage() {
+      window.location.href = "user-complaint.html";
+    }
+
+    function copyPermanentAddress() {
+      const checkbox = document.getElementById('sameAddress');
+      if (checkbox.checked) {
+        document.querySelector('[name="houseNumber"]').value = document.querySelector('[name="permHouseNumber"]').value;
+        document.querySelector('[name="village"]').value = document.querySelector('[name="permVillage"]').value;
+        document.querySelector('[name="street"]').value = document.querySelector('[name="permStreet"]').value;
+        document.querySelector('[name="subdistrict"]').value = document.querySelector('[name="permSubdistrict"]').value;
+        document.querySelector('[name="district"]').value = document.querySelector('[name="permDistrict"]').value;
+        document.querySelector('[name="province"]').value = document.querySelector('[name="permProvince"]').value;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const lang = localStorage.getItem("lang") || "th";
+      changeLanguage(lang);
+    });
+  </script>
+</body>
 </html>
