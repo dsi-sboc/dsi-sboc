@@ -250,102 +250,84 @@
     © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
   </footer>
 
-  <!-- Scripts -->
-  <script src="lang.js">
-        const translations = {
-      th: {
-        page_title: "แบบฟอร์มร้องเรียน DSI - หน้าที่ 2",
-        section_title: "📍 ส่วนที่ 2 : กรอกข้อมูลที่อยู่/ช่องทางการติดต่อ",
-        perm_address: "ที่อยู่ตามภูมิลำเนา",
-        current_address: "ที่อยู่ปัจจุบัน",
-        house_number: "บ้านเลขที่",
-        village: "หมู่ที่",
-        street: "ถนน",
-        subdistrict: "ตำบล/แขวง",
-        district: "อำเภอ/เขต",
-        province: "จังหวัด",
-        same_as_perm: "ใช้ที่อยู่ตามภูมิลำเนา",
-        contact_info: "ช่องทางการติดต่อ",
-        email: "อีเมล",
-        phone: "เบอร์โทรศัพท์",
-        cancel: "ย้อนกลับ",
-        next: "ถัดไป",
-      },
-      en: {
-        page_title: "DSI Complaint Form - Page 2",
-        section_title: "📍 Section 2: Address / Contact Information",
-        perm_address: "Permanent Address",
-        current_address: "Current Address",
-        house_number: "House Number",
-        village: "Village No.",
-        street: "Street",
-        subdistrict: "Sub-district",
-        district: "District",
-        province: "Province",
-        same_as_perm: "Use Permanent Address",
-        contact_info: "Contact Information",
-        email: "Email",
-        phone: "Phone Number",
-        cancel: "Back",
-        next: "Next",
-      },
-      ms: {
-        page_title: "Borang Aduan DSI - Halaman 2",
-        section_title: "📍 Bahagian 2: Alamat / Maklumat Perhubungan",
-        perm_address: "Alamat Tetap",
-        current_address: "Alamat Semasa",
-        house_number: "Nombor Rumah",
-        village: "Kampung No.",
-        street: "Jalan",
-        subdistrict: "Mukim",
-        district: "Daerah",
-        province: "Wilayah",
-        same_as_perm: "Guna Alamat Tetap",
-        contact_info: "Maklumat Perhubungan",
-        email: "E-mel",
-        phone: "Nombor Telefon",
-        cancel: "Kembali",
-        next: "Seterusnya",
+<!-- ลบ src="lang.js" ออก -->
+<script>
+  const translations = {
+    th: {
+      page_title: "แบบฟอร์มร้องเรียน DSI - หน้าที่ 2",
+      section_title: "📍 ส่วนที่ 2 : กรอกข้อมูลที่อยู่/ช่องทางการติดต่อ",
+      perm_address: "ที่อยู่ตามภูมิลำเนา",
+      current_address: "ที่อยู่ปัจจุบัน",
+      house_number: "บ้านเลขที่",
+      village: "หมู่ที่",
+      street: "ถนน",
+      subdistrict: "ตำบล/แขวง",
+      district: "อำเภอ/เขต",
+      province: "จังหวัด",
+      same_as_perm: "ใช้ที่อยู่ตามภูมิลำเนา",
+      contact_info: "ช่องทางการติดต่อ",
+      email: "อีเมล",
+      phone: "เบอร์โทรศัพท์",
+      cancel: "ย้อนกลับ",
+      next: "ถัดไป",
+    },
+    en: {
+      page_title: "DSI Complaint Form - Page 2",
+      section_title: "📍 Section 2: Address / Contact Information",
+      perm_address: "Permanent Address",
+      current_address: "Current Address",
+      house_number: "House Number",
+      village: "Village No.",
+      street: "Street",
+      subdistrict: "Sub-district",
+      district: "District",
+      province: "Province",
+      same_as_perm: "Use Permanent Address",
+      contact_info: "Contact Information",
+      email: "Email",
+      phone: "Phone Number",
+      cancel: "Back",
+      next: "Next",
+    },
+    ms: {
+      page_title: "Borang Aduan DSI - Halaman 2",
+      section_title: "📍 Bahagian 2: Alamat / Maklumat Perhubungan",
+      perm_address: "Alamat Tetap",
+      current_address: "Alamat Semasa",
+      house_number: "Nombor Rumah",
+      village: "Kampung No.",
+      street: "Jalan",
+      subdistrict: "Mukim",
+      district: "Daerah",
+      province: "Wilayah",
+      same_as_perm: "Guna Alamat Tetap",
+      contact_info: "Maklumat Perhubungan",
+      email: "E-mel",
+      phone: "Nombor Telefon",
+      cancel: "Kembali",
+      next: "Seterusnya",
+    }
+  };
+
+  function changeLanguage(lang) {
+    localStorage.setItem("lang", lang);
+    document.documentElement.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        el.innerText = translations[lang][key];
       }
-    };
-    
-    function changeLanguage(lang) {
-      localStorage.setItem("lang", lang);
-      document.documentElement.lang = lang;
-      document.querySelectorAll("[data-i18n]").forEach((el) => {
-        const key = el.getAttribute("data-i18n");
-        if (translations[lang][key]) {
-          el.innerText = translations[lang][key];
-        }
-      });
-    }
-
-  </script>
-  <script>
-    function goBack() {
-      window.location.href = "user-name.html";
-    }
-
-    function goToNextPage() {
-      window.location.href = "user-complaint.html";
-    }
-
-    function copyPermanentAddress() {
-      const checkbox = document.getElementById('sameAddress');
-      if (checkbox.checked) {
-        document.querySelector('[name="houseNumber"]').value = document.querySelector('[name="permHouseNumber"]').value;
-        document.querySelector('[name="village"]').value = document.querySelector('[name="permVillage"]').value;
-        document.querySelector('[name="street"]').value = document.querySelector('[name="permStreet"]').value;
-        document.querySelector('[name="subdistrict"]').value = document.querySelector('[name="permSubdistrict"]').value;
-        document.querySelector('[name="district"]').value = document.querySelector('[name="permDistrict"]').value;
-        document.querySelector('[name="province"]').value = document.querySelector('[name="permProvince"]').value;
-      }
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const lang = localStorage.getItem("lang") || "th";
-      changeLanguage(lang);
     });
-  </script>
+
+    // เปลี่ยน title ด้วย
+    document.title = translations[lang].page_title;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const lang = localStorage.getItem("lang") || "th";
+    changeLanguage(lang);
+  });
+</script>
+
 </body>
 </html>
