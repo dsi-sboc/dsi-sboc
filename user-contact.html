@@ -342,16 +342,16 @@
       window.location.href = "user-complaint.html";
     }
 
-    function goToNextPage() {
-      const addressData = {
-        address: document.getElementById("address").value,
-        district: document.getElementById("district").value,
-        amphoe: document.getElementById("amphoe").value,
-        province: document.getElementById("province").value,
-        zipcode: document.getElementById("zipcode").value,
-        tel: document.getElementById("tel").value,
-        email: document.getElementById("email").value
-      };
+    // function goToNextPage() {
+    //   const addressData = {
+    //     address: document.getElementById("address").value,
+    //     district: document.getElementById("district").value,
+    //     amphoe: document.getElementById("amphoe").value,
+    //     province: document.getElementById("province").value,
+    //     zipcode: document.getElementById("zipcode").value,
+    //     tel: document.getElementById("tel").value,
+    //     email: document.getElementById("email").value
+    //   };
       for (const [key, value] of Object.entries(addressData)) {
         localStorage.setItem(key, value);
       }
