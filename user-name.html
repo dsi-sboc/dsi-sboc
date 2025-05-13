@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>แบบฟอร์มร้องเรียน DSI</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
     body {
       font-family: 'Kanit', sans-serif;
       margin: 0;
@@ -149,7 +150,6 @@
     </div>
   </header>
 
-  <!-- กรอบหัวข้อแยกออกมานอกกล่อง -->
   <div class="section-title">
     👤 ส่วนที่ 1 : กรอกข้อมูลผู้ร้องเรียน/ร้องทุกข์
   </div>
@@ -158,12 +158,12 @@
     <form id="complaintForm">
       <div class="form-group">
         <label>เลขบัตรประจำตัวประชาชน <span class="required">*</span></label>
-        <input type="text" name="idCard" required>
+        <input type="text" name="citizenId" required>
       </div>
       <div class="form-row">
         <div class="form-group">
           <label>คำนำหน้านาม  <span class="required">*</span></label>
-          <input type="text" name="prefix">
+          <input type="text" name="prefix" required>
         </div>
         <div class="form-group">
           <label>ชื่อจริง <span class="required">*</span></label>
@@ -180,7 +180,7 @@
       </div>
       <div class="form-group">
         <label>เชื้อชาติ  <span class="required">*</span></label>
-        <input type="text" name="ethnicity">
+        <input type="text" name="race" required>
       </div>
       <div class="form-group">
         <label>สัญชาติ <span class="required">*</span></label>
@@ -197,6 +197,7 @@
   <footer>
     © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
   </footer>
+
 <script>
   function goBack() {
     window.location.href = "user-name.html";
@@ -208,7 +209,13 @@
 
     const data = {};
     for (const [key, value] of formData.entries()) {
-      data[key] = value;
+      data[key] = value.trim(); // ป้องกันช่องว่าง
+    }
+
+    // ตรวจสอบว่ากรอกครบหรือไม่
+    if (!data.citizenId || !data.firstName || !data.lastName || !data.age || !data.race || !data.nationality) {
+      alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+      return;
     }
 
     try {
@@ -223,15 +230,22 @@
       const result = await response.json();
       console.log("ส่งข้อมูลสำเร็จ:", result);
 
-      // เมื่อส่งสำเร็จไปหน้าถัดไป
-      window.location.href = "user-contact.html";
+      if (result.result === "success") {
+        window.location.href = "user-contact.html"; // ไปหน้าถัดไป
+      } else {
+        alert("เกิดข้อผิดพลาด: " + result.message);
+      }
 
     } catch (error) {
       console.error("เกิดข้อผิดพลาด:", error);
       alert("ไม่สามารถส่งข้อมูลได้ กรุณาลองใหม่");
     }
   }
-</script>
 
+  function changeLanguage(lang) {
+    // placeholder: โหลดคำแปลภาษาจากไฟล์ JSON ถ้ามี
+    alert("ยังไม่ได้เปิดใช้งานระบบเปลี่ยนภาษา");
+  }
+</script>
 </body>
 </html>
