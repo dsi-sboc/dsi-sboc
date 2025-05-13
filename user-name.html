@@ -169,8 +169,8 @@
   <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
-      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2>Department of Special Investigation</h2>
+      <h1 data-i18n="headerTitle">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="headerSubtitle">Department of Special Investigation</h2>
     </div>
     <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
@@ -180,14 +180,13 @@
   </header>
 
   <main>
-    <div class="section-title">
+    <div class="section-title" data-i18n="sectionTitle">
       👤 ส่วนที่ 1 : กรอกข้อมูลผู้ร้องเรียน/ร้องทุกข์
     </div>
-
     <div class="container">
       <form id="complaintForm">
         <div class="form-group">
-          <label>เลขบัตรประจำตัวประชาชน <span class="required">*</span></label>
+    <label data-i18n="citizenIdLabel">เลขบัตรประจำตัวประชาชน <span class="required">*</span></label>
           <input type="text" name="citizenId" required>
         </div>
 
@@ -221,9 +220,10 @@
       </form>
 
     <div class="buttons">
-      <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()">ย้อนกลับ</button>
-      <button type="button" class="next-btn" onclick="goToNextPage()">ถัดไป</button>
+        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="backBtn">ย้อนกลับ</button>
+        <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="nextBtn">ถัดไป</button>
     </div>
+      
     <script>
         function goBack() {
       window.location.href = "index.html";
@@ -286,6 +286,65 @@
       alert("ยังไม่ได้เปิดใช้งานระบบเปลี่ยนภาษา");
     }
   </script> -->
+<script>
+  const translations = {
+    th: {
+      headerTitle: "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)",
+      headerSubtitle: "กรมสอบสวนคดีพิเศษ",
+      sectionTitle: "👤 ส่วนที่ 1 : กรอกข้อมูลผู้ร้องเรียน/ร้องทุกข์",
+      citizenIdLabel: "เลขบัตรประจำตัวประชาชน <span class='required'>*</span>",
+      prefixLabel: "คำนำหน้านาม <span class='required'>*</span>",
+      firstNameLabel: "ชื่อจริง <span class='required'>*</span>",
+      lastNameLabel: "นามสกุล <span class='required'>*</span>",
+      ageLabel: "อายุ <span class='required'>*</span>",
+      raceLabel: "เชื้อชาติ <span class='required'>*</span>",
+      nationalityLabel: "สัญชาติ <span class='required'>*</span>",
+      backBtn: "ย้อนกลับ",
+      nextBtn: "ถัดไป",
+      footer: "© ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002"
+    },
+    en: {
+      headerTitle: "Southern Border Provinces Special Case Operations Center (DSI)",
+      headerSubtitle: "Department of Special Investigation",
+      sectionTitle: "👤 Section 1: Complainant's Information",
+      citizenIdLabel: "National ID Number <span class='required'>*</span>",
+      prefixLabel: "Title <span class='required'>*</span>",
+      firstNameLabel: "First Name <span class='required'>*</span>",
+      lastNameLabel: "Last Name <span class='required'>*</span>",
+      ageLabel: "Age <span class='required'>*</span>",
+      raceLabel: "Race <span class='required'>*</span>",
+      nationalityLabel: "Nationality <span class='required'>*</span>",
+      backBtn: "Back",
+      nextBtn: "Next",
+      footer: "© Southern Border Provinces Special Case Operations Center (DSI) Tel. 02-8319888 ext. 61002"
+    },
+    ms: {
+      headerTitle: "Pusat Operasi Kes Khas Wilayah Sempadan Selatan (DSI)",
+      headerSubtitle: "Jabatan Siasatan Khas",
+      sectionTitle: "👤 Bahagian 1: Maklumat Pengadu",
+      citizenIdLabel: "Nombor Kad Pengenalan <span class='required'>*</span>",
+      prefixLabel: "Gelaran <span class='required'>*</span>",
+      firstNameLabel: "Nama Pertama <span class='required'>*</span>",
+      lastNameLabel: "Nama Keluarga <span class='required'>*</span>",
+      ageLabel: "Umur <span class='required'>*</span>",
+      raceLabel: "Bangsa <span class='required'>*</span>",
+      nationalityLabel: "Warganegara <span class='required'>*</span>",
+      backBtn: "Kembali",
+      nextBtn: "Seterusnya",
+      footer: "© Pusat Operasi Kes Khas Wilayah Sempadan Selatan (DSI) Tel. 02-8319888 samb. 61002"
+    }
+  };
+
+  function changeLanguage(lang) {
+    const elements = document.querySelectorAll("[data-i18n]");
+    elements.forEach(el => {
+      const key = el.getAttribute("data-i18n");
+      if (translations[lang] && translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
