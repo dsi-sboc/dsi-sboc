@@ -220,11 +220,19 @@
         </div>
       </form>
 
-      <div class="buttons">
-        <button type="button" class="cancel-btn" onclick="goBack()">ย้อนกลับ</button>
-        <button type="button" class="next-btn" onclick="goToNextPage()">ถัดไป</button>
-      </div>
+    <div class="buttons">
+      <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()">ย้อนกลับ</button>
+      <button type="button" class="next-btn" onclick="goToNextPage()">ถัดไป</button>
     </div>
+    <script>
+        function goBack() {
+      window.location.href = "index.html";
+      }
+      function goToNextPage() {
+        window.location.href = "user-contact.html"; 
+      }
+    </script>    
+  </div>
   </main>
 
   <footer>
