@@ -5,28 +5,36 @@
   <title data-i18n="page_title">แบบฟอร์มร้องเรียน DSI - หน้าที่ 3</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
-      font-family: 'Kanit', sans-serif;
+    @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
       margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+      font-family: 'Kanit', sans-serif;
     }
+  body {
+    font-family: 'Kanit', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+  }
 
-    header {
-      background-color: #00579a;
-      color: white;
-      padding: 20px;
-      display: flex;
-      align-items: center;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    header img {
-      height: 80px;
-      margin-right: 20px;
-    }
+  header {
+    background-color: #00579a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  header img {
+    height: 80px;
+    margin-right: 20px;
+  }
     .lang-switch {
       position: absolute;
       top: 20px;
@@ -59,21 +67,33 @@
       color: #ffff33;
       font-size: 20px;
     }
-    .container {
-      width: 80%;
-      margin: 20px auto;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px;
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
+
     .section-title {
       font-weight: bold;
       font-size: 18px;
       background: #cce8ff;
-      padding: 10px;
+      color: #00579a;
+      padding: 10px 20px;
       border-radius: 10px 10px 0 0;
+      width: 80%;
+      margin: 40px auto 0 auto;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
+    .container {
+      width: 80%;
+      margin: 0 auto 40px auto;
+      background: white;
+      border-radius: 0 0 10px 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+    }
+
     form {
       display: flex;
       flex-direction: column;
@@ -140,62 +160,78 @@
   </style>
 </head>
 <body>
-  <header>
-    <img src="Logo.png" alt="DSI Logo">
-    <div class="header-text">
-      <h1 data-i18n="header_title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2 data-i18n="header_subtitle">Department of Special Investigation</h2>
-    </div>
-    <div class="lang-switch">
+
+<header>
+  <img src="Logo.png" alt="DSI Logo">
+  <div class="header-text">
+    <h1 data-i18n="title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+    <h2 data-i18n="subtitle">Department of Special Investigation</h2>
+  </div>
+      <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
       <button onclick="changeLanguage('en')">EN</button> |
       <button onclick="changeLanguage('ms')">MS</button>
     </div>  
   </header>
-  <div class="container">
-    <div class="section-title" data-i18n="section_title">
-      📄 ส่วนที่ 3 : ข้อมูลการร้องทุกข์
-    </div>
 
+</header>
+
+<main>
+  <div class="section-title" data-i18n="section3">📓 ส่วนที่ 3 : ข้อมูลการร้องทุกข์</div>
+  <div class="container">
     <form>
       <div class="form-group">
         <h4 style="color: #019EFF;" data-i18n="complaint_info">ข้อมูลการร้องทุกข์  <span class="required">*</span></h4>
-        <label data-i18n="details_label">รายละเอียด <span class="required">*</span></label>
+        <label ">รายละเอียด <span class="required">*</span></label>
         <textarea rows="5" required data-i18n-placeholder="details_placeholder" placeholder="ข้อมูลการร้องทุกข์หรือข้อมูลเกี่ยวกับข้อร้องเรียนที่ต้องการให้ช่วยเหลือหรือแจ้งเบาะแสให้พิจารณาเป็นพิเศษ"></textarea>
         <h4 style="color: #019EFF;" data-i18n="location_title">สถานที่เกิดเหตุ  <span class="required">*</span></h4>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label data-i18n="province">จังหวัด <span class="required">*</span></label>
-          <input type="text" required>
+          <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
+          <input type="text" name="permHouseNumber" required>
         </div>
         <div class="form-group">
-          <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
-          <input type="text" required>
+          <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
+          <input type="text" name="permVillage" required>
         </div>
         <div class="form-group">
-          <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
-          <input type="text" required>
+          <label >ซอย/ถนน <span class="required">*</span></label>
+          <input type="text" name="permStreet" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>ตำบล/แขวง <span class="required">*</span></label>
+          <input type="text" name="permSubdistrict" required>
+        </div>
+        <div class="form-group">
+          <label>อำเภอ/เขต <span class="required">*</span></label>
+          <input type="text" name="permDistrict" required>
+        </div>
+        <div class="form-group">
+          <label>จังหวัด <span class="required">*</span></label>
+          <input type="text" name="permProvince" required>
         </div>
       </div>
 
       <div class="form-group">
-        <label data-i18n="map_label">แผนที่ Map ของสถานที่เกิดเหตุ (ถ้ามี)</label>
+<label style="color: #019EFF;"><b>แผนที่ Map ของสถานที่เกิดเหตุ (ถ้ามี)</b></label>
         <input type="url" data-i18n-placeholder="map_placeholder" placeholder="แนบลิงก์แผนที่ Google Map ของสถานที่เกิดเหตุ">
         <h4 style="color: #019EFF;" data-i18n="incident_date">วันที่เกิดเหตุ  <span class="required">*</span></h4>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label data-i18n="start_date">ตั้งแต่วันที่ <span class="required">*</span></label>
+          <label>ตั้งแต่วันที่ <span class="required">*</span></label>
           <input type="date" required>
         </div>
         <div class="form-group">
-          <label data-i18n="end_date">ถึงวันที่  </label>
+          <label>ถึงวันที่  <span class="required">*</span></label>
           <input type="date">
         </div>
         <div class="form-group">
-          <label data-i18n="incident_time">เวลาเกิดเหตุ </label>
+          <label >เวลาเกิดเหตุ  <span class="required">*</span></label>
           <input type="text" data-i18n-placeholder="incident_time_placeholder" placeholder="เช่น 14:30 น.">
         </div>
       </div>
@@ -206,11 +242,11 @@
       </div>
     </form>
   </div>
+</main>
 
-  <div class="wrapper"></div>
-  <footer data-i18n="footer_text">
-    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-  </footer>
+<footer data-i18n="footer">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
 
   <script>
     function goBack() {
