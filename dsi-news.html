@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="th">
 <head>
   <meta charset="UTF-8">
@@ -22,6 +22,7 @@
       display: flex;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      position: relative;
     }
     header img {
       height: 80px;
@@ -31,7 +32,6 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      margin-left: auto;
       font-size: 14px;
     }
     .header-text {
@@ -48,7 +48,7 @@
       color: #ffff33;
       font-size: 20px;
     }
-    /* ส่วน Nav เมนู */
+    /* Nav menu */
     nav.main-nav {
       background-color: #2677A3;
       display: flex;
@@ -91,7 +91,7 @@
       display: block;
     }
 
-    /* ส่วน Breadcrumb */
+    /* Breadcrumb */
     .breadcrumb-bar {
       background-color: #f1f1f1;
       padding: 12px 40px;
@@ -126,7 +126,6 @@
     .breadcrumb-bar .current {
       color: #666;
     }
-
 
     .banner {
       background: linear-gradient(135deg, #C2E5FB, #C2E5FB);
@@ -203,22 +202,34 @@
       background-color: #001f3d;
     }
 
+    /* ปรับกล่องข่าว และ container พร้อมปุ่มเลื่อน */
+    .cards-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto 50px auto;
+    }
+
     .cards {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       gap: 25px;
-      margin-bottom: 50px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+      scrollbar-width: none; /* Firefox */
+    }
+    .cards::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
     }
 
     .card {
       background-color: #f9f9f9;
-      width: 300px;
+      width: 300px;  /* ขนาดคงที่ */
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: left;
       border: 1px solid #ddd;
+      flex-shrink: 0; /* ไม่ให้ย่อ */
     }
 
     .card img {
@@ -231,6 +242,37 @@
       padding: 15px;
       font-size: 15px;
       color: #333;
+    }
+
+    /* ปุ่มเลื่อนรูปภาพ */
+    .btn-scroll {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0,0,0,0.4);
+      border: none;
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      user-select: none;
+      transition: background-color 0.3s;
+    }
+    .btn-scroll:hover {
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .btn-scroll-left {
+      left: -20px;
+    }
+    .btn-scroll-right {
+      right: -20px;
     }
 
     footer {
@@ -250,12 +292,11 @@
       <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
       <h2>Department of Special Investigation</h2>
     </div>
-  </div>
-  <div class="lang-switch">
-    <button onclick="changeLanguage('th')">TH</button> |
-    <button onclick="changeLanguage('en')">EN</button> |
-    <button onclick="changeLanguage('ms')">MS</button>
-  </div>
+    <div class="lang-switch">
+      <button onclick="changeLanguage('th')">TH</button> |
+      <button onclick="changeLanguage('en')">EN</button> |
+      <button onclick="changeLanguage('ms')">MS</button>
+    </div>
   </header>
 
   <nav class="main-nav">
@@ -312,36 +353,64 @@
     </nav>
   </div>
 
-<div class="banner">
-  <img src="Leader.png" alt="Banner 1" class="left">
-  <img src="4-work_page2.jpg" alt="Banner 2" class="center">
-  <img src="offcie1.png" alt="Banner 3" class="right">
-  <div class="banner-text">DSI</div>
-</div>
+  <div class="banner">
+    <img src="Leader.png" alt="Banner 1" class="left">
+    <img src="4-work_page2.jpg" alt="Banner 2" class="center">
+    <img src="offcie1.png" alt="Banner 3" class="right">
+    <div class="banner-text">DSI</div>
+  </div>
 
-<div class="content">
-  <h2>เกียรติศักดิ์ เชี่ยวชาญ ซื่อสัตย์</h2>
-  <button>ข่าวประชาสัมพันธ์</button>
+  <div class="content">
+    <h2>เกียรติศักดิ์ เชี่ยวชาญ ซื่อสัตย์</h2>
+    <button>ข่าวประชาสัมพันธ์</button>
 
-  <div class="cards">
-    <div class="card">
-      <img src="1-work_page9.jpg" alt="ข่าวประชาสัมพันธ์ 1">
-      <p>มอบรางวัลให้แก่ผู้เข้าร่วมกิจกรรมวันเสริมสร้างความดี เพื่อเฉลิมฉลองวันเด็กแห่งชาติ ณ สำนักงานสาธารณสุขและสาธารณูปโภค</p>
-    </div>
-    <div class="card">
-      <img src="3-work_page1.jpg" alt="ข่าวประชาสัมพันธ์ 2">
-      <p>ลงพื้นที่สำรวจพื้นที่รอยต่อชายแดนภาคใต้ เพื่อเสริมสร้างความสัมพันธ์และความร่วมมือระหว่างหน่วยงานทั้งสองฝ่าย</p>
-    </div>
-    <div class="card">
-      <img src="4-work_page6.jpg" alt="ข่าวประชาสัมพันธ์ 3">
-      <p>จัดประชุมเพื่อแลกเปลี่ยนข้อมูลและการพัฒนาแนวทางการดำเนินงานในพื้นที่จังหวัดชายแดนภาคใต้</p>
+    <div class="cards-container">
+      <button class="btn-scroll btn-scroll-left" aria-label="เลื่อนซ้าย" onclick="scrollCards(-300)">&lt;</button>
+      <div class="cards" id="cards">
+        <div class="card">
+          <img src="1-work_page9.jpg" alt="ข่าวประชาสัมพันธ์ 1">
+          <p>มอบรางวัลให้แก่ผู้เข้าร่วมกิจกรรมวันเสริมสร้างความดี เพื่อเฉลิมฉลองวันเด็กแห่งชาติ ณ สำนักงานสาธารณสุขและสาธารณูปโภค</p>
+        </div>
+        <div class="card">
+          <img src="3-work_page1.jpg" alt="ข่าวประชาสัมพันธ์ 2">
+          <p>ลงพื้นที่สำรวจพื้นที่รอยต่อชายแดนภาคใต้ เพื่อเสริมสร้างความสัมพันธ์และความร่วมมือระหว่างหน่วยงานทั้งสองฝ่าย</p>
+        </div>
+        <div class="card">
+          <img src="4-work_page6.jpg" alt="ข่าวประชาสัมพันธ์ 3">
+          <p>จัดประชุมเพื่อแลกเปลี่ยนข้อมูลและการพัฒนาแนวทางการดำเนินงานในพื้นที่จังหวัดชายแดนภาคใต้</p>
+        </div>
+                <div class="card">
+          <img src="1-work_page9.jpg" alt="ข่าวประชาสัมพันธ์ 4">
+          <p>มอบรางวัลให้แก่ผู้เข้าร่วมกิจกรรมวันเสริมสร้างความดี เพื่อเฉลิมฉลองวันเด็กแห่งชาติ ณ สำนักงานสาธารณสุขและสาธารณูปโภค</p>
+        </div>
+        <div class="card">
+          <img src="3-work_page1.jpg" alt="ข่าวประชาสัมพันธ์ 5">
+          <p>ลงพื้นที่สำรวจพื้นที่รอยต่อชายแดนภาคใต้ เพื่อเสริมสร้างความสัมพันธ์และความร่วมมือระหว่างหน่วยงานทั้งสองฝ่าย</p>
+        </div>
+        <div class="card">
+          <img src="4-work_page6.jpg" alt="ข่าวประชาสัมพันธ์ 6">
+          <p>จัดประชุมเพื่อแลกเปลี่ยนข้อมูลและการพัฒนาแนวทางการดำเนินงานในพื้นที่จังหวัดชายแดนภาคใต้</p>
+        </div>
+
+      </div>
+      <button class="btn-scroll btn-scroll-right" aria-label="เลื่อนขวา" onclick="scrollCards(300)">&gt;</button>
     </div>
   </div>
-</div>
 
-<footer>
-  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-</footer>
+  <footer>
+    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+  </footer>
 
+  <script>
+    function changeLanguage(lang) {
+      alert('เปลี่ยนภาษาเป็น: ' + lang);
+      // ใส่โค้ดเปลี่ยนภาษาที่นี่ (ถ้ามีระบบ)
+    }
+
+    function scrollCards(distance) {
+      const cards = document.getElementById('cards');
+      cards.scrollBy({ left: distance, behavior: 'smooth' });
+    }
+  </script>
 </body>
 </html>
