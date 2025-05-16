@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้(DSI)- หน้าหลัก</title>
-  <!-- Font and icon libraries -->
-  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าหลัก</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    /* General body styles */
     body {
       font-family: 'Kanit', sans-serif;
       margin: 0;
@@ -51,20 +49,8 @@
       font-weight: normal;
       color: #ffff33;
       font-size: 20px;
-    }        /* Menu toggle button for mobile */
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: white;
-      position: absolute;
-      right: 20px;
-      top: 110px;
-      z-index: 100;
     }
 
-    /* Navigation menu */
     nav.main-nav {
       background-color: #2677A3;
       display: flex;
@@ -73,11 +59,9 @@
       padding: 8px 0;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
-    /* Dropdown menu styles */
     .dropdown {
       position: relative;
-      z-index: 10;
+      z-index: 10; 
     }
     .dropbtn {
       background-color: transparent;
@@ -106,12 +90,10 @@
       text-decoration: none;
       display: block;
     }
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content {
+    .dropdown:hover .dropdown-content {
       display: block;
     }
 
-    /* Banner below nav */
     .banner-dsi {
       background-color: #ffffffd0;
       padding: 15px 0;
@@ -121,7 +103,6 @@
       box-shadow: 0 4px 4px rgba(0,0,0,0.1);
     }
 
-    /* Main content layout */
     .main-section {
       display: flex;
       flex-grow: 1;
@@ -141,8 +122,6 @@
       background-size: cover;
       z-index: 0;
     }
-
-    /* Content positioning */
     .left-content, .button-container {
       position: relative;
       z-index: 1;
@@ -154,8 +133,6 @@
       flex-direction: column;
       justify-content: flex-start;
     }
-
-    /* Logo and description */
     .logo-container {
       display: flex;
       align-items: center;
@@ -182,8 +159,6 @@
       font-weight: bold;
       color: #004b94;
     }
-
-    /* Welcome text box */
     .welcome-box {
       background-color: rgba(255, 255, 255, 0.75);
       border-radius: 12px;
@@ -200,31 +175,38 @@
       margin-bottom: 10px;
       color: #004b94;
     }
-
-    /* Section labels */
     .section-block1, .section-block2 {
+      /* background-color: #e2e3e5; */
       font-size: 14px;
       color: #333;
       width: fit-content;
       margin: 5px 0;
-    }
-    .section-block1 span, .section-block2 span {
-      display: inline-block;
-      border-radius: 15px;
-      padding: 8px 12px;
-      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-      text-shadow: -1px -1px 0 white;
+
     }
     .section-block1 span {
       background-color: #DBC697;
-      border: 2px solid #af9356;
+      display: inline-block;
+      border-radius: 15px;
+      padding: 8px 12px;
+      /* margin: 5px 0; */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      text-shadow: -1px -1px 0 white;
+      border: 2px solid #af9356; 
+
+
     }
     .section-block2 span {
       background-color: #C2E0FF;
-      border: 2px solid #5286ba;
+      display: inline-block;
+      border-radius: 15px;
+      padding: 8px 12px;
+      /* margin: 5px 0; */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      text-shadow: -1px -1px 0 white;
+      border: 2px solid #5286ba; 
+
     }
 
-    /* Button section on the right */
     .button-container {
       width: 50%;
       display: flex;
@@ -234,7 +216,6 @@
       padding: 30px 60px 30px 30px;
     }
 
-    /* Button styles */
     .btn {
       width: 400px;
       padding: 15px 20px;
@@ -253,7 +234,6 @@
     .btn-blue1  { background-color: #8CD2FE; color: #000; border-right: 12px solid #2D4F64; text-shadow: -1px -1px 0 white;}
     .btn-blue2  { background-color: #679EFA; color: #000; border-right: 12px solid #0E264F; text-shadow: -1px -1px 0 white;}
 
-    /* Footer styles */
     footer {
       background-color: #444;
       color: white;
@@ -261,8 +241,7 @@
       padding: 20px;
       font-size: 13px;
     }
-
-    /* Responsive styles for mobile */
+        /* Responsive styles for mobile */
     @media (max-width: 768px) {
       header {
         flex-direction: column;
@@ -357,25 +336,8 @@
       }
     }
   </style>
-  <script>
-    // Toggle mobile menu visibility
-    function toggleMenu() {
-      document.querySelector('nav.main-nav').classList.toggle('active');
-    }
-
-    // Enable dropdown toggles on click for mobile
-    document.addEventListener('DOMContentLoaded', () => {
-      const dropdowns = document.querySelectorAll('.dropdown');
-      dropdowns.forEach(drop => {
-        drop.addEventListener('click', () => {
-          drop.classList.toggle('active');
-        });
-      });
-    });
-  </script>
 </head>
 <body>
-  <!-- Header section with logo and language switcher -->
   <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
@@ -387,15 +349,13 @@
       <button onclick="changeLanguage('en')">EN</button> |
       <button onclick="changeLanguage('ms')">MS</button>
     </div>
-    <button class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
   </header>
 
-  <!-- Navigation menu with dropdowns -->
   <nav class="main-nav">
     <div class="dropdown">
       <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
       <div class="dropdown-content">
-        <a href="user-name.html">แจ้งเบาะแส</a>
+        <a href="user-name.html" >แจ้งเบาะแส</a>
         <a href="dsi-book.html">ฟอร์มคำร้อง</a>
       </div>
     </div>
@@ -429,12 +389,11 @@
     <div class="dropdown">
       <button class="dropbtn">เว็บไซต์อื่นๆ</button>
       <div class="dropdown-content">
-        <a href="dsi-websites.html" target="_blank">เว็บไซต์หลัก DSI</a>
+        <a href="dsi-websites.html"s>เว็บไซต์หลัก DSI</a>
         <a href="dsi-guide.html">คู่มือการใช้งาน</a>
       </div>
     </div>
   </nav>
-  <!-- Main content section with left and right panels -->
   <div class="main-section">
     <div class="left-content">
       <div class="logo-container">
@@ -448,14 +407,16 @@
         <span>สำหรับประชาชน</span>
       </div>
       <div class="section-block2">
-        <span ><a href="Admin-Login.html">สำหรับเจ้าหน้าที่</a></span>
-
+        <span><a href="Admin-Login.html">สำหรับเจ้าหน้าที่</a></span>
       </div>
+
       <div class="welcome-box">
         <h2>ยินดีต้อนรับสู่เว็บไซต์ DSI</h2>
         ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ในการดำเนินการและจัดการคดีพิเศษ เพื่อให้เกิดความยุติธรรมและคุ้มครองสิทธิของประชาชน
       </div>
+
     </div>
+
     <div class="button-container">
       <a href="user-name.html" class="btn btn-yellow">ร้องเรียน/ร้องทุกข์</a>
       <a href="dsi-news.html" class="btn btn-orange">ข่าวประชาสัมพันธ์/กิจกรรม</a>
@@ -465,7 +426,6 @@
     </div>
   </div>
 
-  <!-- Footer section -->
   <footer>
     © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
   </footer>
