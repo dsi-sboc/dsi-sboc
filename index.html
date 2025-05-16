@@ -241,7 +241,101 @@
       padding: 20px;
       font-size: 13px;
     }
-</style>
+        /* Responsive styles for mobile */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+      }
+      .menu-toggle {
+        display: block;
+        top: 160px;
+      }
+      nav.main-nav {
+        flex-direction: column;
+        display: none;
+        gap: 8px;
+        padding: 12px;
+      }
+      nav.main-nav.active {
+        display: flex;
+      }
+      .dropdown-content {
+        position: static;
+        box-shadow: none;
+        background-color: #f8f8f8;
+        border-radius: 8px;
+        margin-top: 4px;
+      }
+      .dropdown:hover .dropdown-content {
+        display: none;
+      }
+      .dropbtn {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .dropdown-content a {
+        font-size: 14px;
+        padding: 10px;
+      }
+      .main-section {
+        flex-direction: column;
+        background: none;
+      }
+      .main-section::before {
+        display: none;
+      }
+      .left-content,
+      .button-container {
+        width: 100%;
+        padding: 20px;
+        align-items: center;
+      }
+      .logo-container {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo-text {
+        font-size: 48px;
+        margin-bottom: 10px;
+        text-align: center;
+      }
+      .description {
+        align-items: center;
+        text-align: center;
+      }
+      .welcome-box {
+        font-size: 16px;
+        padding: 15px;
+        margin: 15px 0;
+      }
+      .btn {
+        width: 100%;
+        max-width: 320px;
+        font-size: 16px;
+      }
+      header img {
+        height: 60px;
+      }
+.left-content,
+.button-container {
+  width: 100%;
+  padding: 20px;
+}
+.left-content {
+  align-items: flex-start;
+}
+.button-container {
+  align-items: center;
+}
+      .header-text h1 {
+        font-size: 20px;
+      }
+      .header-text h2 {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
