@@ -161,17 +161,17 @@
 </head>
 <body>
 
-<header>
-  <img src="Logo.png" alt="DSI Logo">
-  <div class="header-text">
-    <h1 data-i18n="title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-    <h2 data-i18n="subtitle">Department of Special Investigation</h2>
-  </div>
-      <div class="lang-switch">
+  <header>
+    <img src="Logo.png" alt="DSI Logo">
+    <div class="header-text">
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
+    </div>
+    <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
       <button onclick="changeLanguage('en')">EN</button> |
       <button onclick="changeLanguage('ms')">MS</button>
-    </div>  
+    </div>
   </header>
 
 </header>
@@ -180,59 +180,70 @@
   <div class="section-title" data-i18n="section3">📓 ส่วนที่ 3 : ข้อมูลการร้องทุกข์</div>
   <div class="container">
     <form>
+<div class="form-group">
+  <h4 style="color: #019EFF;" data-i18n="complaint_info">
+    ข้อมูลการร้องทุกข์ <span class="required">*</span>
+  </h4>
+
+  <label data-i18n="details_label">รายละเอียด <span class="required">*</span></label>
+  <textarea rows="5" required data-i18n-placeholder="details_placeholder"
+    placeholder="ข้อมูลการร้องทุกข์หรือข้อมูลเกี่ยวกับข้อร้องเรียนที่ต้องการให้ช่วยเหลือหรือแจ้งเบาะแสให้พิจารณาเป็นพิเศษ">
+  </textarea>
+
+  <h4 style="color: #019EFF;" data-i18n="location_title">
+    สถานที่เกิดเหตุ <span class="required">*</span>
+  </h4>
+</div>
+
+    <div class="form-row">
       <div class="form-group">
-        <h4 style="color: #019EFF;" data-i18n="complaint_info">ข้อมูลการร้องทุกข์  <span class="required">*</span></h4>
-        <label ">รายละเอียด <span class="required">*</span></label>
-        <textarea rows="5" required data-i18n-placeholder="details_placeholder" placeholder="ข้อมูลการร้องทุกข์หรือข้อมูลเกี่ยวกับข้อร้องเรียนที่ต้องการให้ช่วยเหลือหรือแจ้งเบาะแสให้พิจารณาเป็นพิเศษ"></textarea>
-        <h4 style="color: #019EFF;" data-i18n="location_title">สถานที่เกิดเหตุ  <span class="required">*</span></h4>
+        <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
+        <input type="text" name="permHouseNumber" required>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
-          <input type="text" name="permHouseNumber" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
-          <input type="text" name="permVillage" required>
-        </div>
-        <div class="form-group">
-          <label >ซอย/ถนน <span class="required">*</span></label>
-          <input type="text" name="permStreet" required>
-        </div>
+      <div class="form-group">
+        <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
+        <input type="text" name="permVillage" required>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label>ตำบล/แขวง <span class="required">*</span></label>
-          <input type="text" name="permSubdistrict" required>
-        </div>
-        <div class="form-group">
-          <label>อำเภอ/เขต <span class="required">*</span></label>
-          <input type="text" name="permDistrict" required>
-        </div>
-        <div class="form-group">
-          <label>จังหวัด <span class="required">*</span></label>
-          <input type="text" name="permProvince" required>
-        </div>
+      <div class="form-group">
+        <label data-i18n="street">ซอย/ถนน <span class="required">*</span></label>
+        <input type="text" name="permStreet" required>
       </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
+        <input type="text" name="permSubdistrict" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
+        <input type="text" name="permDistrict" required>
+      </div>
+      <div class="form-group">
+        <label data-i18n="province">จังหวัด <span class="required">*</span></label>
+        <input type="text" name="permProvince" required>
+      </div>
+    </div>
+
 
       <div class="form-group">
-<label style="color: #019EFF;"><b>แผนที่ Map ของสถานที่เกิดเหตุ (ถ้ามี)</b></label>
-        <input type="url" data-i18n-placeholder="map_placeholder" placeholder="แนบลิงก์แผนที่ Google Map ของสถานที่เกิดเหตุ">
-        <h4 style="color: #019EFF;" data-i18n="incident_date">วันที่เกิดเหตุ  <span class="required">*</span></h4>
+        <label data-i18n="map_label" style="color: #019EFF;"><b>แผนที่ Map ของสถานที่เกิดเหตุ (ถ้ามี)</b></label>
+  <input type="url" data-i18n-placeholder="map_placeholder" placeholder="แนบลิงก์แผนที่ Google Map ของสถานที่เกิดเหตุ">
+        <h4 style="color: #019EFF;" data-i18n="incident_date">วันที่เกิดเหตุ <span class="required">*</span></h4>
       </div>
 
       <div class="form-row">
         <div class="form-group">
-          <label>ตั้งแต่วันที่ <span class="required">*</span></label>
+          <label data-i18n="start_date">ตั้งแต่วันที่ <span class="required">*</span></label>
           <input type="date" required>
         </div>
         <div class="form-group">
-          <label>ถึงวันที่  <span class="required">*</span></label>
+          <label data-i18n="end_date">ถึงวันที่ <span class="required">*</span></label>
           <input type="date">
         </div>
         <div class="form-group">
-          <label >เวลาเกิดเหตุ  <span class="required">*</span></label>
-          <input type="text" data-i18n-placeholder="incident_time_placeholder" placeholder="เช่น 14:30 น.">
+          <label data-i18n="incident_time">เวลาเกิดเหตุ <span class="required">*</span></label>
+<input type="text" data-i18n-placeholder="incident_time_placeholder" placeholder="เช่น 14:30 น.">
         </div>
       </div>
 
@@ -240,11 +251,12 @@
         <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
         <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">ถัดไป</button>
       </div>
+
     </form>
   </div>
 </main>
 
-<footer data-i18n="footer">
+<footer data-i18n="footer-contact">
   © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
 </footer>
 
@@ -255,97 +267,26 @@
     function goToNextPage() {
       window.location.href = "user-terms.html"; 
     }
-
+  </script>
+      <script src="lang.js"></script>
+  <script>
     function changeLanguage(lang) {
-      localStorage.setItem('lang', lang);
-      document.querySelectorAll('[data-i18n]').forEach(el => {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (translations[lang] && translations[lang][key]) {
-          el.innerHTML = translations[lang][key];
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
         }
       });
-      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-        const key = el.getAttribute('data-i18n-placeholder');
-        if (translations[lang] && translations[lang][key]) {
-          el.setAttribute('placeholder', translations[lang][key]);
-        }
-      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
     }
 
-    const translations = {
-      th: {
-        page_title: "แบบฟอร์มร้องเรียน DSI - หน้าที่ 3",
-        header_title: "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)",
-        header_subtitle: "Department of Special Investigation",
-        section_title: "📄 ส่วนที่ 3 : ข้อมูลการร้องทุกข์",
-        complaint_info: "ข้อมูลการร้องทุกข์",
-        details_label: "รายละเอียด",
-        details_placeholder: "ข้อมูลการร้องทุกข์หรือข้อมูลเกี่ยวกับข้อร้องเรียน...",
-        location_title: "สถานที่เกิดเหตุ",
-        province: "จังหวัด",
-        district: "อำเภอ/เขต",
-        subdistrict: "ตำบล/แขวง",
-        map_label: "แผนที่ Map ของสถานที่เกิดเหตุ (ถ้ามี)",
-        map_placeholder: "แนบลิงก์แผนที่ Google Map ของสถานที่เกิดเหตุ",
-        incident_date: "วันที่เกิดเหตุ",
-        start_date: "ตั้งแต่วันที่",
-        end_date: "ถึงวันที่",
-        incident_time: "เวลาเกิดเหตุ",
-        incident_time_placeholder: "เช่น 14:30 น.",
-        back_button: "ย้อนกลับ",
-        next_button: "ถัดไป",
-        footer_text: "© ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002"
-      },
-      en: {
-        page_title: "DSI Complaint Form - Page 3",
-        header_title: "Southern Border Provinces DSI Operations Center",
-        header_subtitle: "Department of Special Investigation",
-        section_title: "📄 Part 3: Complaint Details",
-        complaint_info: "Complaint Information",
-        details_label: "Details",
-        details_placeholder: "Information about the complaint or whistleblowing...",
-        location_title: "Incident Location",
-        province: "Province",
-        district: "District",
-        subdistrict: "Sub-district",
-        map_label: "Map of the incident location (if available)",
-        map_placeholder: "Attach Google Maps link to the incident location",
-        incident_date: "Incident Date",
-        start_date: "Start Date",
-        end_date: "End Date",
-        incident_time: "Incident Time",
-        incident_time_placeholder: "e.g. 14:30",
-        back_button: "Back",
-        next_button: "Next",
-        footer_text: "© Southern Border Provinces DSI Operations Center. Tel. 02-8319888 ext. 61002"
-      },
-      ms: {
-        page_title: "Borang Aduan DSI - Halaman 3",
-        header_title: "Pusat Operasi Khas DSI Wilayah Sempadan Selatan",
-        header_subtitle: "Jabatan Siasatan Khas",
-        section_title: "📄 Bahagian 3: Maklumat Aduan",
-        complaint_info: "Maklumat Aduan",
-        details_label: "Butiran",
-        details_placeholder: "Maklumat aduan atau pendedahan yang ingin dibantu...",
-        location_title: "Lokasi Kejadian",
-        province: "Wilayah",
-        district: "Daerah",
-        subdistrict: "Mukim",
-        map_label: "Peta lokasi kejadian (jika ada)",
-        map_placeholder: "Lampirkan pautan Google Map lokasi kejadian",
-        incident_date: "Tarikh Kejadian",
-        start_date: "Dari Tarikh",
-        end_date: "Hingga Tarikh",
-        incident_time: "Masa Kejadian",
-        incident_time_placeholder: "cth. 14:30",
-        back_button: "Kembali",
-        next_button: "Seterusnya",
-        footer_text: "© Pusat Operasi Khas DSI Wilayah Sempadan Selatan. Tel. 02-8319888 samb. 61002"
-      }
-    };
-
-    const currentLang = localStorage.getItem('lang') || 'th';
-    changeLanguage(currentLang);
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
   </script>
+
 </body>
 </html>
