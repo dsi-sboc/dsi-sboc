@@ -220,8 +220,8 @@
     <header>
         <img src="Logo.png" alt="DSI Logo">
         <div class="header-text">
-          <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-          <h2>Department of Special Investigation</h2>
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
         </div>
       </div>
       <div class="lang-switch">
@@ -231,92 +231,114 @@
       </div>
       </header>
     
-      <nav class="main-nav">
-        <div class="dropdown">
-          <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
-          <div class="dropdown-content">
-            <a href="user-name.html">แจ้งเบาะแส</a>
-            <a href="dsi-book.html" >ฟอร์มคำร้อง</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">ข่าวประชาสัมพันธ์/กิจกรรม</button>
-          <div class="dropdown-content">
-            <a href="dsi-news.html">ประชาสัมพันธ์</a>
-            <a href="dsi-announcement.html">รายละเอียดกิจกรรม</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">เกี่ยวกับ DSI</button>
-          <div class="dropdown-content">
-            <a href="dsi-about.html">เกี่ยวกับ DSI</a>
-            <a href="dsi-laws.html">กฎหมาย DSI</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">โครงสร้างการบริหารงาน</button>
-          <div class="dropdown-content">
-            <a href="dsi-structure.html">แผนผังองค์กร</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">ช่องทางการติดต่อ</button>
-          <div class="dropdown-content">
-            <a href="dsi-contact.html">ช่องทางการติดต่อ</a>
-            <a href="dsi-contact.html">ที่ตั้งสำนักงาน</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button class="dropbtn">เว็บไซต์อื่นๆ</button>
-          <div class="dropdown-content">
-            <a href="dsi-websites.html">เว็บไซต์หลัก DSI</a>
-            <a href="dsi-guide.html">คู่มือการใช้งาน</a>
-          </div>
-        </div>
-      </nav>
+<nav class="main-nav">
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
+    <div class="dropdown-content">
+      <a href="user-name.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+      <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-news">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+    <div class="dropdown-content">
+      <a href="dsi-news.html" data-i18n="menu-public">ประชาสัมพันธ์</a>
+      <a href="dsi-announcement.html" data-i18n="menu-activity">รายละเอียดกิจกรรม</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-about">เกี่ยวกับ DSI</button>
+    <div class="dropdown-content">
+      <a href="dsi-about.html" data-i18n="menu-about-dsi">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" data-i18n="menu-laws">กฎหมาย DSI</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-structure">โครงสร้างการบริหารงาน</button>
+    <div class="dropdown-content">
+      <a href="dsi-structure.html" data-i18n="menu-organization">แผนผังองค์กร</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-contact">ช่องทางการติดต่อ</button>
+    <div class="dropdown-content">
+      <a href="dsi-contact.html" data-i18n="menu-contact-channel">ช่องทางการติดต่อ</a>
+      <a href="dsi-contact.html" data-i18n="menu-location">ที่ตั้งสำนักงาน</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-website">เว็บไซต์อื่นๆ</button>
+    <div class="dropdown-content">
+      <a href="dsi-websites.html" data-i18n="menu-main-site">เว็บไซต์หลัก DSI</a>
+      <a href="dsi-guide.html" data-i18n="menu-guide">คู่มือการใช้งาน</a>
+    </div>
+  </div>
+</nav>
     
       <div class="breadcrumb-bar" id="breadcrumb">
-        <nav aria-label="breadcrumb">
-          <ol>
-            <li><a href="index.html">หน้าหลัก</a></li>
-            <li>&nbsp;/&nbsp;</li>
-            <li><a href="dsi-news.html">ประชาสัมพันธ์</a></li>
-            <li>&nbsp;/&nbsp;</li>
-            <li><span class="current">รายละเอียดกิจกรรม</span></li>
-          </ol>
-        </nav>
-      </div>    
-  <div class="search-section">
-        <input type="text" placeholder="ค้นหา...">
+      <nav aria-label="breadcrumb">
+        <ol>
+          <li><a href="index.html" data-i18n="home">หน้าหลัก</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li><a href="dsi-news.html" data-i18n="news">ประชาสัมพันธ์</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li><span class="current" data-i18n="activity_detail">รายละเอียดกิจกรรม</span></li>
+        </ol>
+      </nav>
     </div>
+  <!-- <div class="search-section">
+        <input type="text" placeholder="ค้นหา...">
+    </div> -->
 
-    <section class="news">
-        <h2>นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม</h2>
-        
-        <div class="images">
-            <img src="2-work_page7.jpg" alt="ภาพกิจกรรม 1">
-            <img src="2-work_page1.jpg" alt="ภาพกิจกรรม 2">
-            <img src="2-work_page4.jpg" alt="ภาพกิจกรรม 3">
-            <img src="2-work_page3.jpg" alt="ภาพกิจกรรม 4">
+<section class="news">
+  <h2 data-i18n="news5_title">
+    นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม
+  </h2>
 
-        </div>
+  <div class="images">
+    <img src="2-work_page7.jpg" alt="ภาพกิจกรรม 1" data-i18n-alt="news5_img1_alt">
+    <img src="2-work_page1.jpg" alt="ภาพกิจกรรม 2" data-i18n-alt="news5_img2_alt">
+    <img src="2-work_page4.jpg" alt="ภาพกิจกรรม 3" data-i18n-alt="news5_img3_alt">
+    <img src="2-work_page3.jpg" alt="ภาพกิจกรรม 4" data-i18n-alt="news5_img4_alt">
+  </div>
 
-        <p class="date-location">วันที่ 24 เมษายน 2568 ณ โรงแรมเซาเทิร์น วิว ปัตตานี อ.เมือง จ.ปัตตานี</p>
+  <p class="date-location" data-i18n="news5_date">
+    วันที่ 24 เมษายน 2568 ณ โรงแรมเซาเทิร์น วิว ปัตตานี อ.เมือง จ.ปัตตานี
+  </p>
 
-        <p>
-            นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม
-        </p>
+  <p data-i18n="news5_intro">
+    นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม
+  </p>
 
-        <p>
-            วันนี้ 24 เมษายน 2568 เวลา 09.30 น. นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม 
-ในการลงพื้นที่เป็นประธานในพิธีเปิดการประชุมเชิงปฏิบัตการเพื่อเพิ่มประสิทธิภาพการดำเนินการตามพระราชบัญญัติป้องกันเเละปราบปรามการทรมานเเละการกระทำให้บุคคลสูญ พ.ศ.2565 สำหรับเจ้าหน้าที่บังคับใช้กฎหมายในพื้นที่จังหวัดชายแดนภาคใต้ รุ่นที่ 4 โดยมีตัวแทนจากหน่วยงานราชการที่เกี่ยวข้องในพื้นที่เข้าร่วมการประชุม
-ทั้งนี้ นายเจตนา เหมมุน ได้มอบหมายนางสาวรมยกร จิตติอาภรณ์ พสพ.ชพ. และนายภัทรดนัย สุทธิคณะ พสพ.ชก. เข้าร่วมการประชุมดังกล่าว ณ โรงแรมเซาท์เทิร์นวิว ปัตตานี อ.เมือง จ.ปัตตานี
-        </p>
-    </section>
+  <p data-i18n="news5_detail">
+    วันนี้ 24 เมษายน 2568 เวลา 09.30 น. นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม 
+    ในการลงพื้นที่เป็นประธานในพิธีเปิดการประชุมเชิงปฏิบัตการเพื่อเพิ่มประสิทธิภาพการดำเนินการตามพระราชบัญญัติป้องกันเเละปราบปรามการทรมานเเละการกระทำให้บุคคลสูญ พ.ศ.2565 สำหรับเจ้าหน้าที่บังคับใช้กฎหมายในพื้นที่จังหวัดชายแดนภาคใต้ รุ่นที่ 4 โดยมีตัวแทนจากหน่วยงานราชการที่เกี่ยวข้องในพื้นที่เข้าร่วมการประชุม
+    ทั้งนี้ นายเจตนา เหมมุน ได้มอบหมายนางสาวรมยกร จิตติอาภรณ์ พสพ.ชพ. และนายภัทรดนัย สุทธิคณะ พสพ.ชก. เข้าร่วมการประชุมดังกล่าว ณ โรงแรมเซาท์เทิร์นวิว ปัตตานี อ.เมือง จ.ปัตตานี
+  </p>
+</section>
 
-    <footer>
-      © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-    </footer>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
+    <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
 
 </body>
 </html>
