@@ -138,26 +138,25 @@
   <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
-      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2>Department of Special Investigation</h2>
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
     </div>
     <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
       <button onclick="changeLanguage('en')">EN</button> |
       <button onclick="changeLanguage('ms')">MS</button>
     </div>
-  
   </header>
 
   <div class="main-container">
-    <div class="content-box">
-      <h2>ส่งข้อมูลคำขอร้อง</h2>
-      <p class="note">
-         ⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน <span style="color: red">*</span>
-      </p>
+      <div class="content-box">
+        <h2 data-i18n="form_title">ส่งข้อมูลคำขอร้อง</h2>
+        <p class="note" data-i18n="form_note">
+          ⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน <span style="color: red">*</span>
+        </p>
       <div class="buttons">
-        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()">ย้อนกลับ</button>
-        <button type="button" class="next-btn" onclick="goToNextPage()">ส่งข้อมูลคำขอร้อง</button>
+        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
+        <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">ถัดไป</button>
       </div>
       <script>
           function goBack() {
@@ -166,12 +165,32 @@
         function goToNextPage() {
           window.location.href = "#"; 
         }
-      </script>    
-     </div>
+      </script>  
+      </div>  
   </div>
     <div class="wrapper"></div>
-    <footer>
-      © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-    </footer>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
+        <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
 </body>
 </html>
