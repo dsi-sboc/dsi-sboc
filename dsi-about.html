@@ -188,127 +188,149 @@
   </style>
 </head>
 <body>
-  <header>
+    <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
-      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2>Department of Special Investigation</h2>
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
     </div>
-  </div>
-  <div class="lang-switch">
-    <button onclick="changeLanguage('th')">TH</button> |
-    <button onclick="changeLanguage('en')">EN</button> |
-    <button onclick="changeLanguage('ms')">MS</button>
-  </div>
+    <div class="lang-switch">
+      <button onclick="changeLanguage('th')">TH</button> |
+      <button onclick="changeLanguage('en')">EN</button> |
+      <button onclick="changeLanguage('ms')">MS</button>
+    </div>
   </header>
 
-  <nav class="main-nav">
-    <div class="dropdown">
-      <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
-      <div class="dropdown-content">
-        <a href="user-name.html">แจ้งเบาะแส</a>
-        <a href="dsi-book.html">ฟอร์มคำร้อง</a>
-      </div>
+
+<nav class="main-nav">
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
+    <div class="dropdown-content">
+      <a href="user-name.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+      <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">ข่าวประชาสัมพันธ์/กิจกรรม</button>
-      <div class="dropdown-content">
-        <a href="dsi-news.html">ประชาสัมพันธ์</a>
-        <a href="dsi-announcement.html">รายละเอียดกิจกรรม</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">เกี่ยวกับ DSI</button>
-      <div class="dropdown-content">
-        <a href="dsi-about.html">เกี่ยวกับ DSI</a>
-        <a href="dsi-laws.html">กฎหมาย DSI</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">โครงสร้างการบริหารงาน</button>
-      <div class="dropdown-content">
-        <a href="dsi-structure.html">แผนผังองค์กร</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">ช่องทางการติดต่อ</button>
-      <div class="dropdown-content">
-        <a href="dsi-contact.html">ช่องทางการติดต่อ</a>
-        <a href="dsi-contact.html">ที่ตั้งสำนักงาน</a>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">เว็บไซต์อื่นๆ</button>
-      <div class="dropdown-content">
-        <a href="dsi-websites.html">เว็บไซต์หลัก DSI</a>
-        <a href="dsi-guide.html">คู่มือการใช้งาน</a>
-      </div>
-    </div>
-  </nav>
-  <div class="breadcrumb-bar" id="breadcrumb">
-    <nav aria-label="breadcrumb">
-      <ol>
-        <li><a href="index.html">หน้าหลัก</a></li>
-        <li>&nbsp;/&nbsp;</li>
-        <li><span class="current">เกี่ยวกับ DSI</span></li>
-      </ol>
-    </nav>
   </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-news">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+    <div class="dropdown-content">
+      <a href="dsi-news.html" data-i18n="menu-public">ประชาสัมพันธ์</a>
+      <a href="dsi-announcement.html" data-i18n="menu-activity">รายละเอียดกิจกรรม</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-about">เกี่ยวกับ DSI</button>
+    <div class="dropdown-content">
+      <a href="dsi-about.html" data-i18n="menu-about-dsi">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" data-i18n="menu-laws">กฎหมาย DSI</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-structure">โครงสร้างการบริหารงาน</button>
+    <div class="dropdown-content">
+      <a href="dsi-structure.html" data-i18n="menu-organization">แผนผังองค์กร</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-contact">ช่องทางการติดต่อ</button>
+    <div class="dropdown-content">
+      <a href="dsi-contact.html" data-i18n="menu-contact-channel">ช่องทางการติดต่อ</a>
+      <a href="dsi-contact.html" data-i18n="menu-location">ที่ตั้งสำนักงาน</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-website">เว็บไซต์อื่นๆ</button>
+    <div class="dropdown-content">
+      <a href="dsi-websites.html" data-i18n="menu-main-site">เว็บไซต์หลัก DSI</a>
+      <a href="dsi-guide.html" data-i18n="menu-guide">คู่มือการใช้งาน</a>
+    </div>
+  </div>
+</nav>
+<div class="breadcrumb-bar" id="breadcrumb">
+  <nav aria-label="breadcrumb">
+    <ol>
+      <li><a href="index.html" data-i18n="breadcrumb-home">หน้าหลัก</a></li>
+      <li>&nbsp;/&nbsp;</li>
+      <li><span data-i18n="breadcrumb-about">เกี่ยวกับ DSI</span></li>
+    </ol>
+  </nav>
+</div>
 
 
   <div class="main-container">
     <div class="content-container">
-      <h2>เกี่ยวกับศูนย์ปฎิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้</h2>
+      <h2 data-i18n="about-center-title">เกี่ยวกับศูนย์ปฎิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้</h2>
 
       <div class="box red-box">
-        <h3>อำนาจและหน้าที่ของศูนย์ปฎิบัติการคดีพิเศษจังหวัดชายแดนใต้</h3>
+      <h3 data-i18n="about-center-duties">อำนาจและหน้าที่ของศูนย์ปฎิบัติการคดีพิเศษจังหวัดชายแดนใต้</h3>
         <ol>
-          <li>การป้องกันและปราบปราม</li>
-          <li>การสืบสวนและสอบสวนการกระทำความผิดทางอาญาที่เป็นคดีพิเศษตามมาตรา 21 แห่ง พระราชบัญัติการสอบสวนคดีพิเศษ พ.ศ. 2547 และที่แก้ไขเพิ่มเติม</li>
-          <li>งานด้านการข่าว</li>
-          <li>งานอำนวยความยุติธรรม</li>
-          <li>ปฎิบัติหน้าที่ราชการอื่นๆร่วมกับหน่วยงานความมั่นคงในพื้นที่จังหวัดชายแดนภาคใต้</li>
-          <li>ภารกิจด้านอื่นๆ ที่ผู้บังคับบัญชามอบหมาย</li>
+          <li data-i18n="duty-prevention">การป้องกันและปราบปราม</li>
+          <li data-i18n="duty-investigation">การสืบสวนและสอบสวนการกระทำความผิดทางอาญาที่เป็นคดีพิเศษตามมาตรา 21 แห่ง พระราชบัญัติการสอบสวนคดีพิเศษ พ.ศ. 2547 และที่แก้ไขเพิ่มเติม</li>
+          <li data-i18n="duty-intelligence">งานด้านการข่าว</li>
+          <li data-i18n="duty-justice">งานอำนวยความยุติธรรม</li>
+          <li data-i18n="duty-security">ปฎิบัติหน้าที่ราชการอื่นๆร่วมกับหน่วยงานความมั่นคงในพื้นที่จังหวัดชายแดนภาคใต้</li>
+          <li data-i18n="duty-other">ภารกิจด้านอื่นๆ ที่ผู้บังคับบัญชามอบหมาย</li>
         </ol>
 
       </div>
 
       <div class="box yellow-box">
-        <h3>เขตพื้นที่รับผิดชอบ</h3>
-        <p style="text-indent: 2em;">เกี่ยวกับการป้องกันการปราบปราม การสืบสวนและการสอบสวนคดีความผิดทางอาญาที่ต้องดำเนินการสืบสวนและสอบสวน
-          โดยใช้วิธีการพิเศษตามกฎหมายว่าด้วยการสอบสวนคดีพิเศษเฉพาะในเขตพื้นที่รับผิดชอบ 
-          ลักษณะบูรณาการร่วมกับหน่วยงานความมั่งคงในพื้นที่ 
-          เพื่อสนับสนุนการปฎิบัติงานของพนักงานสอบสวนคดีพิเศษในการปฎิบัติหน้าที่ 
-          โดยมีพื้นที่รับผิดชอบ ใน 3 จังหวัด ปัตตานี ยะลา นราธิวาส และ 4 อำเภอในจังหวัดสงขลา อ.จะนะ อ.เทพา อ.นาทวี อ.สะบ้าย้อย
-        </p>
+      <h3 data-i18n="area-title">เขตพื้นที่รับผิดชอบ</h3>
+          <p data-i18n="area-description" style="text-indent: 2em;">
+            เกี่ยวกับการป้องกันการปราบปราม การสืบสวนและการสอบสวนคดีความผิดทางอาญาที่ต้องดำเนินการสืบสวนและสอบสวน
+            โดยใช้วิธีการพิเศษตามกฎหมายว่าด้วยการสอบสวนคดีพิเศษเฉพาะในเขตพื้นที่รับผิดชอบ 
+            ลักษณะบูรณาการร่วมกับหน่วยงานความมั่งคงในพื้นที่ 
+            เพื่อสนับสนุนการปฎิบัติงานของพนักงานสอบสวนคดีพิเศษในการปฎิบัติหน้าที่ 
+            โดยมีพื้นที่รับผิดชอบ ใน 3 จังหวัด ปัตตานี ยะลา นราธิวาส และ 4 อำเภอในจังหวัดสงขลา อ.จะนะ อ.เทพา อ.นาทวี อ.สะบ้าย้อย
+          </p>
       </div>
 
       <div class="box green-box">
-        <h3>คดีที่อยู่ในความรับผิดชอบ</h3>
+        <h3 data-i18n="case-title">คดีที่อยู่ในความรับผิดชอบ</h3>
         <ol>
-          <li>คดีเกี่ยวกับทรัพยากรธรรมชาติและสิ่งแวดล้อม</li>
-          <li>คดีเกี่ยวกับกฎหายว่าด้วยคอมพิวเตอร์มีลักษณะเกี่ยวกับความมั่นคง</li>
-          <li>คดีเกี่ยวกับกฎหมายมาตรฐานผลิตภัณฑ์อุตสาหกรรม</li>
-          <li>คดีเกี่ยวกับหลอกลวงประชาชน</li>
-          <li>คดีเกี่ยวกับยาเสพติด</li>
-          <li>คดีเกี่ยวกับการฟอกเงิน</li>
+          <li data-i18n="case-item-1">คดีเกี่ยวกับทรัพยากรธรรมชาติและสิ่งแวดล้อม</li>
+          <li data-i18n="case-item-2">คดีเกี่ยวกับกฎหายว่าด้วยคอมพิวเตอร์มีลักษณะเกี่ยวกับความมั่นคง</li>
+          <li data-i18n="case-item-3">คดีเกี่ยวกับกฎหมายมาตรฐานผลิตภัณฑ์อุตสาหกรรม</li>
+          <li data-i18n="case-item-4">คดีเกี่ยวกับหลอกลวงประชาชน</li>
+          <li data-i18n="case-item-5">คดีเกี่ยวกับยาเสพติด</li>
+          <li data-i18n="case-item-6">คดีเกี่ยวกับการฟอกเงิน</li>
         </ol>
       </div>
 
       <div class="box blue-box">
-        <h3>ภารกิจที่ได้รับมอบหมาย</h3>
+        <h3 data-i18n="mission-title">ภารกิจที่ได้รับมอบหมาย</h3>
         <ol>
-          <li>งานด้านการข่าว</li>
-          <li>งานอำนวยความยุติธรรม</li>
-          <li>งานมวลชน</li>
-          <li>งานจัดทำและพัฒนาระบบฐานข้อมูล</li>
+          <li data-i18n="mission-item-1">งานด้านการข่าว</li>
+          <li data-i18n="mission-item-2">งานอำนวยความยุติธรรม</li>
+          <li data-i18n="mission-item-3">งานมวลชน</li>
+          <li data-i18n="mission-item-4">งานจัดทำและพัฒนาระบบฐานข้อมูล</li>
         </ol>
       </div>
     </div>
   </div>
 
-  <footer>
-    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-  </footer>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
+
+      <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
 </body>
 </html>
