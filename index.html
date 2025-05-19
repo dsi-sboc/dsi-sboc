@@ -338,11 +338,12 @@
   </style>
 </head>
 <body>
+
   <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
-      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2>Department of Special Investigation</h2>
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
     </div>
     <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
@@ -351,83 +352,108 @@
     </div>
   </header>
 
-  <nav class="main-nav">
-    <div class="dropdown">
-      <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
-      <div class="dropdown-content">
-        <a href="user-name.html" >แจ้งเบาะแส</a>
-        <a href="dsi-book.html">ฟอร์มคำร้อง</a>
-      </div>
+<nav class="main-nav">
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
+    <div class="dropdown-content">
+      <a href="user-name.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+      <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">ข่าวประชาสัมพันธ์/กิจกรรม</button>
-      <div class="dropdown-content">
-        <a href="dsi-news.html">ประชาสัมพันธ์</a>
-        <a href="dsi-announcement.html">รายละเอียดกิจกรรม</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-news">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+    <div class="dropdown-content">
+      <a href="dsi-news.html" data-i18n="menu-public">ประชาสัมพันธ์</a>
+      <a href="dsi-announcement.html" data-i18n="menu-activity">รายละเอียดกิจกรรม</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">เกี่ยวกับ DSI</button>
-      <div class="dropdown-content">
-        <a href="dsi-about.html">เกี่ยวกับ DSI</a>
-        <a href="dsi-laws.html">กฎหมาย DSI</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-about">เกี่ยวกับ DSI</button>
+    <div class="dropdown-content">
+      <a href="dsi-about.html" data-i18n="menu-about-dsi">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" data-i18n="menu-laws">กฎหมาย DSI</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">โครงสร้างการบริหารงาน</button>
-      <div class="dropdown-content">
-        <a href="dsi-structure.html">แผนผังองค์กร</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-structure">โครงสร้างการบริหารงาน</button>
+    <div class="dropdown-content">
+      <a href="dsi-structure.html" data-i18n="menu-organization">แผนผังองค์กร</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">ช่องทางการติดต่อ</button>
-      <div class="dropdown-content">
-        <a href="dsi-contact.html">ช่องทางการติดต่อ</a>
-        <a href="dsi-contact.html">ที่ตั้งสำนักงาน</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-contact">ช่องทางการติดต่อ</button>
+    <div class="dropdown-content">
+      <a href="dsi-contact.html" data-i18n="menu-contact-channel">ช่องทางการติดต่อ</a>
+      <a href="dsi-contact.html" data-i18n="menu-location">ที่ตั้งสำนักงาน</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">เว็บไซต์อื่นๆ</button>
-      <div class="dropdown-content">
-        <a href="dsi-websites.html"s>เว็บไซต์หลัก DSI</a>
-        <a href="dsi-guide.html">คู่มือการใช้งาน</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-website">เว็บไซต์อื่นๆ</button>
+    <div class="dropdown-content">
+      <a href="dsi-websites.html" data-i18n="menu-main-site">เว็บไซต์หลัก DSI</a>
+      <a href="dsi-guide.html" data-i18n="menu-guide">คู่มือการใช้งาน</a>
     </div>
-  </nav>
+  </div>
+</nav>
+  
   <div class="main-section">
     <div class="left-content">
       <div class="logo-container">
         <div class="logo-text">DSI</div>
-        <div class="description">
-          <div class="thai">กรมสอบสวนคดีพิเศษ</div>
-          <div class="eng">Department of Special Investigation</div>
-        </div>
-      </div>
-      <div class="section-block1">
-        <span>สำหรับประชาชน</span>
-      </div>
-      <div class="section-block2">
-        <span><a href="Admin-Login.html">สำหรับเจ้าหน้าที่</a></span>
+      <div class="description">
+          <div class="thai" data-i18n="title-department">กรมสอบสวนคดีพิเศษ</div>
+          <div class="eng" data-i18n="desc-agency">Department of Special Investigation</div>
       </div>
 
-      <div class="welcome-box">
-        <h2>ยินดีต้อนรับสู่เว็บไซต์ DSI</h2>
-        ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ในการดำเนินการและจัดการคดีพิเศษ เพื่อให้เกิดความยุติธรรมและคุ้มครองสิทธิของประชาชน
       </div>
+<div class="section-block1">
+  <span data-i18n="for-citizen">สำหรับประชาชน</span>
+</div>
+<div class="section-block2">
+  <span><a href="Admin-Login.html" data-i18n="for-officer">สำหรับเจ้าหน้าที่</a></span>
+</div>
 
+<div class="welcome-box">
+  <h2 data-i18n="welcome-title">ยินดีต้อนรับสู่เว็บไซต์ DSI</h2>
+  <p data-i18n="welcome-description">
+    ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ในการดำเนินการและจัดการคดีพิเศษ เพื่อให้เกิดความยุติธรรมและคุ้มครองสิทธิของประชาชน
+  </p>
+</div>
     </div>
 
-    <div class="button-container">
-      <a href="user-name.html" class="btn btn-yellow">ร้องเรียน/ร้องทุกข์</a>
-      <a href="dsi-news.html" class="btn btn-orange">ข่าวประชาสัมพันธ์/กิจกรรม</a>
-      <a href="dsi-about.html" class="btn btn-green">เกี่ยวกับ DSI</a>
-      <a href="dsi-laws.html" class="btn btn-blue1">กฎหมายที่เกี่ยวข้อง</a>
-      <a href="dsi-contact.html" class="btn btn-blue2">ช่องทางติดต่อ</a>
-    </div>
+<div class="button-container">
+  <a href="user-name.html" class="btn btn-yellow" data-i18n="btn-complaint">ร้องเรียน/ร้องทุกข์</a>
+  <a href="dsi-news.html" class="btn btn-orange" data-i18n="btn-news">ข่าวประชาสัมพันธ์/กิจกรรม</a>
+  <a href="dsi-about.html" class="btn btn-green" data-i18n="btn-about">เกี่ยวกับ DSI</a>
+  <a href="dsi-laws.html" class="btn btn-blue1" data-i18n="btn-laws">กฎหมายที่เกี่ยวข้อง</a>
+  <a href="dsi-contact.html" class="btn btn-blue2" data-i18n="btn-contact">ช่องทางติดต่อ</a>
+</div>
+
   </div>
 
-  <footer>
-    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-  </footer>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
+
+  <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
 </body>
 </html>
