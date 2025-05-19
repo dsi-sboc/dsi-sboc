@@ -288,8 +288,8 @@
   <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
-      <h1>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2>Department of Special Investigation</h2>
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
     </div>
     <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
@@ -297,61 +297,58 @@
       <button onclick="changeLanguage('ms')">MS</button>
     </div>
   </header>
-
-  <nav class="main-nav">
-    <div class="dropdown">
-      <button class="dropbtn">การร้องเรียน/ร้องทุกข์</button>
-      <div class="dropdown-content">
-        <a href="user-name.html">แจ้งเบาะแส</a>
-        <a href="dsi-book.html">ฟอร์มคำร้อง</a>
-      </div>
+<nav class="main-nav">
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
+    <div class="dropdown-content">
+      <a href="user-name.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+      <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">ข่าวประชาสัมพันธ์/กิจกรรม</button>
-      <div class="dropdown-content">
-        <a href="dsi-news.html">ประชาสัมพันธ์</a>
-        <a href="dsi-announcement.html">รายละเอียดกิจกรรม</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-news">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+    <div class="dropdown-content">
+      <a href="dsi-news.html" data-i18n="menu-public">ประชาสัมพันธ์</a>
+      <a href="dsi-announcement.html" data-i18n="menu-activity">รายละเอียดกิจกรรม</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">เกี่ยวกับ DSI</button>
-      <div class="dropdown-content">
-        <a href="dsi-about.html">เกี่ยวกับ DSI</a>
-        <a href="dsi-laws.html">กฎหมาย DSI</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-about">เกี่ยวกับ DSI</button>
+    <div class="dropdown-content">
+      <a href="dsi-about.html" data-i18n="menu-about-dsi">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" data-i18n="menu-laws">กฎหมาย DSI</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">โครงสร้างการบริหารงาน</button>
-      <div class="dropdown-content">
-        <a href="dsi-structure.html">แผนผังองค์กร</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-structure">โครงสร้างการบริหารงาน</button>
+    <div class="dropdown-content">
+      <a href="dsi-structure.html" data-i18n="menu-organization">แผนผังองค์กร</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">ช่องทางการติดต่อ</button>
-      <div class="dropdown-content">
-        <a href="dsi-contact.html">ช่องทางการติดต่อ</a>
-        <a href="dsi-contact.html">ที่ตั้งสำนักงาน</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-contact">ช่องทางการติดต่อ</button>
+    <div class="dropdown-content">
+      <a href="dsi-contact.html" data-i18n="menu-contact-channel">ช่องทางการติดต่อ</a>
+      <a href="dsi-contact.html" data-i18n="menu-location">ที่ตั้งสำนักงาน</a>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">เว็บไซต์อื่นๆ</button>
-      <div class="dropdown-content">
-        <a href="dsi-websites.html">เว็บไซต์หลัก DSI</a>
-        <a href="dsi-guide.html">คู่มือการใช้งาน</a>
-      </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-website">เว็บไซต์อื่นๆ</button>
+    <div class="dropdown-content">
+      <a href="dsi-websites.html" data-i18n="menu-main-site">เว็บไซต์หลัก DSI</a>
+      <a href="dsi-guide.html" data-i18n="menu-guide">คู่มือการใช้งาน</a>
     </div>
+  </div>
+</nav>
+<div class="breadcrumb-bar" id="breadcrumb">
+  <nav aria-label="breadcrumb">
+    <ol>
+      <li><a href="index.html" data-i18n="home">หน้าหลัก</a></li>
+      <li>&nbsp;/&nbsp;</li>
+      <li><span class="current" data-i18n="breadcrumb-news">ข่าวประชาสัมพันธ์และกิจกรรม</span></li>
+    </ol>
   </nav>
-
-  <div class="breadcrumb-bar" id="breadcrumb">
-    <nav aria-label="breadcrumb">
-      <ol>
-        <li><a href="index.html">หน้าหลัก</a></li>
-        <li>&nbsp;/&nbsp;</li>
-        <li><span class="current">ข่าวประชาสัมพันธ์และกิจกรรม</span></li>
-      </ol>
-    </nav>
-  </div>  
-
+</div>
   <div class="banner">
     <img src="Leader.png" alt="Banner 1" class="left" onclick="location.href='dsi-structure.html'">
     <img src="4-work_page2.jpg" alt="Banner 2" class="center">
@@ -360,8 +357,8 @@
   </div>
 
   <div class="content">
-    <h2>เกียรติศักดิ์ เชี่ยวชาญ ซื่อสัตย์</h2>
-    <button>ข่าวประชาสัมพันธ์</button>
+<h2 data-i18n="motto">เกียรติศักดิ์ เชี่ยวชาญ ซื่อสัตย์</h2>
+<button data-i18n="news-button">ข่าวประชาสัมพันธ์</button>
 
     <div class="cards-container">
       <button class="btn-scroll btn-scroll-left" aria-label="เลื่อนซ้าย" onclick="scrollCards(-300)">&lt;</button>
@@ -369,25 +366,25 @@
         <div class="card">
           <img src="1-work_page9.jpg" alt="ข่าวประชาสัมพันธ์ 1">
             <a href="dsi-announcement1.html">
-              <p>มอบรางวัลให้แก่ผู้เข้าร่วมฝึกอบรมที่ชนะการแข่งขันผลิตสื่อออนไลน์ที่เกี่ยวข้องกับสิทธิเสรีภาพและสิทธิมนุษยชน และมอบประกาศนียบัตรให้แก่ผู้เข้าร่วมอบรมทุกท่าน</p>
+              <p  data-i18n="newsCard1">มอบรางวัลให้แก่ผู้เข้าร่วมฝึกอบรมที่ชนะการแข่งขันผลิตสื่อออนไลน์ที่เกี่ยวข้องกับสิทธิเสรีภาพและสิทธิมนุษยชน และมอบประกาศนียบัตรให้แก่ผู้เข้าร่วมอบรมทุกท่าน</p>
             </a>
         </div>
         <div class="card">
           <img src="3-work_page1.jpg" alt="ข่าวประชาสัมพันธ์ 2">
             <a href="dsi-announcement2.html">
-              <p>ลงพื้นที่บันทึกถ้อยคำสมาชิกสมาคมผู้ไม่มีที่ดินทำกินและที่อยู่อาศัยเบตง เพื่อประกอบการพิจารณาสิทธิการเช่าที่ราชพัสดุ ในเรื่องร้องเรียนร้องทุกข์</p>
+              <p  data-i18n="newsCard2">ลงพื้นที่บันทึกถ้อยคำสมาชิกสมาคมผู้ไม่มีที่ดินทำกินและที่อยู่อาศัยเบตง เพื่อประกอบการพิจารณาสิทธิการเช่าที่ราชพัสดุ ในเรื่องร้องเรียนร้องทุกข์</p>
             </a>
         </div>
         <div class="card">
           <img src="4-work_page6.jpg" alt="ข่าวประชาสัมพันธ์ 3">
             <a href="dsi-announcement3.html">
-              <p>ลงพื้นที่จัดเก็บข้อมูลและประวัติส่วนบุคคลของสมาชิกสมาคมผู้ไม่มีที่ดินทำกินและที่อยู่อาศัยเบตง จำนวน 34 ราย เพื่อประกอบการพิจารณาสิทธิการเช่าที่ราชพัสดุจากผู้เช่าเดิม</p>
+              <p  data-i18n="newsCard3">ลงพื้นที่จัดเก็บข้อมูลและประวัติส่วนบุคคลของสมาชิกสมาคมผู้ไม่มีที่ดินทำกินและที่อยู่อาศัยเบตง จำนวน 34 ราย เพื่อประกอบการพิจารณาสิทธิการเช่าที่ราชพัสดุจากผู้เช่าเดิม</p>
             </a>
         </div>
         <div class="card">
           <img src="w1.png" alt="ข่าวประชาสัมพันธ์ 4">
           <a href="dsi-announcement4.html">
-            <p>
+            <p  data-i18n="newsCard4">
               นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายเรืองฤทธิ์ เลือลา จคพ.ชพ. และ จสส. ร่วมให้การต้อนรับ ติดตาม และอำนวยความสะดวกแก่นายกูเฮง ยาวอหะซัน เลขานุการรัฐมนตรีว่าการกระทรวงยุติธรรม
             </p>
           </a>
@@ -396,13 +393,13 @@
         <div class="card">
           <img src="w2.png" alt="ข่าวประชาสัมพันธ์ 5">
             <a href="#">
-              <p>มหาวิทยาลัยฟาฏอนีต้อนรับคณะจาก DSI และ ศูนย์สันติวิธี ในโครงการรอมฎอนสัมพันธ์</p>
+              <p  data-i18n="newsCard5">มหาวิทยาลัยฟาฏอนีต้อนรับคณะจาก DSI และ ศูนย์สันติวิธี ในโครงการรอมฎอนสัมพันธ์</p>
             </a>
         </div>
         <div class="card">
           <img src="w3.png" alt="ข่าวประชาสัมพันธ์ 6">
             <a href="#">
-              <p>นายเจตนา เหมมุน ผอ.ศปพ.จชต. และเจ้าหน้าที่เข้าช่วยเหลือพี่น้องชายแดนใต้เนื่องจากสถานการณ์น้ำท่วมจังหวัดชายแดนภาคใต้</p>
+              <p  data-i18n="newsCard6">นายเจตนา เหมมุน ผอ.ศปพ.จชต. และเจ้าหน้าที่เข้าช่วยเหลือพี่น้องชายแดนใต้เนื่องจากสถานการณ์น้ำท่วมจังหวัดชายแดนภาคใต้</p>
             </a>
         </div>
 
@@ -411,14 +408,13 @@
     </div>
   </div>
 
-  <footer>
-    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-  </footer>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
 
   <script>
     function changeLanguage(lang) {
       alert('เปลี่ยนภาษาเป็น: ' + lang);
-      // ใส่โค้ดเปลี่ยนภาษาที่นี่ (ถ้ามีระบบ)
     }
 
     function scrollCards(distance) {
@@ -426,5 +422,25 @@
       cards.scrollBy({ left: distance, behavior: 'smooth' });
     }
   </script>
+      <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
 </body>
 </html>
