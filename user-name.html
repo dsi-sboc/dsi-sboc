@@ -134,8 +134,8 @@
   <header>
     <img src="Logo.png" alt="DSI Logo">
     <div class="header-text">
-      <h1 data-i18n="title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
-      <h2 data-i18n="subtitle">Department of Special Investigation</h2>
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
     </div>
     <div class="lang-switch">
       <button onclick="changeLanguage('th')">TH</button> |
@@ -189,9 +189,9 @@
     </div>
   </main>
 
-  <footer data-i18n="footer">
-    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-  </footer>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
 
   <script>
     function goBack() {
@@ -201,68 +201,25 @@
     function goToNextPage() {
       window.location.href = "user-contact.html";
     }
-
-    const translations = {
-      th: {
-        title: "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)",
-        subtitle: "Department of Special Investigation",
-        section1: "👤 ส่วนที่ 1 : กรอกข้อมูลผู้ร้องเรียน/ร้องทุกข์",
-        citizenId: "เลขบัตรประจำตัวประชาชน",
-        prefix: "คำนำหน้านาม",
-        firstName: "ชื่อจริง",
-        lastName: "นามสกุล",
-        age: "อายุ",
-        race: "เชื้อชาติ",
-        nationality: "สัญชาติ",
-        back: "ย้อนกลับ",
-        next: "ถัดไป",
-        footer: "© ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002"
-      },
-      en: {
-        title: "Southern Border Provinces DSI Operations Center",
-        subtitle: "Department of Special Investigation",
-        section1: "👤 Part 1: Complainant's Information",
-        citizenId: "Citizen ID",
-        prefix: "Prefix",
-        firstName: "First Name",
-        lastName: "Last Name",
-        age: "Age",
-        race: "Race",
-        nationality: "Nationality",
-        back: "Back",
-        next: "Next",
-        footer: "© Southern DSI Operations Center Tel. 02-8319888 ext. 61002"
-      },
-      ms: {
-        title: "Pusat Operasi DSI Wilayah Sempadan Selatan",
-        subtitle: "Jabatan Siasatan Khas",
-        section1: "👤 Bahagian 1: Maklumat Pengadu",
-        citizenId: "No. Kad Pengenalan",
-        prefix: "Gelaran",
-        firstName: "Nama Pertama",
-        lastName: "Nama Keluarga",
-        age: "Umur",
-        race: "Bangsa",
-        nationality: "Warganegara",
-        back: "Kembali",
-        next: "Seterusnya",
-        footer: "© Pusat Operasi DSI Wilayah Selatan Tel. 02-8319888 samb. 61002"
-      }
-    };
-
+  </script>
+    <script src="lang.js"></script>
+  <script>
     function changeLanguage(lang) {
-      localStorage.setItem("language", lang);
-      const dict = translations[lang];
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (dict[key]) el.innerText = dict[key];
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
       });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      const savedLang = localStorage.getItem("language") || "th";
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
       changeLanguage(savedLang);
-    });
+    }
   </script>
 
 </body>
