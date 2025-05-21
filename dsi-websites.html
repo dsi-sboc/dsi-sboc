@@ -52,50 +52,48 @@
       font-size: 20px;
     }
 
-    /* ส่วน Nav เมนู */
+    /* Nav menu */
     nav.main-nav {
-    background-color: #2677A3;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 8px 0; /* ปรับลดความสูง */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  .dropdown {
-    position: relative;
-  }
-  .dropbtn {
-    background-color: transparent;
-    color: white;
-    padding: 6px 16px; /* ปรับ padding ให้เล็กลง */
-    font-size: 15px; /* ลดขนาดตัวอักษรนิดหน่อย */
-    border: none;
-    cursor: pointer;
-  }
-  .dropbtn::after {
-    content: "\25BC";
-    margin-left: 8px;
-    font-size: 10px;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 180px;
-    z-index: 1;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  }
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
+      background-color: #2677A3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background-color: transparent;
+      color: white;
+      padding: 6px 16px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropbtn::after {
+      content: "\25BC";
+      margin-left: 8px;
+      font-size: 10px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
     /* ส่วน Breadcrumb */
     .breadcrumb-bar {
       background-color: #f1f1f1; /* สีเทาอ่อน */
