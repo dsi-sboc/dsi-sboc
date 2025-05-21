@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้(DSI)- แบบฟอร์มร้องเรียน/ร้องทุกข์</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    }
+
+    header {
+      background-color: #00579a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header img {
+      height: 80px;
+      margin-right: 20px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .header-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .header-text h1 {
+      margin: 5px;
+      font-size: 24px;
+    }
+    .header-text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #ffff33;
+      font-size: 20px;
+    }
+
+    /* ส่วน Nav เมนู */
+    nav.main-nav {
+    background-color: #2677A3;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 8px 0; /* ปรับลดความสูง */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown {
+    position: relative;
+  }
+  .dropbtn {
+    background-color: transparent;
+    color: white;
+    padding: 6px 16px; /* ปรับ padding ให้เล็กลง */
+    font-size: 15px; /* ลดขนาดตัวอักษรนิดหน่อย */
+    border: none;
+    cursor: pointer;
+  }
+  .dropbtn::after {
+    content: "\25BC";
+    margin-left: 8px;
+    font-size: 10px;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 180px;
+    z-index: 1;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  }
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+    /* ส่วน Breadcrumb */
+    .breadcrumb-bar {
+      background-color: #f1f1f1; /* สีเทาอ่อน */
+      padding: 12px 40px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: inset 0 -1px 0 #ccc;
+    }
+    .breadcrumb-bar nav {
+      display: flex;
+      align-items: center;
+    }
+    .breadcrumb-bar ol {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+    .breadcrumb-bar li {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+    .breadcrumb-bar a {
+      text-decoration: none;
+      color: #00579a;
+      transition: color 0.3s;
+    }
+    .breadcrumb-bar a:hover {
+      color: #003366;
+    }
+    .breadcrumb-bar .current {
+      color: #666;
+    }
+
+    /* ส่วน Main */
+    .main-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+    .card h2 {
+      color: #007bff;
+      margin-bottom: 20px;
+    }
+    .qr-wrapper img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .qr-wrapper:hover img {
+      transform: scale(1.05);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .card a {
+      display: inline-block;
+      margin-top: 15px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .card a i {
+      margin-right: 8px;
+    }
+    .card a:hover {
+      color: #007bff;
+    }
+    .cta-btn {
+      margin-top: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .cta-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* ส่วน Footer */
+    footer {
+      background-color: #444;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .header-text h1 { font-size: 18px; }
+      .header-text h2 { font-size: 16px; }
+      .card h2 { font-size: 20px; }
+      .breadcrumb-bar { padding: 10px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="Logo.png" alt="DSI Logo">
+    <div class="header-text">
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
+    </div>
+    <div class="lang-switch">
+      <button onclick="changeLanguage('th')">TH</button> |
+      <button onclick="changeLanguage('en')">EN</button> |
+      <button onclick="changeLanguage('ms')">MS</button>
+    </div>
+  </header>
+
+<nav class="main-nav">
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
+    <div class="dropdown-content">
+      <a href="user-name.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+      <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-news">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+    <div class="dropdown-content">
+      <a href="dsi-news.html" data-i18n="menu-public">ประชาสัมพันธ์</a>
+      <a href="dsi-announcement.html" data-i18n="menu-activity">รายละเอียดกิจกรรม</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-about">เกี่ยวกับ DSI</button>
+    <div class="dropdown-content">
+      <a href="dsi-about.html" data-i18n="menu-about-dsi">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" data-i18n="menu-laws">กฎหมาย DSI</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-structure">โครงสร้างการบริหารงาน</button>
+    <div class="dropdown-content">
+      <a href="dsi-structure.html" data-i18n="menu-organization">แผนผังองค์กร</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-contact">ช่องทางการติดต่อ</button>
+    <div class="dropdown-content">
+      <a href="dsi-contact.html" data-i18n="menu-contact-channel">ช่องทางการติดต่อ</a>
+      <a href="dsi-contact.html" data-i18n="menu-location">ที่ตั้งสำนักงาน</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-website">เว็บไซต์อื่นๆ</button>
+    <div class="dropdown-content">
+      <a href="dsi-websites.html" data-i18n="menu-main-site">เว็บไซต์หลัก DSI</a>
+      <a href="dsi-guide.html" data-i18n="menu-guide">คู่มือการใช้งาน</a>
+    </div>
+  </div>
+</nav>
+
+<div class="breadcrumb-bar" id="breadcrumb">
+  <nav aria-label="breadcrumb">
+    <ol>
+      <li><a href="index.html" data-i18n="home">หน้าหลัก</a></li>
+      <li>&nbsp;/&nbsp;</li>
+      <li><span class="current" data-i18n="complaint_form_title">แบบฟอร์มคำขอร้องเรียน/ร้องทุกข์ (ออนไลน์)</span></li>
+    </ol>
+  </nav>
+</div>
+
+<div class="qr-wrapper" style="width: 100%;">
+<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRxSd4B_71gdsNATUok-e09FkpmyrRX0lv_SV1JXH0X9ZzEg/viewform?embedded=true" 
+  width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">กำลังโหลด…</iframe>
+
+</div>
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
+    <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
+</body>
+</html>
