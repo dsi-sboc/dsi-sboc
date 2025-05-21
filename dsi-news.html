@@ -139,35 +139,35 @@
       letter-spacing: 2px;
       position: relative;
       overflow: hidden;
+        gap: 0; /* ไม่มีช่องว่างระหว่างรูป */
+
     }
 
-    .banner img.left,
-    .banner img.right {
-      position: absolute;
-      width: 500px;
-      height: auto;
-      opacity: 1;
-    }
+.banner img.left,
+.banner img.right,
+.banner img.center {
+  position: absolute;
+  height: 100%; /* ทำให้ความสูงเท่ากับความสูงของ Banner */
+  width: auto; /* ปรับความกว้างตามสัดส่วน */
+  max-width: 30%; /* จำกัดความกว้างสูงสุด */
+  object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่โดยไม่เสียสัดส่วน */
+  width: 44.33%;
+}
 
-    .banner img.center {
-      position: absolute;
-      width: 680px;
-      height: auto;
-      opacity: 0.2;
-    }
+.banner img.left {
+  left: 0;
+}
 
-    .banner img.left {
-      left: 0%;
-    }
+.banner img.center {
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.2;
+  max-width: 40%; /* อาจให้รูปกลางใหญ่กว่าหน่อย */
+}
 
-    .banner img.center {
-      left: 55%;
-      transform: translateX(-50%);
-    }
-
-    .banner img.right {
-      right: 0%;
-    }
+.banner img.right {
+  right: 0;
+}
 
     .banner-text {
       position: relative;
