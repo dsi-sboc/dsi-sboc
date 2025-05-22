@@ -186,8 +186,8 @@
   </h4>
 
   <label data-i18n="details_label">รายละเอียด <span class="required">*</span></label>
-  <textarea rows="5" required data-i18n-placeholder="details_placeholder"
-    placeholder="ข้อมูลการร้องทุกข์หรือข้อมูลเกี่ยวกับข้อร้องเรียนที่ต้องการให้ช่วยเหลือหรือแจ้งเบาะแสให้พิจารณาเป็นพิเศษ">
+<textarea name="complaintDetails" rows="5" required data-i18n-placeholder="details_placeholder"
+  placeholder="ข้อมูลการร้องทุกข์หรือข้อมูลเกี่ยวกับข้อร้องเรียนที่ต้องการให้ช่วยเหลือหรือแจ้งเบาะแสให้พิจารณาเป็นพิเศษ"></textarea>
   </textarea>
 
   <h4 style="color: #019EFF;" data-i18n="location_title">
@@ -199,10 +199,11 @@
       <div class="form-group">
         <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
         <input type="text" name="permHouseNumber" required>
+
       </div>
       <div class="form-group">
         <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
-        <input type="text" name="permVillage" required>
+        <<input type="text" name="permVillage" required>
       </div>
       <div class="form-group">
         <label data-i18n="street">ซอย/ถนน <span class="required">*</span></label>
@@ -228,22 +229,22 @@
 
       <div class="form-group">
         <label data-i18n="map_label" style="color: #019EFF;"><b>แผนที่ Map ของสถานที่เกิดเหตุ (ถ้ามี)</b></label>
-  <input type="url" data-i18n-placeholder="map_placeholder" placeholder="แนบลิงก์แผนที่ Google Map ของสถานที่เกิดเหตุ">
+<input type="url" name="mapLink" data-i18n-placeholder="map_placeholder" placeholder="แนบลิงก์แผนที่ Google Map ของสถานที่เกิดเหตุ">
         <h4 style="color: #019EFF;" data-i18n="incident_date">วันที่เกิดเหตุ <span class="required">*</span></h4>
       </div>
 
       <div class="form-row">
         <div class="form-group">
           <label data-i18n="start_date">ตั้งแต่วันที่ <span class="required">*</span></label>
-          <input type="date" required>
+<input type="date" name="startDate" required>
         </div>
         <div class="form-group">
           <label data-i18n="end_date">ถึงวันที่ <span class="required">*</span></label>
-          <input type="date">
+<input type="date" name="endDate">
         </div>
         <div class="form-group">
           <label data-i18n="incident_time">เวลาเกิดเหตุ <span class="required">*</span></label>
-<input type="text" data-i18n-placeholder="incident_time_placeholder" placeholder="เช่น 14:30 น.">
+<input type="text" name="incidentTime" data-i18n-placeholder="incident_time_placeholder" placeholder="เช่น 14:30 น.">
         </div>
       </div>
 
@@ -264,9 +265,9 @@
     function goBack() {
       window.location.href = "user-contact.html";
     }
-    function goToNextPage() {
-      window.location.href = "user-terms.html"; 
-    }
+    // function goToNextPage() {
+    //   window.location.href = "user-terms.html"; 
+    // }
   </script>
       <script src="lang.js"></script>
   <script>
