@@ -27,13 +27,7 @@
       height: 80px;
       margin-right: 20px;
     }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      margin-left: auto;
-      font-size: 14px;
-    }
+
     .header-text {
       text-align: center;
       flex-grow: 1;
@@ -53,24 +47,23 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      margin-left: auto;
       font-size: 14px;
     }
     .lang-switch button {
       padding: 2px 6px;
       margin: 0 1px;
       font-size: 14px;
-      border-radius: 0;       /* ขอบมุมคม */
+      border-radius: 0;
       cursor: pointer;
       outline: none;
-      box-shadow: none;
       border: 1px solid #ccc;
     }
-    
+
     .main-container {
       padding: 40px 20px;
       display: flex;
       justify-content: center;
+      flex-grow: 1;
     }
 
     .content-box {
@@ -126,13 +119,11 @@
       padding: 15px;
       font-size: 14px;
     }
-    .wrapper {
-  min-height: 33.5vh;
-  display: flex;
-  flex-direction: column;
-}
 
-</style>
+    .wrapper {
+      min-height: 33.5vh;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -149,30 +140,26 @@
   </header>
 
   <div class="main-container">
-      <div class="content-box">
-        <h2 data-i18n="form_title">ส่งข้อมูลคำขอร้อง</h2>
-        <p class="note" data-i18n="form_note">
-          ⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน <span style="color: red">*</span>
-        </p>
+    <div class="content-box">
+      <h2 data-i18n="form_title">ส่งข้อมูลคำขอร้อง</h2>
+      <p class="note" data-i18n="form_note">
+        ⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน <span style="color: red">*</span>
+      </p>
+
       <div class="buttons">
-        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
+        <button type="button" class="cancel-btn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
         <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">ถัดไป</button>
       </div>
-      <script>
-          function goBack() {
-        window.location.href = "user-terms.html";
-        }
-        function goToNextPage() {
-          window.location.href = "#"; 
-        }
-      </script>  
-      </div>  
+    </div>
   </div>
-    <div class="wrapper"></div>
-<footer data-i18n="footer-contact">
-  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-</footer>
-        <script src="lang.js"></script>
+
+  <div class="wrapper"></div>
+
+  <footer data-i18n="footer-contact">
+    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+  </footer>
+
+  <script src="lang.js"></script>
   <script>
     function changeLanguage(lang) {
       const elements = document.querySelectorAll('[data-i18n]');
@@ -181,16 +168,31 @@
         if (langData[lang] && langData[lang][key]) {
           el.innerText = langData[lang][key];
         }
+
+        // รองรับ placeholder แปลได้
+        if (el.hasAttribute('data-i18n-placeholder')) {
+          const placeholderKey = el.getAttribute('data-i18n-placeholder');
+          if (langData[lang][placeholderKey]) {
+            el.setAttribute('placeholder', langData[lang][placeholderKey]);
+          }
+        }
       });
-      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+
+      localStorage.setItem('lang', lang);
     }
 
-    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    function goBack() {
+      window.location.href = "user-terms.html";
+    }
+
+    function goToNextPage() {
+      window.location.href = "#"; // เปลี่ยนเป็นหน้าถัดไปจริงๆ
+    }
+
     window.onload = () => {
       const savedLang = localStorage.getItem('lang') || 'th';
       changeLanguage(savedLang);
-    }
+    };
   </script>
-
 </body>
 </html>
