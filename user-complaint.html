@@ -288,6 +288,17 @@
       changeLanguage(savedLang);
     }
   </script>
+  <script>
+    function goToNextPage() {
+  const form = document.querySelector("form");
+  if (form.checkValidity()) {
+    window.location.href = "user-terms.html";
+  } else {
+    form.reportValidity(); // แสดงข้อความเตือน
+  }
+}
+    window.location.href = "user-terms.html";
+  </script>
 
 </body>
 </html>
