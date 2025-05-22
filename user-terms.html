@@ -175,52 +175,71 @@
     </div>
   </header>
 
-    <main>
-      <div class="section-title" data-i18n="section4">📄 ส่วนที่ 4 : ข้อมูลการดำเนินการ</div>
-
-      <div class="container">
-        <form>
-          <div class="form-group">
-            <h4 style="color: #019EFF;" data-i18n="detail_label">รายละเอียด <span class="required">*</span></h4>
-            <p style="margin-top: 5px; color: #666;" data-i18n="detail_desc">รายละเอียดข้อมูลการร้องทุกข์ที่เกิดขึ้นหรือสถานการณ์ที่ต้องการให้ตรวจสอบ</p>
-            <textarea rows="5" required></textarea>
-          </div>
-
-          <div class="form-group">
-            <h4 style="color: #019EFF;" data-i18n="objective_label">ข้อมูลความประสงค์  <span class="required">*</span></h4>
-            <p style="margin-top: 5px; color: #666;" data-i18n="objective_desc">ความประสงค์ที่ต้องการให้ดำเนินการ</p>
-            <textarea rows="1" required></textarea>
-          </div>
-
-          <div class="form-group">
-            <h4 style="color: #019EFF;" data-i18n="upload_label">แนบเอกสาร  <span class="required">*</span></h4>
-            <p style="color: #666;" data-i18n="upload_desc">ผู้ร้องสามารถแนบรูปภาพหรือวิดีโอไม่เกิน 5 ไฟล์ (รวมขนาดไม่เกิน 1 GB)</p>
-            <div class="upload-box" id="drop-area" data-i18n="upload_box">
-              วางเอกสารบนพื้นที่นี้ หรือคลิกเพื่อเลือกไฟล์<br>
-              <input type="file" id="fileElem" accept="image/*,video/*" multiple onchange="handleFiles(this.files)">
-              <div id="preview" style="margin-top: 10px;"></div>
-            </div>
-          </div>
-        </form>
+<main>
+  <form>
+    <!-- ส่วนที่ 4 -->
+    <div class="section-title" data-i18n="section4">📄 ส่วนที่ 4 : ข้อมูลการดำเนินการ</div>
+    <div class="container">
+      <div class="form-group">
+        <h4 style="color: #019EFF;" data-i18n="detail_label">
+          รายละเอียด <span class="required">*</span>
+        </h4>
+        <p style="margin-top: 5px; color: #666;" data-i18n="detail_desc">
+          รายละเอียดข้อมูลการร้องทุกข์ที่เกิดขึ้นหรือสถานการณ์ที่ต้องการให้ตรวจสอบ
+        </p>
+        <textarea rows="5" required></textarea>
       </div>
 
-      <div class="section-title" data-i18n="section5">📝 ส่วนที่ 5 : ข้อตกลงและเงื่อนไข</div>
-      <div class="container">
-        <form>
-          <div class="form-group">
-            <h4 style="color: #019EFF;" data-i18n="terms_label">ข้อตกลงและเงื่อนไข  <span class="required">*</span></h4>
-            <p style="color: #666;" data-i18n="terms_desc">เมื่อยื่นเรื่องร้องทุกข์แสดงว่าท่านยินยอมให้ข้อมูลนี้ถูกนำมาใช้ในขั้นตอนความปลอดภัย/ความคุ้มครองที่เหมาะสม</p>
-            <input type="text" placeholder="โปรดพิมพ์ยืนยันความยินยอม" data-i18n-placeholder="terms_input_placeholder">
-          </div>
-
-          <div class="buttons">
-            <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
-            <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">ถัดไป</button>
-          </div>
-        </form>
+      <div class="form-group">
+        <h4 style="color: #019EFF;" data-i18n="objective_label">
+          ข้อมูลความประสงค์ <span class="required">*</span>
+        </h4>
+        <p style="margin-top: 5px; color: #666;" data-i18n="objective_desc">
+          ความประสงค์ที่ต้องการให้ดำเนินการ
+        </p>
+        <textarea rows="1" required></textarea>
       </div>
-    </main>
 
+      <div class="form-group">
+        <h4 style="color: #019EFF;" data-i18n="upload_label">
+          แนบเอกสาร <span class="required">*</span>
+        </h4>
+        <p style="color: #666;" data-i18n="upload_desc">
+          ผู้ร้องสามารถแนบรูปภาพหรือวิดีโอไม่เกิน 5 ไฟล์ (รวมขนาดไม่เกิน 1 GB)
+        </p>
+        <div class="upload-box" id="drop-area" data-i18n="upload_box">
+          วางเอกสารบนพื้นที่นี้ หรือคลิกเพื่อเลือกไฟล์<br>
+          <input type="file" id="fileElem" accept="image/*,video/*" multiple onchange="handleFiles(this.files)">
+          <div id="preview" style="margin-top: 10px;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ส่วนที่ 5 -->
+    <div class="section-title" data-i18n="section5">📝 ส่วนที่ 5 : ข้อตกลงและเงื่อนไข</div>
+    <div class="container">
+      <div class="form-group">
+        <h4 style="color: #019EFF;" data-i18n="terms_label">
+          ข้อตกลงและเงื่อนไข <span class="required">*</span>
+        </h4>
+        <p style="color: #666;" data-i18n="terms_desc">
+          เมื่อยื่นเรื่องร้องทุกข์แสดงว่าท่านยินยอมให้ข้อมูลนี้ถูกนำมาใช้ในขั้นตอนความปลอดภัย/ความคุ้มครองที่เหมาะสม
+        </p>
+        <input type="text" name="agreementConfirm" placeholder="โปรดพิมพ์ยืนยันความยินยอม" data-i18n-placeholder="terms_input_placeholder" required>
+      </div>
+
+      <div class="buttons">
+        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">
+          ย้อนกลับ
+        </button>
+        <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">
+          ถัดไป
+        </button>
+      </div>
+    </div>
+  </form>
+</main>
+  
     </div>
       <script>
           function goBack() {
