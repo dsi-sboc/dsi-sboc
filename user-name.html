@@ -198,9 +198,9 @@
       window.location.href = "index.html";
     }
 
-    function goToNextPage() {
-      window.location.href = "user-contact.html";
-    }
+    // function goToNextPage() {
+    //   window.location.href = "user-contact.html";
+    // }
   </script>
     <script src="lang.js"></script>
   <script>
@@ -224,8 +224,12 @@
 <script>
 function goToNextPage() {
   const form = document.getElementById("complaintForm");
-  const formData = new FormData(form);
+  if (!form.checkValidity()) {
+    alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+    return;
+  }
 
+  const formData = new FormData(form);
   sessionStorage.setItem("citizenId", formData.get("citizenId"));
   sessionStorage.setItem("prefix", formData.get("prefix"));
   sessionStorage.setItem("firstName", formData.get("firstName"));
@@ -236,6 +240,7 @@ function goToNextPage() {
 
   window.location.href = "user-contact.html";
 }
+
 </script>
 
 </body>
