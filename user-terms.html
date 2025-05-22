@@ -229,12 +229,8 @@
       </div>
 
       <div class="buttons">
-        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">
-          ย้อนกลับ
-        </button>
-        <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">
-          ถัดไป
-        </button>
+          <button type="button" class="cancel-btn" onclick="goBack()">ย้อนกลับ</button>
+          <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">ถัดไป</button>
       </div>
     </div>
   </form>
@@ -242,8 +238,8 @@
   
     </div>
       <script>
-          function goBack() {
-        window.location.href = "user-complaint.html";
+        function goBack() {
+          window.location.href = "user-complaint.html";
         }
         function goToNextPage() {
           window.location.href = "user-submit.html"; 
