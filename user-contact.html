@@ -305,9 +305,9 @@
       window.location.href = "user-name.html";
     }
 
-    function goToNextPage() {
-    window.location.href = "user-complaint.html";
-    }
+    // function goToNextPage() {
+    // window.location.href = "user-complaint.html";
+    // }
   </script>
       <script src="lang.js"></script>
   <script>
@@ -328,7 +328,34 @@
       changeLanguage(savedLang);
     }
   </script>
+<script>
+  function goToNextPage() {
+  const form = document.getElementById('contactForm');
+  if (!form.checkValidity()) {
+    form.reportValidity();
+    return;
+  }
+  
+  const formData = new FormData(form);
+  const data = {};
+  formData.forEach((value, key) => data[key] = value);
 
+  fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+    method: 'POST',
+    mode: 'no-cors',  // หรือ 'cors' ขึ้นกับการตั้งค่า Script
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(data)
+  }).then(() => {
+    window.location.href = "user-complaint.html";
+  }).catch(err => {
+    alert('เกิดข้อผิดพลาดในการส่งข้อมูล');
+    console.error(err);
+  });
+}
+
+</script>
 
 </body>
 </html>
