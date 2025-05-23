@@ -180,12 +180,17 @@
       e.preventDefault();
 
       // ดึงข้อมูลที่เก็บไว้ใน localStorage จากหน้าก่อนๆ
-      const formData = {
-        name: localStorage.getItem("user_name") || "",
-        contact: localStorage.getItem("user_contact") || "",
-        complaint: localStorage.getItem("user_complaint") || ""
-        // terms: localStorage.getItem("user_complaint") || ""
-      };
+    const formData = {
+      name: localStorage.getItem("user_name") || "",
+      contact: localStorage.getItem("user_contact") || "",
+      complaint: localStorage.getItem("user_complaint") || "",
+      terms: localStorage.getItem("user_terms_accepted") || "false"
+    };
+    
+    if (!formData.name || !formData.contact || !formData.complaint || formData.terms !== "true") {
+      alert("กรุณากรอกข้อมูลให้ครบถ้วนและยอมรับเงื่อนไขก่อนส่ง");
+      return;
+    }
 
       // เปลี่ยนลิงก์นี้เป็น URL Google Apps Script ของคุณ
       const scriptURL = "https://script.google.com/macros/s/AKfycbxlIqCiF0MtKkyPU4oVJbeiu4p72qB394NqRFn5B_ZWPbL8V9VK2tWYC70BL75u9Pxx/exec";
