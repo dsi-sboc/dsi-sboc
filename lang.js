@@ -229,7 +229,7 @@ const langData = {
     objective_desc: 'ความประสงค์ที่ต้องการให้ดำเนินการ',
     upload_label: 'แนบเอกสาร',
     upload_desc: 'ผู้ร้องสามารถแนบรูปภาพหรือวิดีโอไม่เกิน 5 ไฟล์ (รวมขนาดไม่เกิน 1 GB)',
-    upload_box: 'วางเอกสารบนพื้นที่นี้ หรือคลิกเพื่อเลือกไฟล์<br>',
+    upload_box: 'วางเอกสารบนพื้นที่นี้ หรือคลิกเพื่อเลือกไฟล์',
 
     section5: '📝 ส่วนที่ 5 : ข้อตกลงและเงื่อนไข',
     terms_label: 'ข้อตกลงและเงื่อนไข',
@@ -237,6 +237,12 @@ const langData = {
     terms_input_placeholder: 'โปรดพิมพ์ยืนยันความยินยอม',
     form_title: 'ส่งข้อมูลคำขอร้อง',
     form_note: '⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน *',
+
+    upload_label: "แนบเอกสาร",
+    upload_desc: "ผู้ร้องสามารถแนบรูปภาพหรือวิดีโอไม่เกิน 5 ไฟล์ (รวมขนาดไม่เกิน 1 GB)",
+    upload_dragdrop: "วางไฟล์ของคุณที่นี่ หรือคลิกเลือกไฟล์",
+    upload_btn: "เลือกไฟล์",
+    upload_file_limit: "สามารถแนบไฟล์ได้สูงสุด 5 ไฟล์เท่านั้น",
 
 
 
@@ -469,6 +475,11 @@ const langData = {
     form_title: 'Submit Complaint Form',
     form_note: '⚠️ You are required to fill out all mandatory fields *',
 
+    upload_label: "Attach Documents ",
+    upload_desc: "You can attach up to 5 images or videos (total size not exceeding 1 GB)",
+    upload_dragdrop: "Drop your files here or click to select",
+    upload_btn: "Select files",
+    upload_file_limit: "You can attach up to 5 files only",
 
   },
   ms: {
@@ -691,6 +702,11 @@ const langData = {
     form_title: 'Hantar Borang Aduan',
     form_note: '⚠️ Anda perlu mengisi semua maklumat yang diperlukan *',
 
+    upload_label: "Lampirkan Dokumen",
+    upload_desc: "Anda boleh melampirkan sehingga 5 gambar atau video (jumlah saiz tidak melebihi 1 GB)",
+    upload_dragdrop: "Letakkan fail anda di sini atau klik untuk pilih",
+    upload_btn: "Pilih fail",
+    upload_file_limit: "Anda hanya boleh lampirkan maksimum 5 fail sahaja",
 
 
 
