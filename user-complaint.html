@@ -283,21 +283,52 @@
     }
 
     // โหลดภาษาเมื่อเปิดหน้าเว็บ
-    window.onload = () => {
-      const savedLang = localStorage.getItem('lang') || 'th';
-      changeLanguage(savedLang);
+   window.onload = () => {
+  const savedLang = localStorage.getItem('lang') || 'th';
+  changeLanguage(savedLang);
+
+  const savedData = sessionStorage.getItem("complaintData");
+  if (savedData) {
+    const data = JSON.parse(savedData);
+    document.querySelector("form").complaintDetails.value = data.complaintDetails || "";
+    document.querySelector("form").permHouseNumber.value = data.permHouseNumber || "";
+    document.querySelector("form").permVillage.value = data.permVillage || "";
+    document.querySelector("form").permStreet.value = data.permStreet || "";
+    document.querySelector("form").permSubdistrict.value = data.permSubdistrict || "";
+    document.querySelector("form").permDistrict.value = data.permDistrict || "";
+    document.querySelector("form").permProvince.value = data.permProvince || "";
+    document.querySelector("form").mapLink.value = data.mapLink || "";
+    document.querySelector("form").startDate.value = data.startDate || "";
+    document.querySelector("form").endDate.value = data.endDate || "";
+    document.querySelector("form").incidentTime.value = data.incidentTime || "";
+  }
+}
+
     }
   </script>
   <script>
-    function goToNextPage() {
+function goToNextPage() {
   const form = document.querySelector("form");
   if (form.checkValidity()) {
+    const formData = {
+      complaintDetails: form.complaintDetails.value,
+      permHouseNumber: form.permHouseNumber.value,
+      permVillage: form.permVillage.value,
+      permStreet: form.permStreet.value,
+      permSubdistrict: form.permSubdistrict.value,
+      permDistrict: form.permDistrict.value,
+      permProvince: form.permProvince.value,
+      mapLink: form.mapLink.value,
+      startDate: form.startDate.value,
+      endDate: form.endDate.value,
+      incidentTime: form.incidentTime.value
+    };
+    sessionStorage.setItem("complaintData", JSON.stringify(formData));
     window.location.href = "user-terms.html";
   } else {
-    form.reportValidity(); // แสดงข้อความเตือน
+    form.reportValidity();
   }
 }
-    window.location.href = "user-terms.html";
   </script>
 
 </body>
