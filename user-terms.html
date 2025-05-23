@@ -187,7 +187,7 @@
         <p style="margin-top: 5px; color: #666;" data-i18n="detail_desc">
           รายละเอียดข้อมูลการร้องทุกข์ที่เกิดขึ้นหรือสถานการณ์ที่ต้องการให้ตรวจสอบ
         </p>
-        <textarea rows="5" required></textarea>
+        <textarea id="detail" rows="5" required></textarea>
       </div>
 
       <div class="form-group">
@@ -197,7 +197,7 @@
         <p style="margin-top: 5px; color: #666;" data-i18n="objective_desc">
           ความประสงค์ที่ต้องการให้ดำเนินการ
         </p>
-        <textarea rows="1" required></textarea>
+          <textarea id="objective" rows="1" required></textarea>
       </div>
 
       <div class="form-group">
@@ -225,7 +225,7 @@
         <p style="color: #666;" data-i18n="terms_desc">
           เมื่อยื่นเรื่องร้องทุกข์แสดงว่าท่านยินยอมให้ข้อมูลนี้ถูกนำมาใช้ในขั้นตอนความปลอดภัย/ความคุ้มครองที่เหมาะสม
         </p>
-        <input type="text" name="agreementConfirm" placeholder="โปรดพิมพ์ยืนยันความยินยอม" data-i18n-placeholder="terms_input_placeholder" required>
+        <input type="text" id="agreementConfirm" name="agreementConfirm" placeholder="โปรดพิมพ์ยืนยันความยินยอม" data-i18n-placeholder="terms_input_placeholder" required>
       </div>
 
       <div class="buttons">
@@ -241,9 +241,25 @@
         function goBack() {
           window.location.href = "user-complaint.html";
         }
-        function goToNextPage() {
-          window.location.href = "user-submit.html"; 
-        }
+        // function goToNextPage() {
+        //   window.location.href = "user-submit.html"; 
+        // }
+       function goToNextPage() {
+            const detail = document.getElementById("detail").value.trim();
+            const objective = document.getElementById("objective").value.trim();
+            const agreement = document.getElementById("agreementConfirm").value.trim();
+          
+            if (!detail || !objective || !agreement) {
+              alert("กรุณากรอกข้อมูลให้ครบทุกช่องที่มี *");
+              return;
+            }
+          
+            sessionStorage.setItem("complaint_detail", detail);
+            sessionStorage.setItem("complaint_objective", objective);
+            sessionStorage.setItem("agreement", agreement);
+            window.location.href = "user-submit.html";
+          }
+}
       </script>
     <script>
       let filesList = [];
@@ -320,10 +336,9 @@
   </script>
 
     
-      <div class="wrapper"></div>
-
-<footer data-i18n="footer-contact">
-  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-</footer>
+    <div class="wrapper"></div>
+    <footer data-i18n="footer-contact">
+      © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+    </footer>
 </body>
 </html>
