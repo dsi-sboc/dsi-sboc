@@ -207,13 +207,20 @@
         <p style="color: #666;" data-i18n="upload_desc">
           ผู้ร้องสามารถแนบรูปภาพหรือวิดีโอไม่เกิน 5 ไฟล์ (รวมขนาดไม่เกิน 1 GB)
         </p>
-        <div class="upload-box" id="drop-area" data-i18n="upload_box">
-          วางเอกสารบนพื้นที่นี้ หรือคลิกเพื่อเลือกไฟล์<br>
-          <input type="file" id="fileElem" accept="image/*,video/*" multiple onchange="handleFiles(this.files)">
-          <div id="preview" style="margin-top: 10px;"></div>
+        <div class="upload-box" id="drop-area">
+          <p data-i18n="upload_dragdrop">วางไฟล์ของคุณที่นี่ หรือคลิกเลือกไฟล์ </p>
+          <label for="fileElem" class="upload-btn" data-i18n="upload_btn">เลือกไฟล์</label>
+          <input
+            type="file"
+            id="fileElem"
+            accept="image/*,video/*"
+            multiple
+            onchange="handleFiles(this.files)"
+            style="display: none;"
+          <div id="preview" style="margin-top: 15px;">
+          </div>
         </div>
       </div>
-    </div>
 
     <!-- ส่วนที่ 5 -->
     <div class="section-title" data-i18n="section5">📝 ส่วนที่ 5 : ข้อตกลงและเงื่อนไข</div>
