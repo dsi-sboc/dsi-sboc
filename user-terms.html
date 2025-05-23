@@ -267,7 +267,7 @@
         const preview = document.getElementById('preview');
 
         // รวมไฟล์เก่า + ใหม่
-      let combinedFiles = [...filesList, ...Array.from(newFiles)];
+        let combinedFiles = [...filesList, ...Array.from(newFiles)];
 
         // ถ้าเกิน 5 ไฟล์ ไม่ให้เพิ่ม
         if (combinedFiles.length > 5) {
@@ -286,17 +286,17 @@
           if (file.type.startsWith("image/")) {
             div.innerHTML = `
               <img src="${fileURL}" style="max-width: 100px; margin-right: 10px;">
-              <button onclick="removeFile(${index})">ลบ</button>
+              <button onclick="removeFile(${index})">Delete</button>
             `;
           } else if (file.type.startsWith("video/")) {
             div.innerHTML = `
               <video src="${fileURL}" controls style="max-width: 150px; margin-right: 10px;"></video>
-              <button onclick="removeFile(${index})">ลบ</button>
+              <button onclick="removeFile(${index})">Delete</button>
             `;
           } else {
             div.textContent = file.name + " ";
             const btn = document.createElement("button");
-            btn.textContent = "ลบ";
+            btn.textContent = "Delete";
             btn.onclick = () => removeFile(index);
             div.appendChild(btn);
           }
