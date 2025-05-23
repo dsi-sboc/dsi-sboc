@@ -242,23 +242,24 @@
   function goBack() {
     window.location.href = "user-complaint.html";
   }
-
-  function goToNextPage() {
-    const detail = document.getElementById("detail").value.trim();
-    const objective = document.getElementById("objective").value.trim();
-    const agreement = document.getElementById("agreementConfirm").value.trim();
-
-    if (!detail || !objective || !agreement) {
-      alert("กรุณากรอกข้อมูลให้ครบทุกช่องที่มี *");
-      return;
-    }
-
-    sessionStorage.setItem("complaint_detail", detail);
-    sessionStorage.setItem("complaint_objective", objective);
-    sessionStorage.setItem("agreement", agreement);
-    window.location.href = "user-submit.html";
-  }
 </script>
+  <script>
+    function goToNextPage() {
+  const detail = document.getElementById("detail").value.trim();
+  const objective = document.getElementById("objective").value.trim();
+  const agreement = document.getElementById("agreementConfirm").value.trim();
+
+  if (!detail || !objective || !agreement) {
+    alert("กรุณากรอกข้อมูลให้ครบทุกช่องที่มี *");
+    return;
+  }
+
+  sessionStorage.setItem("complaint_detail", detail);
+  sessionStorage.setItem("complaint_objective", objective);
+  sessionStorage.setItem("agreement", agreement);
+  window.location.href = "user-submit.html";
+}
+  </script>
     <script>
       let filesList = [];
 
@@ -266,7 +267,7 @@
         const preview = document.getElementById('preview');
 
         // รวมไฟล์เก่า + ใหม่
-        let combinedFiles = [...filesList, ...Array.from(newFiles)];
+      let combinedFiles = [...filesList, ...Array.from(newFiles)];
 
         // ถ้าเกิน 5 ไฟล์ ไม่ให้เพิ่ม
         if (combinedFiles.length > 5) {
