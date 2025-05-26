@@ -276,7 +276,7 @@
         formData[input.name] = input.value;
       });
       sessionStorage.setItem('formData', JSON.stringify(formData));
-      window.location.href = "user-detail.html";
+      window.location.href = "user-complaint.html";
     }
 
     function changeLanguage(lang) {
@@ -301,7 +301,25 @@
       changeLanguage(savedLang);
     }
   </script>
-
+    <script>
+      function copyPermanentAddress() {
+        const checkbox = document.getElementById("sameAddress");
+        const mapping = {
+          houseNumber: 'permHouseNumber',
+          village: 'permVillage',
+          street: 'permStreet',
+          subdistrict: 'permSubdistrict',
+          district: 'permDistrict',
+          province: 'permProvince'
+        };
+      
+        for (const currentField in mapping) {
+          const permField = mapping[currentField];
+          const permValue = document.querySelector(`[name="${permField}"]`).value;
+          document.querySelector(`[name="${currentField}"]`).value = checkbox.checked ? permValue : "";
+        }
+      }
+    </script>
   <script src="lang.js"></script>
 
 </body>
