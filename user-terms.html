@@ -293,132 +293,80 @@
   
     </div>
 
-<script>
-  function goBack() {
-    window.location.href = "user-complaint.html";
-  }
-</script>
-<script>
-  // โหลดข้อมูลจาก sessionStorage มาเติมในฟอร์มตอนโหลดหน้า
-  window.onload = () => {
-    const savedDetail = sessionStorage.getItem("complaint_detail");
-    const savedObjective = sessionStorage.getItem("complaint_objective");
-    const savedAgreement = sessionStorage.getItem("agreement");
-    
-    if (savedDetail) {
-      document.getElementById("detail").value = savedDetail;
-    }
-    if (savedObjective) {
-      document.getElementById("objective").value = savedObjective;
-    }
-    if (savedAgreement) {
-      document.getElementById("agreementConfirm").value = savedAgreement;
-    }
-    
-    // โหลดไฟล์แนบถ้ามี (ซับซ้อนกว่าหน่อย เพราะ sessionStorage เก็บไฟล์ไม่ได้โดยตรง)
-    // ถ้าต้องการเก็บไฟล์จริงๆ อาจใช้ IndexedDB หรือเก็บแค่ข้อมูลไฟล์ชื่อ แต่แนะนำเก็บไฟล์ตอน submit เท่านั้น
-  }; 
-  
-  function goToNextPage() {
-    const detail = document.getElementById("detail").value.trim();
-    const objective = document.getElementById("objective").value.trim();
-    const agreement = document.getElementById("agreementConfirm").value.trim();
-
-    if (!detail || !objective || !agreement) {
-      alert("กรุณากรอกข้อมูลให้ครบทุกช่องที่มี *");
-      return;
-    }
-
-    sessionStorage.setItem("complaint_detail", detail);
-    sessionStorage.setItem("complaint_objective", objective);
-    sessionStorage.setItem("agreement", agreement);
-
-    window.location.href = "user-submit.html";  // ปรับ URL หน้าถัดไปตามจริง
-  }
-</script>
-<script>
-  // ประกาศตัวแปรเก็บไฟล์ที่เลือกไว้
-  let filesList = [];
-
-  // ฟังก์ชันแสดง preview และจัดการไฟล์
-  function handleFiles(newFiles) {
-    const preview = document.getElementById('preview');
-
-    // รวมไฟล์เก่า + ใหม่
-    let combinedFiles = [...filesList, ...Array.from(newFiles)];
-
-    if (combinedFiles.length > 5) {
-      alert("สามารถแนบไฟล์ได้สูงสุด 5 ไฟล์เท่านั้น");
-      return;
-    }
-
-    // ตรวจสอบขนาดรวม
-    const totalSize = combinedFiles.reduce((sum, file) => sum + file.size, 0);
-    if (totalSize > 1000000000) { // 1 GB
-      alert("ขนาดไฟล์รวมต้องไม่เกิน 1 GB");
-      return;
-    }
-
-    filesList = combinedFiles;
-    preview.innerHTML = '';
-
-    filesList.forEach((file, index) => {
-      const fileURL = URL.createObjectURL(file);
-      const div = document.createElement("div");
-      div.className = 'preview-item';
-      div.style.margin = "10px 0";
-
-      if (file.type.startsWith("image/")) {
-        div.innerHTML = `
-          <img src="${fileURL}" alt="${file.name}" style="max-width: 150px; margin-right: 10px;">
-          <button type="button" onclick="removeFile(${index})">ลบ</button>
-        `;
-      } else if (file.type.startsWith("video/")) {
-        div.innerHTML = `
-          <video src="${fileURL}" controls style="max-width: 150px; margin-right: 10px;"></video>
-          <button type="button" onclick="removeFile(${index})">ลบ</button>
-        `;
-      } else {
-        div.textContent = file.name + " ";
-        const btn = document.createElement("button");
-        btn.textContent = "ลบ";
-        btn.type = "button";
-        btn.onclick = () => removeFile(index);
-        div.appendChild(btn);
-      }
-
-      preview.appendChild(div);
-    });
-
-    // อัปเดต input file (จำลองด้วย DataTransfer)
-    const dataTransfer = new DataTransfer();
-    filesList.forEach(file => dataTransfer.items.add(file));
-    document.getElementById('fileElem').files = dataTransfer.files;
-  }
-
-  // ฟังก์ชันลบไฟล์
-  function removeFile(index) {
-    filesList.splice(index, 1);
-    handleFiles([]); // อัพเดต preview โดยส่ง empty array
-  }
-</script>
-        <script src="lang.js"></script>
   <script>
+    // 🔸 จัดการภาษา (ตัวอย่าง)
     function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-i18n]');
-      elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (langData[lang] && langData[lang][key]) {
-          el.innerText = langData[lang][key];
-        }
-      });
-      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+      alert("ระบบเปลี่ยนภาษายังไม่เปิดใช้งาน"); // ทดสอบ
     }
 
-    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    // 🔸 จัดการไฟล์แนบ
+    let filesList = [];
+    function handleFiles(newFiles) {
+      const preview = document.getElementById('preview');
+      let combinedFiles = [...filesList, ...Array.from(newFiles)];
+
+      if (combinedFiles.length > 5) {
+        alert("สามารถแนบไฟล์ได้สูงสุด 5 ไฟล์");
+        return;
+      }
+      const totalSize = combinedFiles.reduce((sum, file) => sum + file.size, 0);
+      if (totalSize > 1e9) {
+        alert("ขนาดไฟล์รวมต้องไม่เกิน 1 GB");
+        return;
+      }
+      filesList = combinedFiles;
+      preview.innerHTML = '';
+
+      filesList.forEach((file, index) => {
+        const fileURL = URL.createObjectURL(file);
+        const div = document.createElement("div");
+        div.className = 'preview-item';
+        if (file.type.startsWith("image/")) {
+          div.innerHTML = `<img src="${fileURL}" alt="${file.name}"><button type="button" onclick="removeFile(${index})">ลบ</button>`;
+        } else if (file.type.startsWith("video/")) {
+          div.innerHTML = `<video src="${fileURL}" controls></video><button type="button" onclick="removeFile(${index})">ลบ</button>`;
+        } else {
+          div.textContent = file.name + " ";
+          const btn = document.createElement("button");
+          btn.textContent = "ลบ";
+          btn.onclick = () => removeFile(index);
+          div.appendChild(btn);
+        }
+        preview.appendChild(div);
+      });
+    }
+    function removeFile(index) {
+      filesList.splice(index, 1);
+      handleFiles([]);
+    }
+
+    // 🔸 โหลดค่าจาก sessionStorage
     window.onload = () => {
-      const savedLang = localStorage.getItem('lang') || 'th';
-      changeLanguage(savedLang);
+      document.getElementById("detail").value = sessionStorage.getItem("complaint_detail") || "";
+      document.getElementById("objective").value = sessionStorage.getItem("complaint_objective") || "";
+      document.getElementById("agreementConfirm").value = sessionStorage.getItem("agreement") || "";
+    };
+
+    function goBack() {
+      window.location.href = "user-complaint.html";
+    }
+
+    function goToNextPage() {
+      const detail = document.getElementById("detail").value.trim();
+      const objective = document.getElementById("objective").value.trim();
+      const agreement = document.getElementById("agreementConfirm").value.trim();
+      if (!detail || !objective || !agreement) {
+        alert("กรุณากรอกข้อมูลให้ครบทุกช่องที่มี *");
+        return;
+      }
+      sessionStorage.setItem("complaint_detail", detail);
+      sessionStorage.setItem("complaint_objective", objective);
+      sessionStorage.setItem("agreement", agreement);
+
+      // สำหรับไฟล์แนบ: จัดเก็บไฟล์ใน memory (ส่งตอน submit เท่านั้น)
+      sessionStorage.setItem("complaint_files_count", filesList.length);
+
+      window.location.href = "user-submit.html";
     }
   </script>
 
