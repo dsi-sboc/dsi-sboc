@@ -251,15 +251,6 @@
   </footer>
 
   <script>
-    function copyPermanentAddress() {
-      const checkbox = document.getElementById("sameAddress");
-      const fields = ["HouseNumber", "Village", "Street", "Subdistrict", "District", "Province"];
-      fields.forEach(field => {
-        const permValue = document.querySelector(`[name="perm${field}"]`).value;
-        document.querySelector(`[name="${field.toLowerCase()}"]`).value = checkbox.checked ? permValue : "";
-      });
-    }
-
     function goBack() {
       window.location.href = "user-name.html";
     }
