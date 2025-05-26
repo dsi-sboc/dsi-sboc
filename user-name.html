@@ -221,27 +221,53 @@
       changeLanguage(savedLang);
     }
   </script>
-<script>
-function goToNextPage() {
-  const form = document.getElementById("complaintForm");
-  if (!form.checkValidity()) {
-    alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-    return;
-  }
-
-  const formData = new FormData(form);
-  sessionStorage.setItem("citizenId", formData.get("citizenId"));
-  sessionStorage.setItem("prefix", formData.get("prefix"));
-  sessionStorage.setItem("firstName", formData.get("firstName"));
-  sessionStorage.setItem("lastName", formData.get("lastName"));
-  sessionStorage.setItem("age", formData.get("age"));
-  sessionStorage.setItem("race", formData.get("race"));
-  sessionStorage.setItem("nationality", formData.get("nationality"));
-
-  window.location.href = "user-contact.html";
-}
-
-</script>
+        <script>
+        function goToNextPage() {
+          const form = document.getElementById("complaintForm");
+          if (!form.checkValidity()) {
+            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+            return;
+          }
+        
+          const formData = new FormData(form);
+        
+          // สร้างอ็อบเจ็กต์ข้อมูลจากฟอร์ม
+          const data = {
+            citizenId: formData.get("citizenId"),
+            prefix: formData.get("prefix"),
+            firstName: formData.get("firstName"),
+            lastName: formData.get("lastName"),
+            age: formData.get("age"),
+            race: formData.get("race"),
+            nationality: formData.get("nationality")
+          };
+        
+          // URL ของ Google Apps Script Web App (แก้เป็น URL ของคุณเอง)
+          const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
+        
+          // ส่งข้อมูลด้วย fetch แบบ POST
+          fetch(scriptURL, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: {
+              'Content-Type': 'application/json'
+            }
+          })
+          .then(response => response.json())
+          .then(result => {
+            if (result.status === 'success') {
+              alert('บันทึกข้อมูลสำเร็จ');
+              // ไปหน้าถัดไป
+              window.location.href = "user-contact.html";
+            } else {
+              alert('เกิดข้อผิดพลาดในการบันทึกข้อมูล: ' + (result.message || ''));
+            }
+          })
+          .catch(error => {
+            alert('เกิดข้อผิดพลาด: ' + error.message);
+          });
+        }
+        </script>
 
 </body>
 </html>
