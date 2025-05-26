@@ -135,7 +135,6 @@
         ⚠️ท่านจำเป็นต้องกรอกข้อมูลตามที่กำหนดให้ครบถ้วน <span style="color: red">*</span>
       </p>
 
-      <!-- ฟอร์มส่งข้อมูล -->
       <form id="submitForm" onsubmit="handleSubmit(event)">
         <div class="buttons">
           <button type="button" class="cancel-btn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
@@ -179,33 +178,35 @@
     function handleSubmit(e) {
       e.preventDefault();
 
-      // ดึงข้อมูลที่เก็บไว้ใน localStorage จากหน้าก่อนๆ
-    const formData = {
-      name: localStorage.getItem("user_name") || "",
-      contact: localStorage.getItem("user_contact") || "",
-      complaint: localStorage.getItem("user_complaint") || "",
-      terms: localStorage.getItem("user_terms_accepted") || "false"
-    };
-    
-    if (!formData.name || !formData.contact || !formData.complaint || formData.terms !== "true") {
-      alert("กรุณากรอกข้อมูลให้ครบถ้วนและยอมรับเงื่อนไขก่อนส่ง");
-      return;
-    }
+      // ดึงข้อมูลจาก localStorage ของแต่ละหน้า
+      const formData = {
+        name: localStorage.getItem("user_name") || "",
+        contact: localStorage.getItem("user_contact") || "",
+        complaint: localStorage.getItem("user_complaint") || "",
+        terms: localStorage.getItem("user_terms_accepted") || "false"
+      };
 
-      // เปลี่ยนลิงก์นี้เป็น URL Google Apps Script ของคุณ
+      // ตรวจสอบข้อมูลเบื้องต้น
+      if (!formData.name.trim() || !formData.contact.trim() || !formData.complaint.trim() || formData.terms !== "true") {
+        alert("กรุณากรอกข้อมูลให้ครบถ้วนและยอมรับเงื่อนไขก่อนส่ง");
+        return;
+      }
+
+      // URL Google Apps Script Web App ของคุณ
       const scriptURL = "https://script.google.com/macros/s/AKfycbxlIqCiF0MtKkyPU4oVJbeiu4p72qB394NqRFn5B_ZWPbL8V9VK2tWYC70BL75u9Pxx/exec";
 
       fetch(scriptURL, {
         method: "POST",
-        body: JSON.stringify(formData),
         headers: {
           "Content-Type": "application/json"
-        }
+        },
+        body: JSON.stringify(formData)
       })
       .then(response => {
         if (response.ok) {
           alert("ส่งข้อมูลเรียบร้อยแล้ว");
-          window.location.href = "thank-you.html"; // เปลี่ยนเป็นหน้าขอบคุณ
+          localStorage.clear(); // ล้างข้อมูลหลังส่ง
+          window.location.href = "thank-you.html"; // หน้าแสดงขอบคุณ
         } else {
           alert("เกิดข้อผิดพลาดในการส่งข้อมูล");
         }
