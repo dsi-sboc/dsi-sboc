@@ -193,81 +193,75 @@
   © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
 </footer>
 
-  <script>
-    function goBack() {
-      window.location.href = "index.html";
-    }
-
-    // function goToNextPage() {
-    //   window.location.href = "user-contact.html";
-    // }
-  </script>
-    <script src="lang.js"></script>
-  <script>
-    function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-i18n]');
-      elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (langData[lang] && langData[lang][key]) {
-          el.innerText = langData[lang][key];
+      <script>
+        function goBack() {
+          window.location.href = "index.html";
         }
-      });
-      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    
+        // function goToNextPage() {
+        //   window.location.href = "user-contact.html";
+        // }
+      </script>
+        <script src="lang.js"></script>
+      <script>
+        function changeLanguage(lang) {
+          const elements = document.querySelectorAll('[data-i18n]');
+          elements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (langData[lang] && langData[lang][key]) {
+              el.innerText = langData[lang][key];
+            }
+          });
+          localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+        }
+    
+        // โหลดภาษาเมื่อเปิดหน้าเว็บ
+        window.onload = () => {
+          const savedLang = localStorage.getItem('lang') || 'th';
+          changeLanguage(savedLang);
+        }
+      </script>
+    <script>
+    function goToNextPage() {
+      const form = document.getElementById("complaintForm");
+      if (!form.checkValidity()) {
+        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+        return;
+      }
+    
+      const formData = new FormData(form);
+      const data = {
+        citizenId: formData.get("citizenId"),
+        prefix: formData.get("prefix"),
+        firstName: formData.get("firstName"),
+        lastName: formData.get("lastName"),
+        age: formData.get("age"),
+        race: formData.get("race"),
+        nationality: formData.get("nationality")
+      };
+    
+      // เก็บข้อมูลใน sessionStorage
+      sessionStorage.setItem("step1Data", JSON.stringify(data));
+    
+      // ไปหน้าถัดไป
+      window.location.href = "user-contact.html";
     }
-
-    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    </script>
+  <script>
     window.onload = () => {
       const savedLang = localStorage.getItem('lang') || 'th';
       changeLanguage(savedLang);
-    }
-  </script>
-        <script>
-        function goToNextPage() {
-          const form = document.getElementById("complaintForm");
-          if (!form.checkValidity()) {
-            alert("กรุณากรอกข้อมูลให้ครบถ้วน");
-            return;
+    
+      const step1Data = JSON.parse(sessionStorage.getItem("step1Data") || "{}");
+      for (let key in step1Data) {
+        if (step1Data.hasOwnProperty(key)) {
+          const input = document.querySelector(`[name="${key}"]`);
+          if (input) {
+            input.value = step1Data[key];
           }
-        
-          const formData = new FormData(form);
-        
-          // สร้างอ็อบเจ็กต์ข้อมูลจากฟอร์ม
-          const data = {
-            citizenId: formData.get("citizenId"),
-            prefix: formData.get("prefix"),
-            firstName: formData.get("firstName"),
-            lastName: formData.get("lastName"),
-            age: formData.get("age"),
-            race: formData.get("race"),
-            nationality: formData.get("nationality")
-          };
-        
-          // URL ของ Google Apps Script Web App (แก้เป็น URL ของคุณเอง)
-          const scriptURL = 'https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec';
-        
-          // ส่งข้อมูลด้วย fetch แบบ POST
-          fetch(scriptURL, {
-            method: 'POST',
-            body: JSON.stringify(data),
-            headers: {
-              'Content-Type': 'application/json'
-            }
-          })
-          .then(response => response.json())
-          .then(result => {
-            if (result.status === 'success') {
-              alert('บันทึกข้อมูลสำเร็จ');
-              // ไปหน้าถัดไป
-              window.location.href = "user-contact.html";
-            } else {
-              alert('เกิดข้อผิดพลาดในการบันทึกข้อมูล: ' + (result.message || ''));
-            }
-          })
-          .catch(error => {
-            alert('เกิดข้อผิดพลาด: ' + error.message);
-          });
         }
-        </script>
-
+      }
+    };
+    </script>
 </body>
 </html>
