@@ -12,41 +12,24 @@
       font-family: 'Kanit', sans-serif;
     }
     body {
-      font-family: 'Kanit', sans-serif;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
     }
-
     header {
       background-color: #00579a;
       color: white;
       padding: 20px;
       display: flex;
       align-items: center;
+      position: relative;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     header img {
       height: 80px;
       margin-right: 20px;
     }
-    .lang-switch {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 14px;
-    }
-    .lang-switch button {
-      padding: 2px 6px;
-      margin: 0 1px;
-      font-size: 14px;
-      cursor: pointer;
-      border: 1px solid #ccc;
-    }
-
     .header-text {
       text-align: center;
       flex-grow: 1;
@@ -72,14 +55,13 @@
       margin: 0 1px;
       font-size: 14px;
       cursor: pointer;
+      border: 1px solid #ccc;
     }
-
     main {
       flex: 1;
       display: flex;
       flex-direction: column;
     }
-
     .section-title {
       font-weight: bold;
       font-size: 18px;
@@ -91,7 +73,6 @@
       margin: 40px auto 0 auto;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
-
     .container {
       width: 80%;
       margin: 0 auto 40px auto;
@@ -100,7 +81,6 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       padding: 20px;
     }
-
     form {
       display: flex;
       flex-direction: column;
@@ -154,7 +134,6 @@
       background-color: #00579a;
       color: white;
     }
-
     footer {
       background-color: #444;
       color: white;
@@ -162,12 +141,7 @@
       padding: 15px;
       font-size: 14px;
     }
-
-    .wrapper {
-      min-height: 18vh;
-      display: flex;
-      flex-direction: column;
-    }  </style>
+  </style>
 </head>
 <body>
 
@@ -185,177 +159,150 @@
   </header>
 
   <main>
-      <div class="section-title" data-i18n="section2">📍 ส่วนที่ 2 : กรอกข้อมูลที่อยู่/ช่องทางการติดต่อ</div>
+    <div class="section-title" data-i18n="section2">📍 ส่วนที่ 2 : กรอกข้อมูลที่อยู่/ช่องทางการติดต่อ</div>
     <div class="container">
-    <form id="contactForm">
+      <form id="contactForm">
         <h4 style="color: #019EFF;" data-i18n="perm_address">ที่อยู่ตามภูมิลำเนา <span class="required">*</span></h4>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
-          <input type="text" name="permHouseNumber" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
+            <input type="text" name="permHouseNumber" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
+            <input type="text" name="permVillage" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="street">ซอย/ถนน <span class="required">*</span></label>
+            <input type="text" name="permStreet" required>
+          </div>
         </div>
-        <div class="form-group">
-          <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
-          <input type="text" name="permVillage" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
+            <input type="text" name="permSubdistrict" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
+            <input type="text" name="permDistrict" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="province">จังหวัด <span class="required">*</span></label>
+            <input type="text" name="permProvince" required>
+          </div>
         </div>
-        <div class="form-group">
-          <label data-i18n="street">ซอย/ถนน <span class="required">*</span></label>
-          <input type="text" name="permStreet" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
-          <input type="text" name="permSubdistrict" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
-          <input type="text" name="permDistrict" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="province">จังหวัด <span class="required">*</span></label>
-          <input type="text" name="permProvince" required>
-        </div>
-      </div>
 
         <h4 style="color: #019EFF;" data-i18n="current_address">ที่อยู่ปัจจุบัน <span class="required">*</span></h4>
         <label class="checkbox-label">
           <input type="checkbox" id="sameAddress" onchange="copyPermanentAddress()">
           <span data-i18n="same_as_perm">ใช้ที่อยู่ตามภูมิลำเนา</span>
         </label>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
-          <input type="text" name="houseNumber" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
-          <input type="text" name="village" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="street">ถนน <span class="required">*</span></label>
-          <input type="text" name="street" required>
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
-          <input type="text" name="subdistrict" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
-          <input type="text" name="district" required>
-        </div>
-        <div class="form-group">
-          <label data-i18n="province">จังหวัด <span class="required">*</span></label>
-          <input type="text" name="province" required>
-        </div>
-      </div>
-
-          <h4 style="color: #019EFF;" data-i18n="contact_info">ช่องทางการติดต่อ <span class="required">*</span></h4>
-          <div class="form-row">
-            <div class="form-group">
-              <label data-i18n="email">อีเมล <span class="required">*</span></label>
-              <input type="email" name="email" required>
-            </div>
-            <div class="form-group">
-              <label data-i18n="phone">เบอร์โทรศัพท์ <span class="required">*</span></label>
-              <input type="tel" name="phone" required>
-            </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="house_number">บ้านเลขที่ <span class="required">*</span></label>
+            <input type="text" name="houseNumber" required>
           </div>
-    </form>
+          <div class="form-group">
+            <label data-i18n="village">หมู่ที่ <span class="required">*</span></label>
+            <input type="text" name="village" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="street">ถนน <span class="required">*</span></label>
+            <input type="text" name="street" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="subdistrict">ตำบล/แขวง <span class="required">*</span></label>
+            <input type="text" name="subdistrict" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="district">อำเภอ/เขต <span class="required">*</span></label>
+            <input type="text" name="district" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="province">จังหวัด <span class="required">*</span></label>
+            <input type="text" name="province" required>
+          </div>
+        </div>
+
+        <h4 style="color: #019EFF;" data-i18n="contact_info">ช่องทางการติดต่อ <span class="required">*</span></h4>
+        <div class="form-row">
+          <div class="form-group">
+            <label data-i18n="email">อีเมล <span class="required">*</span></label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label data-i18n="phone">เบอร์โทรศัพท์ <span class="required">*</span></label>
+            <input type="tel" name="phone" required>
+          </div>
+        </div>
+      </form>
 
       <div class="buttons">
-        <button type="button" class="cancel-btn" id="cancelBtn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
+        <button type="button" class="cancel-btn" onclick="goBack()" data-i18n="back_button">ย้อนกลับ</button>
         <button type="button" class="next-btn" onclick="goToNextPage()" data-i18n="next_button">ถัดไป</button>
       </div>
-  </div>
+    </div>
   </main>
 
-<footer data-i18n="footer-contact">
-  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
-</footer>
-  <script>
-  // ✅ เพิ่มฟังก์ชันนี้ไว้ตรงนี้เลย
-  function copyPermanentAddress() {
-    const checkbox = document.getElementById("sameAddress");
+  <footer data-i18n="footer-contact">
+    © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+  </footer>
 
-    if (checkbox.checked) {
-      document.querySelector('[name="houseNumber"]').value = document.querySelector('[name="permHouseNumber"]').value;
-      document.querySelector('[name="village"]').value = document.querySelector('[name="permVillage"]').value;
-      document.querySelector('[name="street"]').value = document.querySelector('[name="permStreet"]').value;
-      document.querySelector('[name="subdistrict"]').value = document.querySelector('[name="permSubdistrict"]').value;
-      document.querySelector('[name="district"]').value = document.querySelector('[name="permDistrict"]').value;
-      document.querySelector('[name="province"]').value = document.querySelector('[name="permProvince"]').value;
-    } else {
-      // ล้างช่องถ้าติ๊กออก
-      document.querySelector('[name="houseNumber"]').value = "";
-      document.querySelector('[name="village"]').value = "";
-      document.querySelector('[name="street"]').value = "";
-      document.querySelector('[name="subdistrict"]').value = "";
-      document.querySelector('[name="district"]').value = "";
-      document.querySelector('[name="province"]').value = "";
+  <script>
+    function copyPermanentAddress() {
+      const checkbox = document.getElementById("sameAddress");
+      const fields = ["HouseNumber", "Village", "Street", "Subdistrict", "District", "Province"];
+      fields.forEach(field => {
+        const permValue = document.querySelector(`[name="perm${field}"]`).value;
+        document.querySelector(`[name="${field.toLowerCase()}"]`).value = checkbox.checked ? permValue : "";
+      });
     }
-  }
-</script>
-      <script>
-          function goBack() {
-            window.location.href = "user-name.html";
-          }
- </script>
-    <script src="lang.js"></script>
-    
-    <script>
-      // ฟังก์ชันเปลี่ยนภาษา พร้อมตั้ง title ด้วย
-      function changeLanguage(lang) {
-        const elements = document.querySelectorAll('[data-i18n]');
-        elements.forEach(el => {
-          const key = el.getAttribute('data-i18n');
-          if (langData[lang] && langData[lang][key]) {
-            el.innerText = langData[lang][key];
-            if (key === 'page_title') {
-              document.title = langData[lang][key];
-            }
-          }
-        });
-        localStorage.setItem('lang', lang);
+
+    function goBack() {
+      window.location.href = "user-name.html";
+    }
+
+    function goToNextPage() {
+      const form = document.getElementById("contactForm");
+      if (!form.checkValidity()) {
+        alert("กรุณากรอกข้อมูลให้ครบถ้วน");
+        return;
       }
-    
-      // ฟังก์ชันคัดลอกที่อยู่ถาวรไปที่อยู่ปัจจุบัน และล็อก/ปลดล็อกฟิลด์
-      function copyPermanentAddress() {
-        const checkbox = document.getElementById("sameAddress");
-        const fields = ['houseNumber', 'village', 'street', 'subdistrict', 'district', 'province'];
-    
-        if (checkbox.checked) {
-          fields.forEach(name => {
-            const permValue = document.querySelector(`[name="perm${name.charAt(0).toUpperCase() + name.slice(1)}"]`).value;
-            const currentField = document.querySelector(`[name="${name}"]`);
-            currentField.value = permValue;
-            currentField.readOnly = true;  // ล็อกไม่ให้แก้ไข
-          });
-        } else {
-          fields.forEach(name => {
-            const currentField = document.querySelector(`[name="${name}"]`);
-            currentField.value = "";
-            currentField.readOnly = false; // ปลดล็อก
-          });
+      const formElements = document.querySelectorAll('#contactForm input');
+      const formData = JSON.parse(sessionStorage.getItem('formData')) || {};
+      formElements.forEach(input => {
+        formData[input.name] = input.value;
+      });
+      sessionStorage.setItem('formData', JSON.stringify(formData));
+      window.location.href = "user-detail.html";
+    }
+
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+          if (key === 'page_title') document.title = langData[lang][key];
         }
+      });
+      localStorage.setItem('lang', lang);
+    }
+
+    window.onload = function() {
+      const savedData = JSON.parse(sessionStorage.getItem('formData')) || {};
+      for (const key in savedData) {
+        const field = document.querySelector(`[name="${key}"]`);
+        if (field) field.value = savedData[key];
       }
-    
-      // โหลดข้อมูลฟอร์มจาก sessionStorage และโหลดภาษาตอนหน้าโหลดเสร็จ
-      window.onload = function() {
-        // โหลดข้อมูลจาก sessionStorage ลงฟอร์ม
-        const savedData = JSON.parse(sessionStorage.getItem('formData')) || {};
-        for (const key in savedData) {
-          const field = document.querySelector(`[name="${key}"]`);
-          if (field) field.value = savedData[key];
-        }
-    
-        // โหลดภาษา
-        const savedLang = localStorage.getItem('lang') || 'th';
-        changeLanguage(savedLang);
-      }
-    </script>
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
+  <script src="lang.js"></script>
 
 </body>
 </html>
