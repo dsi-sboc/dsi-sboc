@@ -298,64 +298,70 @@
     }
   }
 </script>
-
-
-  <script>
-    function goBack() {
-      window.location.href = "user-name.html";
-    }
-
-    // function goToNextPage() {
-    // window.location.href = "user-complaint.html";
-    // }
-  </script>
-      <script src="lang.js"></script>
-  <script>
-    function changeLanguage(lang) {
-      const elements = document.querySelectorAll('[data-i18n]');
-      elements.forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (langData[lang] && langData[lang][key]) {
-          el.innerText = langData[lang][key];
-        }
-      });
-      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
-    }
-
-    // โหลดภาษาเมื่อเปิดหน้าเว็บ
-    window.onload = () => {
-      const savedLang = localStorage.getItem('lang') || 'th';
-      changeLanguage(savedLang);
-    }
-  </script>
-<script>
-  function goToNextPage() {
-  const form = document.getElementById('contactForm');
-  if (!form.checkValidity()) {
-    form.reportValidity();
-    return;
-  }
-  
-  const formData = new FormData(form);
-  const data = {};
-  formData.forEach((value, key) => data[key] = value);
-
-  fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
-    method: 'POST',
-    mode: 'no-cors',  // หรือ 'cors' ขึ้นกับการตั้งค่า Script
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data)
-  }).then(() => {
-    window.location.href = "user-complaint.html";
-  }).catch(err => {
-    alert('เกิดข้อผิดพลาดในการส่งข้อมูล');
-    console.error(err);
-  });
-}
-
-</script>
+      <script>
+          function goBack() {
+            window.location.href = "user-name.html";
+          }
+      
+        </script>
+        <script src="lang.js"></script>
+        <script>
+          function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+              const key = el.getAttribute('data-i18n');
+              if (langData[lang] && langData[lang][key]) {
+                el.innerText = langData[lang][key];
+              }
+            });
+            localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+          }
+      
+          // โหลดภาษาเมื่อเปิดหน้าเว็บ
+          window.onload = () => {
+            const savedLang = localStorage.getItem('lang') || 'th';
+            changeLanguage(savedLang);
+          }
+          </script>
+          <script>
+            function goToNextPage() {
+              const form = document.getElementById('contactForm');
+              if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+              }
+          
+              const formData = new FormData(form);
+              const data = {};
+              formData.forEach((value, key) => data[key] = value);
+          
+              // ✅ เก็บข้อมูลใน sessionStorage (merge กับข้อมูลเดิม)
+              let existingData = JSON.parse(sessionStorage.getItem('formData')) || {};
+              Object.assign(existingData, data);
+              sessionStorage.setItem('formData', JSON.stringify(existingData));
+          
+              // ✅ ไปหน้าถัดไป
+              window.location.href = "user-complaint.html";
+            }
+          
+            function goBack() {
+              // ✅ กลับไปหน้าแรก
+              window.location.href = "user-name.html";
+            }
+          
+            // ✅ โหลดค่าจาก sessionStorage มาลงฟอร์ม (ถ้ามี)
+            window.onload = function() {
+              const savedData = JSON.parse(sessionStorage.getItem('formData')) || {};
+              for (const key in savedData) {
+                const field = document.querySelector(`[name="${key}"]`);
+                if (field) field.value = savedData[key];
+              }
+          
+              // ✅ โหลดภาษา (ตามที่มีอยู่เดิม)
+              const savedLang = localStorage.getItem('lang') || 'th';
+              changeLanguage(savedLang);
+            };
+          </script>
 
 </body>
 </html>
