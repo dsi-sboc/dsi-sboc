@@ -300,7 +300,7 @@ function goToNextPage() {
   const form = document.querySelector("form");
   if (form.checkValidity()) {
     const formData = {
-      complaintDetails: form.complaintDetails.value,
+      complaintDetails: form.elements["complaintDetails"].value,
       permHouseNumber: form.permHouseNumber.value,
       permVillage: form.permVillage.value,
       permStreet: form.permStreet.value,
