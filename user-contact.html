@@ -302,66 +302,60 @@
           function goBack() {
             window.location.href = "user-name.html";
           }
-      
-        </script>
-        <script src="lang.js"></script>
-        <script>
-          function changeLanguage(lang) {
-            const elements = document.querySelectorAll('[data-i18n]');
-            elements.forEach(el => {
-              const key = el.getAttribute('data-i18n');
-              if (langData[lang] && langData[lang][key]) {
-                el.innerText = langData[lang][key];
-              }
-            });
-            localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
-          }
-      
-          // โหลดภาษาเมื่อเปิดหน้าเว็บ
-          window.onload = () => {
-            const savedLang = localStorage.getItem('lang') || 'th';
-            changeLanguage(savedLang);
-          }
-          </script>
-          <script>
-            function goToNextPage() {
-              const form = document.getElementById('contactForm');
-              if (!form.checkValidity()) {
-                form.reportValidity();
-                return;
-              }
-          
-              const formData = new FormData(form);
-              const data = {};
-              formData.forEach((value, key) => data[key] = value);
-          
-              // ✅ เก็บข้อมูลใน sessionStorage (merge กับข้อมูลเดิม)
-              let existingData = JSON.parse(sessionStorage.getItem('formData')) || {};
-              Object.assign(existingData, data);
-              sessionStorage.setItem('formData', JSON.stringify(existingData));
-          
-              // ✅ ไปหน้าถัดไป
-              window.location.href = "user-complaint.html";
+ </script>
+    <script src="lang.js"></script>
+    
+    <script>
+      // ฟังก์ชันเปลี่ยนภาษา พร้อมตั้ง title ด้วย
+      function changeLanguage(lang) {
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (langData[lang] && langData[lang][key]) {
+            el.innerText = langData[lang][key];
+            if (key === 'page_title') {
+              document.title = langData[lang][key];
             }
-          
-            function goBack() {
-              // ✅ กลับไปหน้าแรก
-              window.location.href = "user-name.html";
-            }
-          
-            // ✅ โหลดค่าจาก sessionStorage มาลงฟอร์ม (ถ้ามี)
-            window.onload = function() {
-              const savedData = JSON.parse(sessionStorage.getItem('formData')) || {};
-              for (const key in savedData) {
-                const field = document.querySelector(`[name="${key}"]`);
-                if (field) field.value = savedData[key];
-              }
-          
-              // ✅ โหลดภาษา (ตามที่มีอยู่เดิม)
-              const savedLang = localStorage.getItem('lang') || 'th';
-              changeLanguage(savedLang);
-            };
-          </script>
+          }
+        });
+        localStorage.setItem('lang', lang);
+      }
+    
+      // ฟังก์ชันคัดลอกที่อยู่ถาวรไปที่อยู่ปัจจุบัน และล็อก/ปลดล็อกฟิลด์
+      function copyPermanentAddress() {
+        const checkbox = document.getElementById("sameAddress");
+        const fields = ['houseNumber', 'village', 'street', 'subdistrict', 'district', 'province'];
+    
+        if (checkbox.checked) {
+          fields.forEach(name => {
+            const permValue = document.querySelector(`[name="perm${name.charAt(0).toUpperCase() + name.slice(1)}"]`).value;
+            const currentField = document.querySelector(`[name="${name}"]`);
+            currentField.value = permValue;
+            currentField.readOnly = true;  // ล็อกไม่ให้แก้ไข
+          });
+        } else {
+          fields.forEach(name => {
+            const currentField = document.querySelector(`[name="${name}"]`);
+            currentField.value = "";
+            currentField.readOnly = false; // ปลดล็อก
+          });
+        }
+      }
+    
+      // โหลดข้อมูลฟอร์มจาก sessionStorage และโหลดภาษาตอนหน้าโหลดเสร็จ
+      window.onload = function() {
+        // โหลดข้อมูลจาก sessionStorage ลงฟอร์ม
+        const savedData = JSON.parse(sessionStorage.getItem('formData')) || {};
+        for (const key in savedData) {
+          const field = document.querySelector(`[name="${key}"]`);
+          if (field) field.value = savedData[key];
+        }
+    
+        // โหลดภาษา
+        const savedLang = localStorage.getItem('lang') || 'th';
+        changeLanguage(savedLang);
+      }
+    </script>
 
 </body>
 </html>
