@@ -217,6 +217,26 @@
       height: 100%;
       border: 0;
     }
+    .open-form-link {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.open-form-link a {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.open-form-link a:hover {
+  background-color: #0056b3;
+}
+
     /* Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -305,11 +325,18 @@
       frameborder="0" allowfullscreen></iframe>
   </div>
   
-  <div class="mobile-form-link" style="text-align:center; margin: 20px 0;">
+<!-- ลิงก์เปิดฟอร์มในแท็บใหม่ -->
+<div class="open-form-link">
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRxSd4B_71gdsNATUok-e09FkpmyrRX0lv_SV1JXH0X9ZzEg/viewform"
-     target="_blank" class="cta-btn">
-    เปิดฟอร์มในแท็บใหม่ (สำหรับมือถือ)
+     target="_blank" rel="noopener">
+    📱 เปิดฟอร์มในแท็บใหม่ (เหมาะสำหรับมือถือ)
   </a>
+</div>
+
+<!-- ตัว iframe -->
+<div class="form-wrapper">
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRxSd4B_71gdsNATUok-e09FkpmyrRX0lv_SV1JXH0X9ZzEg/viewform?embedded=true"
+    frameborder="0" allowfullscreen></iframe>
 </div>
 
   
