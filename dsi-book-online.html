@@ -203,7 +203,20 @@
       font-size: 14px;
       box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
     }
-
+    .form-wrapper {
+      width: 100%;
+      position: relative;
+      padding-top: 150%; /* หรือ 120-160 แล้วแต่ความยาวของฟอร์ม */
+    }
+    
+    .form-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
     /* Animation */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -287,11 +300,19 @@
   </nav>
 </div>
 
-<div class="qr-wrapper" style="width: 100%;">
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRxSd4B_71gdsNATUok-e09FkpmyrRX0lv_SV1JXH0X9ZzEg/viewform?embedded=true" 
-  width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0">กำลังโหลด…</iframe>
-
+  <div class="form-wrapper">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfRxSd4B_71gdsNATUok-e09FkpmyrRX0lv_SV1JXH0X9ZzEg/viewform?embedded=true"
+      frameborder="0" allowfullscreen></iframe>
+  </div>
+  
+  <div class="mobile-form-link" style="text-align:center; margin: 20px 0;">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSfRxSd4B_71gdsNATUok-e09FkpmyrRX0lv_SV1JXH0X9ZzEg/viewform"
+     target="_blank" class="cta-btn">
+    เปิดฟอร์มในแท็บใหม่ (สำหรับมือถือ)
+  </a>
 </div>
+
+  
 <footer data-i18n="footer-contact">
   © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
 </footer>
