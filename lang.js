@@ -6,6 +6,7 @@ const langData = {
     "welcome-title": "ยินดีต้อนรับสู่เว็บไซต์ DSI",
     "welcome-text": "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ดำเนินการคดีพิเศษ",
     
+    "menu-main": "หน้าหลัก",
     "menu-complaint": "การร้องเรียน/ร้องทุกข์",
     "menu-tip": "แจ้งเบาะแส",
     "menu-form": "ฟอร์มคำร้อง",
@@ -253,7 +254,8 @@ const langData = {
     "header-subtitle": "Department of Special Investigation",
     "welcome-title": "Welcome to the DSI website",
     "welcome-text": "The DSI is an agency responsible for handling special cases.",
-
+  
+     "menu-main": "Home page",
     "menu-complaint": "Complaints / Petitions",
     "menu-tip": "Submit a Tip",
     "menu-form": "Complaint Form",
@@ -488,6 +490,7 @@ const langData = {
     "welcome-title": "Selamat datang ke laman web DSI",
     "welcome-text": "DSI ialah agensi yang bertanggungjawab mengendalikan kes-kes istimewa.",
     
+    "menu-main": "Laman utama",
     "menu-complaint": "Aduan / Rayuan",
     "menu-tip": "Hantar Maklumat",
     "menu-form": "Borang Aduan",
