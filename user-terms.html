@@ -273,15 +273,19 @@
     <!-- ส่วนที่ 5 -->
     <div class="section-title" data-i18n="section5">📝 ส่วนที่ 5 : ข้อตกลงและเงื่อนไข</div>
     <div class="container">
-      <div class="form-group">
+      <div class="form-group" >
         <h4 style="color: #019EFF;" data-i18n="terms_label">
           ข้อตกลงและเงื่อนไข <span class="required">*</span>
         </h4>
         <p style="color: #666;" data-i18n="terms_desc">
           เมื่อยื่นเรื่องร้องทุกข์แสดงว่าท่านยินยอมให้ข้อมูลนี้ถูกนำมาใช้ในขั้นตอนความปลอดภัย/ความคุ้มครองที่เหมาะสม
         </p>
-        <input type="text" id="agreementConfirm" name="agreementConfirm" placeholder="โปรดพิมพ์ยืนยันความยินยอม" data-i18n-placeholder="terms_input_placeholder" required>
+        <label>
+          <input type="checkbox" id="termsCheckbox" />
+          <span data-i18n="accept_terms">โปรดยอมรับเงื่อนไข</span> <span style="color: red">*</span>
+        </label>
       </div>
+      
 
       <div class="buttons">
           <button type="button" class="cancel-btn" onclick="goBack()">ย้อนกลับ</button>
