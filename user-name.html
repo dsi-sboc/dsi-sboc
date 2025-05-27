@@ -214,12 +214,6 @@
           });
           localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
         }
-    
-        // โหลดภาษาเมื่อเปิดหน้าเว็บ
-        window.onload = () => {
-          const savedLang = localStorage.getItem('lang') || 'th';
-          changeLanguage(savedLang);
-        }
       </script>
     <script>
     function goToNextPage() {
@@ -248,20 +242,19 @@
     }
     </script>
   <script>
-    window.onload = () => {
-      const savedLang = localStorage.getItem('lang') || 'th';
-      changeLanguage(savedLang);
-    
-      const step1Data = JSON.parse(sessionStorage.getItem("step1Data") || "{}");
-      for (let key in step1Data) {
-        if (step1Data.hasOwnProperty(key)) {
+      window.onload = () => {
+        const savedLang = localStorage.getItem('lang') || 'th';
+        changeLanguage(savedLang);
+      
+        const step1Data = JSON.parse(sessionStorage.getItem("step1Data") || "{}");
+        for (let key in step1Data) {
           const input = document.querySelector(`[name="${key}"]`);
           if (input) {
             input.value = step1Data[key];
           }
         }
-      }
-    };
+      };
+
     </script>
 </body>
 </html>
