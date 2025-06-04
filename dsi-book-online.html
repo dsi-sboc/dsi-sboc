@@ -217,7 +217,20 @@
       height: 100%;
       border: 0;
     }
-    .open-form-link {
+    /* Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .header-text h1 { font-size: 18px; }
+      .header-text h2 { font-size: 16px; }
+      .card h2 { font-size: 20px; }
+      .breadcrumb-bar { padding: 10px 20px; }
+    }
+        .open-form-link {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -248,19 +261,6 @@
               border: none;
     }
 
-    /* Animation */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* Responsive */
-    @media (max-width: 480px) {
-      .header-text h1 { font-size: 18px; }
-      .header-text h2 { font-size: 16px; }
-      .card h2 { font-size: 20px; }
-      .breadcrumb-bar { padding: 10px 20px; }
-    }
   </style>
 </head>
 <body>
