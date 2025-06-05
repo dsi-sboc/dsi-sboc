@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้(DSI)- รายละเอียดกิจกรรม</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+        body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: linear-gradient(to bottom right, #e3f2fd, #ffffff);
+    }
+
+    header {
+      background-color: #00579a;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    header img {
+      height: 80px;
+      margin-right: 20px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .header-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .header-text h1 {
+      margin: 5px;
+      font-size: 24px;
+    }
+    .header-text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #ffff33;
+      font-size: 20px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      margin-left: auto;
+      font-size: 14px;
+    }
+    .header-text {
+      text-align: center;
+      flex-grow: 1;
+    }
+    .header-text h1 {
+      margin: 5px;
+      font-size: 24px;
+    }
+    .header-text h2 {
+      margin: 0;
+      font-weight: normal;
+      color: #ffff33;
+      font-size: 20px;
+    }
+
+    /* ส่วน Nav เมนู */
+    nav.main-nav {
+      background-color: #2677A3;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 8px 0;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .dropdown {
+      position: relative;
+    }
+    .dropbtn {
+      background-color: transparent;
+      color: white;
+      padding: 6px 16px;
+      font-size: 15px;
+      border: none;
+      cursor: pointer;
+    }
+    .dropbtn::after {
+      content: "\25BC";
+      margin-left: 8px;
+      font-size: 10px;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 180px;
+      z-index: 1;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    }
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* ส่วน Breadcrumb */
+    .breadcrumb-bar {
+      background-color: #f1f1f1;
+      padding: 12px 40px;
+      font-size: 14px;
+      color: #333;
+      box-shadow: inset 0 -1px 0 #ccc;
+    }
+    .breadcrumb-bar nav {
+      display: flex;
+      align-items: center;
+    }
+    .breadcrumb-bar ol {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      padding: 0;
+      margin: 0;
+    }
+    .breadcrumb-bar li {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+    }
+    .breadcrumb-bar a {
+      text-decoration: none;
+      color: #00579a;
+      transition: color 0.3s;
+    }
+    .breadcrumb-bar a:hover {
+      color: #003366;
+    }
+    .breadcrumb-bar .current {
+      color: #666;
+    }
+
+        section.news {
+            padding: 30px;
+            background: white;
+            margin: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        section.news h2 {
+            color: #003366;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .images {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            justify-content: center;
+        }
+
+        .images img {
+            width: 320px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .date-location {
+            font-weight: bold;
+            margin: 20px 0;
+            color: #555;
+            font-size: 16px;
+        }
+
+        section.news p {
+            font-size: 16px;
+            line-height: 2;
+        }
+
+        .search-section {
+            padding: 20px;
+            text-align: right;
+            /* background-color: white; */
+            margin: 0 30px 30px 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .search-section input[type="text"] {
+            padding: 10px 20px;
+            font-size: 16px;
+            width: 300px;
+            border-radius: 30px;
+            border: 1px solid #ccc;
+        }
+        footer {
+            background-color: #444;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 14px;
+         }
+        .dropdown a.dropbtn {
+              display: inline-block;    /* ทำให้ <a> แสดงแบบบล็อกอินไลน์ */
+              padding: 6px 16px;        /* กำหนด padding เท่ากับปุ่มอื่น */
+              font-size: 15px;
+              color: white;
+              text-align: center;
+              text-decoration: none;    /* ลบเส้นใต้ */
+              cursor: pointer;
+              background-color: transparent;
+              border: none;
+    }
+
+    </style>
+</head>
+<body>
+  <header>
+    <img src="Logo.png" alt="DSI Logo">
+    <div class="heaer-text">
+      <h1 data-i18n="header-title">ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (กรมสอบสวนคดีพิเศษ)</h1>
+      <h2 data-i18n="header-subtitle">Department of Special Investigation</h2>
+    </div>
+    <div class="lang-switch">
+      <button onclick="changeLanguage('th')">TH</button> |
+      <button onclick="changeLanguage('en')">EN</button> |
+      <button onclick="changeLanguage('ms')">MS</button>
+    </div>
+  </header>
+    
+<nav class="main-nav">
+<!--     <div class="dropdown">
+      <a class="dropbtn" href="index.html" data-i18n="menu-main">หน้าหลัก</a>
+    </div> -->
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
+    <div class="dropdown-content">
+      <a href="dsi-book-online.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+<!--       <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a> -->
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-news">ข่าวประชาสัมพันธ์/กิจกรรม</button>
+    <div class="dropdown-content">
+      <a href="dsi-news.html" data-i18n="menu-public">ประชาสัมพันธ์</a>
+      <a href="dsi-announcement.html" data-i18n="menu-activity">รายละเอียดกิจกรรม</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-about">เกี่ยวกับ DSI</button>
+    <div class="dropdown-content">
+      <a href="dsi-about.html" data-i18n="menu-about-dsi">เกี่ยวกับ DSI</a>
+      <a href="dsi-laws.html" data-i18n="menu-laws">กฎหมาย DSI</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-structure">โครงสร้างการบริหารงาน</button>
+    <div class="dropdown-content">
+      <a href="dsi-structure.html" data-i18n="menu-organization">แผนผังองค์กร</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-contact">ช่องทางการติดต่อ</button>
+    <div class="dropdown-content">
+      <a href="dsi-contact.html" data-i18n="menu-contact-channel">ช่องทางการติดต่อ</a>
+      <a href="dsi-contact.html" data-i18n="menu-location">ที่ตั้งสำนักงาน</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn" data-i18n="menu-website">เว็บไซต์อื่นๆ</button>
+    <div class="dropdown-content">
+      <a href="dsi-websites.html" data-i18n="menu-main-site">เว็บไซต์หลัก DSI</a>
+      <a href="dsi-guide.html" data-i18n="menu-guide">คู่มือการใช้งาน</a>
+    </div>
+  </div>
+</nav>
+  
+    <div class="breadcrumb-bar" id="breadcrumb">
+      <nav aria-label="breadcrumb">
+        <ol>
+          <li><a href="index.html" data-i18n="home">หน้าหลัก</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li><a href="dsi-news.html" data-i18n="news">ประชาสัมพันธ์</a></li>
+          <li>&nbsp;/&nbsp;</li>
+          <li><span class="current" data-i18n="activity_detail">รายละเอียดกิจกรรม</span></li>
+        </ol>
+      </nav>
+    </div>
+
+
+<section class="news">
+  <h2 data-i18n="news_title">
+   นายเจตนา เหมมุน ผอ.ศปพ.จชต. มอบหมายให้ นายทศพร กฤตยานาถ จคพ.ชก., นายอิ่มบุญ พิชัย จคพ.ชก. และ เจ้าหน้าที่สนับสนุนงานสืบสวน  เดินทางลงพื้นที่ องค์การบริหารส่วนตำบลเรียง อ.รือเสาะ จ.นราธิวาส 
+  </h2>
+  
+  <div class="images">
+    <img src="7-work_page3.jpg" alt="ภาพกิจกรรม 1">
+    <img src="7-work_page4.jpg" alt="ภาพกิจกรรม 2">
+    <img src="7-work_page9.jpg" alt="ภาพกิจกรรม 3">
+    <img src="7-work_page2.jpg" alt="ภาพกิจกรรม 4">
+  </div>
+
+  <p class="date-location" data-i18n="news_date">วันนี้ 22 พฤษภาคม 2568</p>
+
+  <p data-i18n="news_intro">
+นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายทศพร กฤตยานาถ จคพ.ชก., นายอิ่มบุญ พิชัย จคพ.ชก. และ จสส. เดินทางลงพื้นที่อำเภอรือเสาะ จังหวัดนราธิวาส  </p>
+
+  <p data-i18n="news_detail">
+    นายเจตนา เหมมุน ผอ.ศปพ.จชต. พร้อมด้วยนายทศพร กฤตยานาถ จคพ.ชก., นายอิ่มบุญ พิชัย จคพ.ชก. และ จสส. เดินทางลงพื้นที่อำเภอรือเสาะ จังหวัดนราธิวาส กรณี กลุ่มบุคคลร่วมกันยึดถือครอบครองเอกสารสิทธิที่ดินโดยมิชอบโดยกฎหมาย เพื่อดำเนินการการจดทะเบียนนิติกรรมในที่ดินเพื่อที่อยู่อาศัยและที่ทำกินของประชาชนหมู่ที่ 8 บ้านบียิห์ ตำบลเรียง อำเภอรือเสาะ จังหวัดนราธิวาส จำนวน 127 ราย  ณ สำนักงานที่ดินจังหวัดนราธิวาส สาขารือเสา อำเภอรือเสาะ จังหวัดนราธิวาส
+    โดย ศปพ.จชต. จะดำเนินการติดตามขั้นตอนการรังวัดและออกโฉนดที่ดิน ให้ประชาชนในพื้นที่ดังกล่าวตามข้อสั่งการของอธิบดีกรมสอบสวนคดีพิเศษต่อไป
+     ทั้งนี้ ภารกิจเป็นไปด้วยความเรียบร้อยและแล้วเสร็จในเวลา 18.30 น. </section>
+
+
+<footer data-i18n="footer-contact">
+  © ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) โทร. 02-8319888 ต่อ 61002
+</footer>
+
+    <script src="lang.js"></script>
+  <script>
+    function changeLanguage(lang) {
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (langData[lang] && langData[lang][key]) {
+          el.innerText = langData[lang][key];
+        }
+      });
+      localStorage.setItem('lang', lang); // บันทึกภาษาที่เลือกไว้
+    }
+
+    // โหลดภาษาเมื่อเปิดหน้าเว็บ
+    window.onload = () => {
+      const savedLang = localStorage.getItem('lang') || 'th';
+      changeLanguage(savedLang);
+    }
+  </script>
+
+</body>
+</html>
