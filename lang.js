@@ -42,8 +42,8 @@ const langData = {
     "for-citizen": "สำหรับประชาชน",
     "for-officer": "สำหรับเจ้าหน้าที่",
 
-    "welcome-title": "ยินดีต้อนรับสู่เว็บไซต์ DSI",
-    "welcome-description": "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ในการดำเนินการและจัดการคดีพิเศษ เพื่อให้เกิดความยุติธรรมและคุ้มครองสิทธิของประชาชน",
+    "welcome-title": "ยินดีต้อนรับสู่เว็บไซต์ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้",
+    "welcome-description": "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (กรมสอบสวนคดีพิเศษ) คือหน่วยงานที่ทำหน้าที่ในการดำเนินการและจัดการคดีพิเศษ เพื่อให้เกิดความยุติธรรมและคุ้มครองสิทธิของประชาชน",
 
     "breadcrumb-home": "หน้าหลัก",
     "breadcrumb-current": "เว็บไซต์หลัก DSI",
@@ -292,7 +292,7 @@ const langData = {
     "for-officer": "For Officers",
 
     "welcome-title": "Welcome to the DSI Website",
-    "welcome-description": "The Southern Border Provinces Special Case Operations Center (DSI) is an agency responsible for handling and managing special cases to ensure justice and protect the rights of the people.",
+    "welcome-description": "The Southern Border Provinces Special Case Operations Center (Department of Special Investigation) is an agency responsible for handling and managing special cases to ensure justice and protect the rights of the people.",
 
     "breadcrumb-home": "Home",
     "breadcrumb-current": "DSI Main Website",
@@ -485,7 +485,7 @@ const langData = {
 
   },
   ms: {
-    "header-title": "Pusat Operasi Kes Istimewa Wilayah Selatan (Jabatan Siasatan Khas)",
+    "header-title": "Pusat Operasi Kes Khas Sempadan Selatan (Jabatan Penyiasatan Khas)",
     "header-subtitle": "Jabatan Siasatan Khas",
     "welcome-title": "Selamat datang ke laman web DSI",
     "welcome-text": "DSI ialah agensi yang bertanggungjawab mengendalikan kes-kes istimewa.",
@@ -527,7 +527,7 @@ const langData = {
     "for-officer": "Untuk Pegawai",
 
     "welcome-title": "Selamat Datang ke Laman Web DSI",
-    "welcome-description": "Pusat Operasi Kes Khas Wilayah Sempadan Selatan (DSI) adalah agensi yang bertanggungjawab untuk menjalankan dan mengurus kes khas bagi memastikan keadilan dan melindungi hak rakyat.",
+    "welcome-description": "Pusat Operasi Kes Khas Wilayah Sempadan Selatan (Jabatan Siasatan Khas) adalah agensi yang bertanggungjawab untuk menjalankan dan mengurus kes khas bagi memastikan keadilan dan melindungi hak rakyat.",
 
     "breadcrumb-home": "Laman Utama",
     "breadcrumb-current": "Laman Utama DSI",
