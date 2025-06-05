@@ -1,7 +1,7 @@
 // lang.js - เก็บข้อความของแต่ละภาษา
 const langData = {
   th: {
-    "header-title": "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI)",
+    "header-title": "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (กรมสอบสวนคดีพิเศษ)",
     "header-subtitle": "Department of Special Investigation",
     "welcome-title": "ยินดีต้อนรับสู่เว็บไซต์ DSI",
     "welcome-text": "ศูนย์ปฏิบัติการคดีพิเศษจังหวัดชายแดนภาคใต้ (DSI) คือหน่วยงานที่ทำหน้าที่ดำเนินการคดีพิเศษ",
@@ -250,7 +250,7 @@ const langData = {
 
   },
   en: {
-    "header-title": "Department of Special Investigation of Southern Border Provinces (DSI)",
+    "header-title": "Department of Special Investigation of Southern Border Provinces (Department of Special Investigation)",
     "header-subtitle": "Department of Special Investigation",
     "welcome-title": "Welcome to the DSI website",
     "welcome-text": "The DSI is an agency responsible for handling special cases.",
@@ -485,7 +485,7 @@ const langData = {
 
   },
   ms: {
-    "header-title": "Pusat Operasi Kes Istimewa Wilayah Selatan (DSI)",
+    "header-title": "Pusat Operasi Kes Istimewa Wilayah Selatan (Jabatan Siasatan Khas)",
     "header-subtitle": "Jabatan Siasatan Khas",
     "welcome-title": "Selamat datang ke laman web DSI",
     "welcome-text": "DSI ialah agensi yang bertanggungjawab mengendalikan kes-kes istimewa.",
