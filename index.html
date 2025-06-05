@@ -24,14 +24,6 @@
       display: flex;
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      justify-content: space-between;
-      flex-wrap: nowrap; /* ❗ ป้องกันขึ้นบรรทัดใหม่ */
-      overflow-x: auto;
-      min-width: 0;
-    }
-    .main-nav a {
-      text-decoration: none;
-      color: black;
     }
     header img {
       height: 80px;
@@ -66,8 +58,6 @@
       flex-wrap: wrap;
       padding: 8px 0;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      gap: 15px;
-      margin: 0;
     }
     .dropdown {
       position: relative;
@@ -345,17 +335,31 @@
         font-size: 16px;
       }
     }
-            .dropdown a.dropbtn {
-              display: inline-block;    /* ทำให้ <a> แสดงแบบบล็อกอินไลน์ */
-              padding: 6px 16px;        /* กำหนด padding เท่ากับปุ่มอื่น */
-              font-size: 15px;
-              color: white;
-              text-align: center;
-              text-decoration: none;    /* ลบเส้นใต้ */
-              cursor: pointer;
-              background-color: transparent;
-              border: none;
+    /* แถบตัวอักษรเลื่อน */
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background: #ffffff;
+      padding: 10px 0;
+      border-top: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
     }
+
+    .marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+      font-size: 20px;
+      color: #00579a;
+      font-weight: bold;
+      padding-left: 100%;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(0%); }
+      100% { transform: translateX(-100%); }
+    }
+
   </style>
 </head>
 <body>
@@ -374,14 +378,11 @@
   </header>
 
 <nav class="main-nav">
-<div class="dropdown">
-  <a class="dropbtn" href="index.html" data-i18n="menu-main">หน้าหลัก</a>
-</div>
   <div class="dropdown">
     <button class="dropbtn" data-i18n="menu-complaint">การร้องเรียน/ร้องทุกข์</button>
     <div class="dropdown-content">
-      <a href="dsi-book.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
-<!--       <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a> -->
+      <a href="user-name.html" data-i18n="menu-tip">แจ้งเบาะแส</a>
+      <a href="dsi-book.html" data-i18n="menu-form">ฟอร์มคำร้อง</a>
     </div>
   </div>
   <div class="dropdown">
@@ -419,6 +420,13 @@
     </div>
   </div>
 </nav>
+
+  <div class="marquee-container">
+    <div class="marquee">
+ยินดีต้อนรับสู่เว็บไซต์ DSI | Welcome to DSI Website | Selamat Datang ke Laman Web DSI
+    </div>
+  </div>
+
   
   <div class="main-section">
     <div class="left-content">
@@ -446,7 +454,7 @@
     </div>
 
 <div class="button-container">
-  <a href="dsi-book.html" class="btn btn-yellow" data-i18n="btn-complaint">ร้องเรียน/ร้องทุกข์</a>
+  <a href="user-name.html" class="btn btn-yellow" data-i18n="btn-complaint">ร้องเรียน/ร้องทุกข์</a>
   <a href="dsi-news.html" class="btn btn-orange" data-i18n="btn-news">ข่าวประชาสัมพันธ์/กิจกรรม</a>
   <a href="dsi-about.html" class="btn btn-green" data-i18n="btn-about">เกี่ยวกับ DSI</a>
   <a href="dsi-laws.html" class="btn btn-blue1" data-i18n="btn-laws">กฎหมายที่เกี่ยวข้อง</a>
