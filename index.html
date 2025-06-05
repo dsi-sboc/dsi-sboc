@@ -25,6 +25,13 @@
       align-items: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       justify-content: space-between;
+      flex-wrap: nowrap; /* ❗ ป้องกันขึ้นบรรทัดใหม่ */
+      overflow-x: auto;
+      min-width: 0;
+    }
+    .main-nav a {
+      text-decoration: none;
+      color: black;
     }
     header img {
       height: 80px;
@@ -59,6 +66,8 @@
       flex-wrap: wrap;
       padding: 8px 0;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      gap: 15px;
+      margin: 0;
     }
     .dropdown {
       position: relative;
