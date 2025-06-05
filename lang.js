@@ -270,7 +270,7 @@ const langData = {
 
   },
   en: {
-    "header-title": "Southern Border Provinces Special Case Operation Center, Department of Special Investigation (DSI)"
+    "header-title": "Southern Border Provinces Special Case Operation Center, Department of Special Investigation (DSI)",
     "header-subtitle": "Department of Special Investigation",
     "welcome-title": "Welcome to the DSI website",
     "welcome-text": "The DSI is an agency responsible for handling special cases.",
@@ -405,7 +405,7 @@ const langData = {
     news5_title: "Mr. Jettana Hemmun, Director of Southern Border Provinces Administrative Center (SBPAC), along with Mr. Ruengrit Leula, JKP. CHP., and officers, welcomed and facilitated Mr. Ku Heng Yawahasan, Secretary to the Minister of Justice",
     news5_date: "24 April 2025 at Southern View Hotel, Pattani, Mueang District, Pattani Province",
     news5_intro: "Mr. Jettana Hemmun, Director of SBPAC, along with Mr. Ruengrit Leula, JKP. CHP., and officers, welcomed and facilitated Mr. Ku Heng Yawahasan, Secretary to the Minister of Justice",
-    news5_detail: `On 24 April 2025, at 09:30 AM, Mr. Jettana Hemmun, Director of SBPAC, along with Mr. Ruengrit Leula, JKP. CHP., and officers, welcomed and facilitated Mr. Ku Heng Yawahasan, Secretary to the Minister of Justice, during his visit as the chairman of the opening ceremony of the workshop to enhance the implementation of the Prevention and Suppression of Torture and Enforced Disappearance Act B.E. 2565 for law enforcement officers in the southern border provinces, batch 4. Representatives from related government agencies participated in the meeting.
+    news5_detail: `On 24 April 2025, at 09:30 AM, Mr. Jettana Hemmun, Director of SBPAC, along with Mr. Ruengrit Leula, JKP. CHP., and officers, welcomed and facilitated Mr. Ku Heng Yawahasan, Secretary to the Minister of Justice, during his visit as the chairman of the opening ceremony of the workshop to enhance the implementation of the Prevention and Suppression of Torture and Enforced Disappearance Act B.E. 2565 for law enforcement officers in the southern border provinces, batch 4. Representatives from related government agencies participated in the meeting.,
     Mr. Jettana Hemmun assigned Ms. Romyok Jittiaporn and Mr. Phatthadonai Sutthikhana to attend the meeting held at Southern View Hotel, Pattani, Mueang District, Pattani Province.`,
     
     "news7_title": "Mr. Jetana Hemmun, Director of the Southern Border Special Case Operation Center (SB-SCOC), assigned Mr. Thossaporn Krityanart (Special Case Officer), Mr. Imboon Pichai (Special Case Officer), and investigation support staff to visit Rieang Subdistrict Administrative Organization, Rue So District, Narathiwat Province.",
@@ -523,7 +523,7 @@ const langData = {
 
   },
   ms: {
-    "header-title": "Pusat Operasi Kes Khas Wilayah Selatan, Jabatan Siasatan Khas (DSI)"
+    "header-title": "Pusat Operasi Kes Khas Wilayah Selatan, Jabatan Siasatan Khas (DSI)",
     "header-subtitle": "Jabatan Siasatan Khas",
     "welcome-title": "Selamat datang ke laman web DSI",
     "welcome-text": "DSI ialah agensi yang bertanggungjawab mengendalikan kes-kes istimewa.",
@@ -654,7 +654,7 @@ const langData = {
     news5_title: "Encik Jettana Hemmun, Pengarah SBPAC, bersama Encik Ruengrit Leula, JKP. CHP., dan pegawai, menyambut dan memudahkan Encik Ku Heng Yawahasan, Setiausaha kepada Menteri Keadilan",
     news5_date: "24 April 2025 di Hotel Southern View, Pattani, Daerah Mueang, Wilayah Pattani",
     news5_intro: "Encik Jettana Hemmun, Pengarah SBPAC, bersama Encik Ruengrit Leula, JKP. CHP., dan pegawai, menyambut dan memudahkan Encik Ku Heng Yawahasan, Setiausaha kepada Menteri Keadilan",
-    news5_detail: `Pada 24 April 2025, jam 09:30 pagi, Encik Jettana Hemmun, Pengarah SBPAC, bersama Encik Ruengrit Leula, JKP. CHP., dan pegawai, menyambut dan memudahkan Encik Ku Heng Yawahasan, Setiausaha kepada Menteri Keadilan, semasa lawatannya sebagai pengerusi majlis perasmian bengkel untuk meningkatkan pelaksanaan Akta Pencegahan dan Penghapusan Penyiksaan dan Kehilangan Paksa 2565 bagi pegawai penguatkuasa undang-undang di wilayah selatan sempadan, siri ke-4. Wakil dari agensi kerajaan berkaitan turut hadir dalam mesyuarat tersebut.
+    news5_detail: `Pada 24 April 2025, jam 09:30 pagi, Encik Jettana Hemmun, Pengarah SBPAC, bersama Encik Ruengrit Leula, JKP. CHP., dan pegawai, menyambut dan memudahkan Encik Ku Heng Yawahasan, Setiausaha kepada Menteri Keadilan, semasa lawatannya sebagai pengerusi majlis perasmian bengkel untuk meningkatkan pelaksanaan Akta Pencegahan dan Penghapusan Penyiksaan dan Kehilangan Paksa 2565 bagi pegawai penguatkuasa undang-undang di wilayah selatan sempadan, siri ke-4. Wakil dari agensi kerajaan berkaitan turut hadir dalam mesyuarat tersebut.,
     Encik Jettana Hemmun telah menugaskan Cik Romyok Jittiaporn dan Encik Phatthadonai Sutthikhana untuk menghadiri mesyuarat tersebut yang diadakan di Hotel Southern View, Pattani, Daerah Mueang, Wilayah Pattani.`,
 
     "news7_title": "Encik Jetana Hemmun, Pengarah Pusat Operasi Kes Khas Wilayah Sempadan Selatan (SB-SCOC), telah menugaskan Encik Thossaporn Krityanart (Pegawai Kes Khas), Encik Imboon Pichai (Pegawai Kes Khas) dan kakitangan sokongan siasatan untuk turun ke kawasan Pentadbiran Daerah Kecil Rieang, Daerah Rue So, Wilayah Narathiwat.",
